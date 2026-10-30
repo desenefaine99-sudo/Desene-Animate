@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>DeseneAnimate Cinema</title>
 
 <style>
@@ -13,221 +13,146 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #100b1c;
+    background: #100b19;
     color: white;
+    font-family: Arial, sans-serif;
 }
 
 header {
-    background: #1c1030;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    background: #1c102b;
+    padding: 22px;
+    text-align: center;
+    border-bottom: 2px solid #7838b8;
 }
 
 .logo {
-    font-size: 25px;
+    color: #d9aaff;
+    font-size: 30px;
     font-weight: bold;
-    color: #c084fc;
+}
+
+nav {
+    margin-top: 15px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 10px;
-}
-
-nav a:hover {
-    color: #c084fc;
+    margin: 0 12px;
 }
 
 .hero {
     text-align: center;
-    padding: 65px 15px;
-    background: linear-gradient(135deg, #35145c, #100b1c);
+    padding: 55px 15px;
+    background: linear-gradient(135deg, #28113d, #100b19);
 }
 
 .hero h1 {
-    font-size: 38px;
+    color: #d9aaff;
+    font-size: 36px;
 }
 
 .hero p {
-    color: #ddd;
+    color: #ccc;
 }
 
 .movies {
     max-width: 1100px;
-    margin: auto;
-    padding: 35px 15px;
+    margin: 35px auto;
+    padding: 15px;
 }
 
 .movies h2 {
-    text-align: center;
-    color: #c084fc;
-    margin-bottom: 35px;
+    color: #d9aaff;
+    margin-bottom: 25px;
 }
 
-.movie {
-    background: #201532;
-    padding: 18px;
-    border-radius: 15px;
-    margin-bottom: 35px;
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 200px));
+    gap: 25px;
 }
 
-.movie h3 {
-    text-align: center;
-}
-
-.video-container {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: black;
+.movie-card {
+    background: #21152f;
     border-radius: 12px;
     overflow: hidden;
-}
-
-.video-container iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border: none;
-}
-
-.fullscreen-button {
-    display: block;
-    margin: 12px auto;
-    padding: 11px 20px;
-    background: #9333ea;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-.fullscreen-button:hover {
-    background: #7e22ce;
-}
-
-.movie p {
-    text-align: center;
-    color: #ccc;
-}
-
-.discord {
-    text-align: center;
-    padding: 35px 15px;
-    background: #1c1030;
-}
-
-.discord a {
-    display: inline-block;
-    background: #5865F2;
-    color: white;
-    padding: 12px 22px;
-    border-radius: 8px;
     text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.movie-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 25px #7838b855;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.movie-card h3 {
+    text-align: center;
+    padding: 12px 8px;
+    margin: 0;
+    font-size: 17px;
 }
 
 footer {
+    background: #1c102b;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     color: #aaa;
+    margin-top: 50px;
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-    <div class="logo">🎬 DeseneAnimate</div>
+    <div class="logo">DeseneAnimate</div>
+
     <nav>
-        <a href="#acasa">Acasă</a>
+        <a href="index.html">Acasă</a>
         <a href="#filme">Filme</a>
-        <a href="#discord">Discord</a>
+        <a href="https://discord.com/">Discord</a>
     </nav>
 </header>
 
-<section class="hero" id="acasa">
-    <h1>DeseneAnimate Cinema</h1>
-    <p>Locul unde începe distracția!</p>
+<section class="hero">
+    <h1>Bine ai venit la DeseneAnimate Cinema!</h1>
+    <p>Alege filmul preferat și începe aventura!</p>
 </section>
 
 <section class="movies" id="filme">
 
-<h2>🎥 Filme și desene animate</h2>
+    <h2>Filme disponibile</h2>
 
-<div class="movie">
-    <h3>Hotel Transylvania 4</h3>
+    <div class="movie-grid">
 
-<div class="video-container" id="video1">
-    <iframe
-        src="https://www.canva.com/design/DAHZe8eF7bY/6EgRZcWylP95Yu2IYpEGcQ/watch?embed"
-        allowfullscreen
-        allow="fullscreen"
-        loading="lazy">
-    </iframe>
-</div>
+        <a href="hotel.html" class="movie-card">
+            <img src="postere/hotel.jpg"
+                 alt="Poster Hotel Transylvania 4">
+            <h3>Hotel Transylvania 4</h3>
+        </a>
 
-<button class="fullscreen-button" onclick="makeFullscreen('video1')">
-    ⛶ Ecran complet
-</button>
+        <a href="scooby.html" class="movie-card">
+            <img src="postere/scooby.jpg"
+                 alt="Poster Scooby-Doo pe Insula Zombie">
+            <h3>Scooby-Doo pe Insula Zombie</h3>
+        </a>
 
-<p>Vizionare plăcută!</p>
+    </div>
 
-</div>
-
-<div class="movie">
-    <h3>Scooby-Doo pe Insula Zombie</h3>
-
-<div class="video-container" id="video2">
-    <iframe
-        src="https://www.canva.com/design/DAHZfB6BDqc/PVtkZsPyLWzZM0ZxE4eg0w/watch?embed"
-        allowfullscreen
-        allow="fullscreen"
-        loading="lazy">
-    </iframe>
-</div>
-
-<button class="fullscreen-button" onclick="makeFullscreen('video2')">
-    ⛶ Ecran complet
-</button>
-
-<p>Vizionare plăcută!</p>
-
-</div>
-
-</section>
-
-<section class="discord" id="discord">
-    <h2>💬 Comunitatea noastră</h2>
-    <p>Alătură-te comunității DeseneAnimate!</p>
-    <a href="https://discord.com/" target="_blank" rel="noopener">
-        Intră pe Discord
-    </a>
 </section>
 
 <footer>
-    © 2026 DeseneAnimate Cinema
+    DeseneAnimate Cinema
 </footer>
-
-<script>
-function makeFullscreen(id) {
-    const player = document.getElementById(id);
-
-    if (player.requestFullscreen) {
-        player.requestFullscreen();
-    } else if (player.webkitRequestFullscreen) {
-        player.webkitRequestFullscreen();
-    }
-}
-</script>
 
 </body>
 </html>
