@@ -1,135 +1,215 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hotel Transylvania 2 | DeseneAnimate</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Transylvania 2 | DeseneAnimate+</title>
 
-<style>
-* { box-sizing: border-box; }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-    margin: 0;
-    background: #100b19;
-    color: white;
-    font-family: Arial, sans-serif;
-}
+    body {
+      background: #141414;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
 
-header {
-    background: #1c102b;
-    padding: 22px;
-    text-align: center;
-    border-bottom: 2px solid #7838b8;
-}
+    header {
+      height: 70px;
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      background: #080808;
+    }
 
-header a {
-    color: #d9aaff;
-    text-decoration: none;
-    font-size: 26px;
-    font-weight: bold;
-}
+    .logo {
+      color: #e50914;
+      font-size: 27px;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-.container {
-    max-width: 950px;
-    margin: 30px auto;
-    padding: 15px;
-}
+    .hero {
+      min-height: 500px;
+      padding: 80px 7%;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(to right, #141414 10%, rgba(20,20,20,.75) 55%, rgba(20,20,20,.2)),
+        linear-gradient(to top, #141414, transparent 45%),
+        url("postere/hotel2.jpg") center/cover no-repeat;
+    }
 
-h1 {
-    text-align: center;
-    color: #d9aaff;
-}
+    .hero-content {
+      max-width: 650px;
+    }
 
-.player {
-    width: 100%;
-    max-width: 750px;
-    margin: 25px auto;
-    aspect-ratio: 16 / 9;
-}
+    .label {
+      color: #e50914;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
 
-iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    border-radius: 12px;
-}
+    h1 {
+      font-size: 48px;
+      margin-bottom: 18px;
+    }
 
-.info {
-    background: #21152f;
-    padding: 22px;
-    border-radius: 12px;
-    margin-top: 25px;
-    line-height: 1.7;
-}
+    .meta {
+      color: #ccc;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
 
-.info h2 { color: #d9aaff; }
+    .description {
+      color: #ddd;
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
 
-.info p { color: #ddd; }
+    .button {
+      display: inline-block;
+      background: #e50914;
+      color: white;
+      padding: 13px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-.back {
-    display: inline-block;
-    margin-top: 20px;
-    color: #d9aaff;
-    text-decoration: none;
-}
+    .section {
+      padding: 35px 7%;
+    }
 
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #999;
-}
-</style>
+    h2 {
+      font-size: 25px;
+      margin-bottom: 22px;
+    }
+
+    .player {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+
+    .player iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      color: #ccc;
+      line-height: 1.8;
+    }
+
+    .details strong {
+      color: #fff;
+    }
+
+    .back {
+      display: inline-block;
+      color: #ccc;
+      text-decoration: none;
+      margin-top: 25px;
+    }
+
+    .back:hover {
+      color: #e50914;
+    }
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      color: #777;
+      background: #080808;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      .hero {
+        padding: 60px 6%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <a href="index.html">DeseneAnimate</a>
-</header>
+  <header>
+    <a href="index.html" class="logo">DeseneAnimate+</a>
+  </header>
 
-<main class="container">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="label">RECOMANDAREA NOASTRĂ</div>
 
-    <h1>Hotel Transylvania 2 (2015)</h1>
+      <h1>Hotel Transylvania 2</h1>
+
+      <div class="meta">
+        2015 · Animație · Comedie · Familie · 89 min
+      </div>
+
+      <p class="description">
+        Dracula este încântat de venirea pe lume a nepotului său, Dennis.
+        Dar există o problemă: băiețelul nu pare să aibă deloc trăsături
+        de vampir. Dracula pornește într-o aventură alături de prietenii
+        săi pentru a descoperi dacă Dennis are totuși sângele de monstru
+        al familiei.
+      </p>
+
+      <a href="#vizionare" class="button">▶ Vizionare</a>
+    </div>
+  </section>
+
+  <section class="section" id="vizionare">
+    <h2>Urmărește filmul</h2>
 
     <div class="player">
-        <iframe
-            src="https://www.canva.com/design/DAHZgHjBzjc/o54XsQYJFUsolQ2ih8QRzg/watch?embed"
-            allowfullscreen>
-        </iframe>
+      <iframe
+        src="https://www.canva.com/design/DAHZgHjBzjc/o54XsQYJFUsolQ2ih8QRzg/watch?embed"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Despre film</h2>
+
+    <div class="details">
+      <p><strong>Titlu:</strong><br>Hotel Transylvania 2</p>
+
+      <p><strong>Anul lansării:</strong><br>2015</p>
+
+      <p><strong>Regizor:</strong><br>Genndy Tartakovsky</p>
+
+      <p><strong>Studio:</strong><br>Sony Pictures Animation</p>
+
+      <p><strong>Gen:</strong><br>Animație, Comedie, Familie</p>
+
+      <p><strong>Durată:</strong><br>89 de minute</p>
     </div>
 
-    <section class="info">
-        <h2>Informații despre film</h2>
+    <a href="index.html" class="back">← Înapoi la pagina principală</a>
+  </section>
 
-        <p><strong>Titlu:</strong> Hotel Transylvania 2</p>
-        <p><strong>An:</strong> 2015</p>
-        <p><strong>Durată:</strong> 89 de minute</p>
-        <p><strong>Regia:</strong> Genndy Tartakovsky</p>
-
-        <h2>Distribuție vocală</h2>
-
-        <p>
-            Adam Sandler, Andy Samberg, Selena Gomez,
-            Kevin James, Steve Buscemi, David Spade
-            și Mel Brooks.
-        </p>
-
-        <h2>Descriere</h2>
-
-        <p>
-            Dracula este acum bunic și încearcă să-și ajute nepotul,
-            Dennis, să-și descopere latura de monstru.
-            Familia pornește într-o nouă aventură plină de umor.
-        </p>
-    </section>
-
-    <a class="back" href="index.html">← Înapoi la filme</a>
-
-</main>
-
-<footer>
-    DeseneAnimate Cinema
-</footer>
+  <footer>
+    DeseneAnimate+ © 2026
+  </footer>
 
 </body>
 </html>
