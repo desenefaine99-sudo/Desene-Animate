@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
@@ -7,54 +6,60 @@
 <title>Me and Mia | DeseneAnimate+</title>
 
 <style>
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
-    background: #08080d;
-    color: white;
+    background: #141414;
+    color: #fff;
     font-family: Arial, sans-serif;
 }
 
 header {
     padding: 22px 5%;
-    background: #09090d;
+    background: #101010;
 }
 
 header a {
-    color: #bd75ff;
-    font-size: 26px;
+    color: #e50914;
+    font-size: 27px;
     font-weight: bold;
     text-decoration: none;
 }
 
 .hero {
-    min-height: 470px;
+    min-height: 500px;
     padding: 90px 7%;
     display: flex;
     align-items: center;
     background:
-    linear-gradient(90deg, #08080d 5%, rgba(8,8,13,.8) 55%, transparent),
-    linear-gradient(0deg, #08080d, transparent 60%),
-    url("postere/meandmia.jpg") center 30% / cover no-repeat;
+        linear-gradient(90deg, #141414 5%, rgba(20,20,20,.85) 45%, transparent 100%),
+        linear-gradient(0deg, #141414, transparent 65%),
+        url("postere/meandmia.jpg") center 30% / cover no-repeat;
 }
 
-.hero-content { max-width: 650px; }
+.hero-content {
+    max-width: 650px;
+}
 
 .hero h1 {
-    font-size: 55px;
-    margin: 10px 0;
+    font-size: clamp(40px, 6vw, 65px);
+    margin: 15px 0;
 }
 
 .tag {
-    color: #c88aff;
+    color: #e50914;
     letter-spacing: 3px;
     font-weight: bold;
+    font-size: 13px;
 }
 
 .metadata {
-    color: #bbb;
+    color: #ccc;
     margin: 18px 0;
+    font-size: 15px;
 }
 
 .description {
@@ -65,31 +70,36 @@ header a {
 
 .play {
     display: inline-block;
-    background: #a34ee0;
-    color: white;
+    background: white;
+    color: black;
     padding: 14px 25px;
-    border-radius: 5px;
+    border-radius: 4px;
     text-decoration: none;
     margin-top: 15px;
     font-weight: bold;
+    transition: .2s;
+}
+
+.play:hover {
+    background: #ddd;
 }
 
 .content {
-    max-width: 1100px;
+    max-width: 1150px;
     margin: 45px auto;
-    padding: 0 25px;
+    padding: 0 30px;
 }
 
 h2 {
-    font-size: 27px;
+    font-size: 26px;
     margin-bottom: 25px;
 }
 
 .details {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 25px;
-    margin-bottom: 55px;
+    margin-bottom: 60px;
 }
 
 .details p {
@@ -98,46 +108,65 @@ h2 {
 }
 
 .details strong {
-    color: #c88aff;
+    color: #888;
+    font-size: 14px;
 }
 
 .season-title {
-    font-size: 24px;
-    margin-bottom: 25px;
+    font-size: 20px;
+    color: #ddd;
+    margin: 30px 0 15px;
 }
 
 .episode {
     display: grid;
-    grid-template-columns: 45px 180px 1fr;
+    grid-template-columns: 35px 190px 1fr;
     gap: 22px;
     align-items: center;
-    padding: 18px 0;
-    border-bottom: 1px solid #29232f;
+    padding: 18px 12px;
+    border-bottom: 1px solid #333;
     color: white;
     text-decoration: none;
-    transition: .2s;
+    transition: background .2s;
+}
+
+.episode:first-of-type {
+    border-top: 1px solid #333;
 }
 
 .episode:hover {
-    background: #17111f;
+    background: #252525;
 }
 
 .number {
-    font-size: 25px;
-    color: #888;
+    font-size: 24px;
+    color: #aaa;
     text-align: center;
 }
 
 .thumbnail {
-    width: 180px;
-    height: 100px;
-    background: #21152f;
-    border-radius: 6px;
+    width: 190px;
+    height: 107px;
+    background: #292929;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #c88aff;
-    font-size: 30px;
+    color: white;
+    font-size: 28px;
+    position: relative;
+    overflow: hidden;
+}
+
+.thumbnail::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.15);
+    transition: .2s;
+}
+
+.episode:hover .thumbnail::after {
+    background: rgba(0,0,0,.4);
 }
 
 .episode-info h3 {
@@ -152,19 +181,30 @@ h2 {
     margin: 0;
 }
 
+.duration {
+    color: #888;
+    font-size: 12px;
+    margin-top: 9px;
+}
+
 footer {
     text-align: center;
     padding: 35px;
-    color: #888;
+    color: #777;
     margin-top: 60px;
+    border-top: 1px solid #292929;
 }
 
 @media(max-width:650px) {
-    .hero h1 { font-size: 38px; }
+    .hero {
+        min-height: 420px;
+        padding: 60px 7%;
+    }
 
     .episode {
-        grid-template-columns: 30px 110px 1fr;
+        grid-template-columns: 25px 110px 1fr;
         gap: 12px;
+        padding: 15px 3px;
     }
 
     .thumbnail {
@@ -172,104 +212,121 @@ footer {
         height: 75px;
     }
 
-    .episode-info h3 { font-size: 15px; }
-    .episode-info p { font-size: 12px; }
+    .episode-info h3 {
+        font-size: 14px;
+    }
+
+    .episode-info p {
+        font-size: 12px;
+    }
+
+    .number {
+        font-size: 19px;
+    }
+
+    .content {
+        padding: 0 17px;
+    }
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-<a href="index.html">DeseneAnimate+</a>
+    <a href="index.html">DeseneAnimate+</a>
 </header>
 
 <section class="hero">
-<div class="hero-content">
+    <div class="hero-content">
 
-<div class="tag">SERIAL ORIGINAL</div>
+        <div class="tag">SERIAL</div>
 
-<h1>Me and Mia</h1>
+        <h1>Me and Mia</h1>
 
-<div class="metadata">
-Serial · Aventură · Fantasy
-</div>
+        <div class="metadata">
+            Serial · Aventură · Fantasy
+        </div>
 
-<p class="description">
-Descoperă universul Me and Mia și urmărește aventurile
-personajelor într-o lume plină de mistere și surprize.
-Alege episodul preferat și continuă povestea!
-</p>
+        <p class="description">
+            Descoperă universul Me and Mia și urmărește aventurile
+            personajelor într-o lume plină de mistere și surprize.
+            Alege episodul preferat și continuă povestea!
+        </p>
 
-<a href="mia-s1e1.html" class="play">▶ Primul episod</a>
+        <a href="mia-s1e1.html" class="play">
+            ▶ Primul episod
+        </a>
 
-</div>
+    </div>
 </section>
 
 <main class="content">
 
-<h2>Despre serial</h2>
+    <h2>Despre serial</h2>
 
-<div class="details">
+    <div class="details">
 
-<div>
-<strong>Titlu</strong>
-<p>Me and Mia</p>
-</div>
+        <div>
+            <strong>TITLU</strong>
+            <p>Me and Mia</p>
+        </div>
 
-<div>
-<strong>Format</strong>
-<p>Serial</p>
-</div>
+        <div>
+            <strong>FORMAT</strong>
+            <p>Serial</p>
+        </div>
 
-<div>
-<strong>Gen</strong>
-<p>Aventură și fantasy</p>
-</div>
+        <div>
+            <strong>GEN</strong>
+            <p>Aventură și fantasy</p>
+        </div>
 
-<div>
-<strong>Episoade</strong>
-<p>Sezonul 1</p>
-</div>
+        <div>
+            <strong>SEZON</strong>
+            <p>Sezonul 1</p>
+        </div>
 
-</div>
+    </div>
 
-<h2>Episoade</h2>
+    <h2>Episoade</h2>
 
-<h3 class="season-title">Sezonul 1</h3>
+    <h3 class="season-title">Sezonul 1</h3>
 
-<a href="mia-s1e1.html" class="episode">
-<div class="number">1</div>
-<div class="thumbnail">▶</div>
-<div class="episode-info">
-<h3>Episodul 1</h3>
-<p>Primul episod al serialului Me and Mia.</p>
-</div>
-</a>
+    <a href="mia-s1e1.html" class="episode">
+        <div class="number">1</div>
+        <div class="thumbnail">▶</div>
+        <div class="episode-info">
+            <h3>Episodul 1</h3>
+            <p>Primul episod al serialului Me and Mia.</p>
+            <div class="duration">Sezonul 1 · Episodul 1</div>
+        </div>
+    </a>
 
-<a href="mia-s1e2.html" class="episode">
-<div class="number">2</div>
-<div class="thumbnail">▶</div>
-<div class="episode-info">
-<h3>Episodul 2</h3>
-<p>Descrierea episodului va fi adăugată aici.</p>
-</div>
-</a>
+    <a href="mia-s1e2.html" class="episode">
+        <div class="number">2</div>
+        <div class="thumbnail">▶</div>
+        <div class="episode-info">
+            <h3>Episodul 2</h3>
+            <p>Descrierea episodului va fi adăugată aici.</p>
+            <div class="duration">Sezonul 1 · Episodul 2</div>
+        </div>
+    </a>
 
-<a href="mia-s1e3.html" class="episode">
-<div class="number">3</div>
-<div class="thumbnail">▶</div>
-<div class="episode-info">
-<h3>Episodul 3</h3>
-<p>Descrierea episodului va fi adăugată aici.</p>
-</div>
-</a>
+    <a href="mia-s1e3.html" class="episode">
+        <div class="number">3</div>
+        <div class="thumbnail">▶</div>
+        <div class="episode-info">
+            <h3>Episodul 3</h3>
+            <p>Descrierea episodului va fi adăugată aici.</p>
+            <div class="duration">Sezonul 1 · Episodul 3</div>
+        </div>
+    </a>
 
 </main>
 
 <footer>
-DeseneAnimate+ © 2026
+    DeseneAnimate+ © 2026
 </footer>
 
 </body>
