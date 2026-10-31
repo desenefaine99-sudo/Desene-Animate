@@ -1,101 +1,276 @@
 <!DOCTYPE html>
+
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Me and Mia - Seriale</title>
+<title>Me and Mia | DeseneAnimate+</title>
 
 <style>
+* { box-sizing: border-box; }
+
 body {
     margin: 0;
-    background: #100b1c;
+    background: #08080d;
     color: white;
     font-family: Arial, sans-serif;
 }
+
 header {
-    background: #24143b;
-    padding: 20px;
-    text-align: center;
+    padding: 22px 5%;
+    background: #09090d;
 }
+
 header a {
-    color: white;
+    color: #bd75ff;
+    font-size: 26px;
+    font-weight: bold;
     text-decoration: none;
-    font-size: 28px;
+}
+
+.hero {
+    min-height: 470px;
+    padding: 90px 7%;
+    display: flex;
+    align-items: center;
+    background:
+    linear-gradient(90deg, #08080d 5%, rgba(8,8,13,.8) 55%, transparent),
+    linear-gradient(0deg, #08080d, transparent 60%),
+    url("postere/meandmia.jpg") center 30% / cover no-repeat;
+}
+
+.hero-content { max-width: 650px; }
+
+.hero h1 {
+    font-size: 55px;
+    margin: 10px 0;
+}
+
+.tag {
+    color: #c88aff;
+    letter-spacing: 3px;
     font-weight: bold;
 }
-.container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 15px;
+
+.metadata {
+    color: #bbb;
+    margin: 18px 0;
 }
-.info {
-    background: #24143b;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 30px;
+
+.description {
+    color: #ddd;
+    line-height: 1.8;
+    font-size: 16px;
 }
+
+.play {
+    display: inline-block;
+    background: #a34ee0;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.content {
+    max-width: 1100px;
+    margin: 45px auto;
+    padding: 0 25px;
+}
+
+h2 {
+    font-size: 27px;
+    margin-bottom: 25px;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-bottom: 55px;
+}
+
+.details p {
+    color: #bbb;
+    line-height: 1.7;
+}
+
+.details strong {
+    color: #c88aff;
+}
+
+.season-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
 .episode {
-    display: block;
-    background: #24143b;
-    padding: 18px;
-    margin: 15px 0;
-    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 45px 180px 1fr;
+    gap: 22px;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #29232f;
     color: white;
     text-decoration: none;
-    transition: 0.2s;
+    transition: .2s;
 }
+
 .episode:hover {
-    background: #49306b;
-    transform: translateY(-3px);
+    background: #17111f;
 }
-.episode h3 {
-    margin-top: 0;
-    color: #d6a5ff;
+
+.number {
+    font-size: 25px;
+    color: #888;
+    text-align: center;
 }
-.back {
-    color: #d6a5ff;
-    text-decoration: none;
+
+.thumbnail {
+    width: 180px;
+    height: 100px;
+    background: #21152f;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c88aff;
+    font-size: 30px;
+}
+
+.episode-info h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.episode-info p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 35px;
+    color: #888;
+    margin-top: 60px;
+}
+
+@media(max-width:650px) {
+    .hero h1 { font-size: 38px; }
+
+    .episode {
+        grid-template-columns: 30px 110px 1fr;
+        gap: 12px;
+    }
+
+    .thumbnail {
+        width: 110px;
+        height: 75px;
+    }
+
+    .episode-info h3 { font-size: 15px; }
+    .episode-info p { font-size: 12px; }
 }
 </style>
+
 </head>
 
 <body>
 
 <header>
-<a href="index.html">DeseneAnimate</a>
+<a href="index.html">DeseneAnimate+</a>
 </header>
 
-<div class="container">
+<section class="hero">
+<div class="hero-content">
+
+<div class="tag">SERIAL ORIGINAL</div>
 
 <h1>Me and Mia</h1>
 
-<div class="info">
-<h2>Despre serial</h2>
-<p><strong>Titlu:</strong> Me and Mia</p>
-<p><strong>Tip:</strong> Serial</p>
-<p><strong>Sezoane:</strong> 1</p>
-<p>Aici găsești episoadele serialului Me and Mia.</p>
+<div class="metadata">
+Serial · Aventură · Fantasy
 </div>
 
-<h2>📺 Sezonul 1</h2>
+<p class="description">
+Descoperă universul Me and Mia și urmărește aventurile
+personajelor într-o lume plină de mistere și surprize.
+Alege episodul preferat și continuă povestea!
+</p>
+
+<a href="mia-s1e1.html" class="play">▶ Primul episod</a>
+
+</div>
+</section>
+
+<main class="content">
+
+<h2>Despre serial</h2>
+
+<div class="details">
+
+<div>
+<strong>Titlu</strong>
+<p>Me and Mia</p>
+</div>
+
+<div>
+<strong>Format</strong>
+<p>Serial</p>
+</div>
+
+<div>
+<strong>Gen</strong>
+<p>Aventură și fantasy</p>
+</div>
+
+<div>
+<strong>Episoade</strong>
+<p>Sezonul 1</p>
+</div>
+
+</div>
+
+<h2>Episoade</h2>
+
+<h3 class="season-title">Sezonul 1</h3>
 
 <a href="mia-s1e1.html" class="episode">
+<div class="number">1</div>
+<div class="thumbnail">▶</div>
+<div class="episode-info">
 <h3>Episodul 1</h3>
-<p>Primul episod al serialului.</p>
+<p>Primul episod al serialului Me and Mia.</p>
+</div>
 </a>
 
 <a href="mia-s1e2.html" class="episode">
+<div class="number">2</div>
+<div class="thumbnail">▶</div>
+<div class="episode-info">
 <h3>Episodul 2</h3>
-<p>În curând...</p>
+<p>Descrierea episodului va fi adăugată aici.</p>
+</div>
 </a>
 
 <a href="mia-s1e3.html" class="episode">
+<div class="number">3</div>
+<div class="thumbnail">▶</div>
+<div class="episode-info">
 <h3>Episodul 3</h3>
-<p>În curând...</p>
+<p>Descrierea episodului va fi adăugată aici.</p>
+</div>
 </a>
 
-<a href="index.html" class="back">← Înapoi la pagina principală</a>
+</main>
 
-</div>
+<footer>
+DeseneAnimate+ © 2026
+</footer>
+
 </body>
 </html>
