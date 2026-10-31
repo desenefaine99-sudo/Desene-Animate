@@ -292,6 +292,24 @@ footer {
         padding: 28px 5%;
     }
 }
+
+/* Bara de comunitate si actiuni */
+.quick-links{display:flex;flex-wrap:wrap;gap:10px;padding:18px 5%;background:#100d16;border-bottom:1px solid #24202b}
+.quick-links a,.quick-links button{border:1px solid #49315e;background:#1b1524;color:#eee;padding:10px 15px;border-radius:22px;text-decoration:none;font-size:13px;cursor:pointer}
+.quick-links a:hover,.quick-links button:hover{background:#a34ee0;border-color:#a34ee0}
+.utility-section{padding:28px 5% 5px}
+.utility-section h2{font-size:22px;margin:0 0 16px}
+.utility-row{display:flex;gap:14px;flex-wrap:wrap}
+.utility-card{display:flex;align-items:center;gap:12px;background:#17131e;border:1px solid #30243e;border-radius:9px;padding:14px 17px;color:white;text-decoration:none;min-width:220px}
+.utility-card small{display:block;color:#aaa;margin-top:4px}
+.movie-card{position:relative}
+.favorite-toggle{position:absolute;right:8px;top:8px;z-index:5;width:36px;height:36px;border:1px solid #ffffff55;border-radius:50%;background:#09080dcc;color:white;font-size:19px;cursor:pointer}
+.favorite-toggle.active{color:#ff6b9d;border-color:#ff6b9d;background:#28101d}
+.social-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:12px}
+.social-links a{color:#d9b5ff;text-decoration:none;border:1px solid #49315e;padding:8px 13px;border-radius:20px}
+.social-links a:hover{background:#a34ee0;color:white}
+#surprise-button{margin-left:5%;margin-top:0}
+
 </style>
 </head>
 
@@ -310,6 +328,27 @@ footer {
            type="search" placeholder="Caută un titlu..."
            aria-label="Caută filme și seriale">
 </header>
+
+<div class="quick-links">
+  <a href="https://www.tiktok.com/@deseneanimate047" target="_blank" rel="noopener">🎵 TikTok</a>
+  <a href="https://discord.gg/upbDvH9CS" target="_blank" rel="noopener">💬 Discord</a>
+  <a href="https://www.youtube.com/channel/UCTCdx653OFd2T854aFOaUiQ" target="_blank" rel="noopener">▶ YouTube</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZY9tY-aoqDL-CJXG0lZUgbZHvwDE1ul8-dNmKzsEq_1KNzQ/viewform" target="_blank" rel="noopener">🎫 Contact / Raportează</a>
+  <button type="button" id="surprise-button">🎲 Surprinde-mă!</button>
+</div>
+
+<section class="utility-section" id="continue-section" style="display:none">
+  <h2>▶ Continuă vizionarea</h2>
+  <div class="utility-row" id="continue-row"></div>
+</section>
+
+<section class="utility-section" id="favorites-section">
+  <h2>❤️ Favoritele mele</h2>
+  <div class="utility-row" id="favorites-row">
+    <p style="color:#aaa">Apasă pe inimioara unui titlu pentru a-l adăuga aici.</p>
+  </div>
+</section>
+
 
 <!-- RECOMANDARE ALEATORIE -->
 <section class="hero" id="recommendation">
@@ -444,12 +483,36 @@ footer {
     </p>
 </section>
 
+
+<section class="section" id="top-desen">
+  <h2>⭐ Recomandări populare</h2>
+  <div class="movie-grid">
+    <a href="hotel3.html" class="movie-card" data-category="animatie comedie aventura"><div class="poster"><img src="postere/hotel3.jpg" alt="Hotel Transylvania 3"></div><h3>Hotel Transylvania 3</h3><p>Recomandare · 2018</p></a>
+    <a href="coco.html" class="movie-card" data-category="animatie aventura"><div class="poster"><img src="postere/coco.jpg" alt="Coco"></div><h3>Coco</h3><p>Recomandare · 2017</p></a>
+    <a href="scooby.html" class="movie-card" data-category="animatie mister aventura"><div class="poster"><img src="postere/scooby.jpg" alt="Scooby-Doo pe Insula Zombie"></div><h3>Scooby-Doo pe Insula Zombie</h3><p>Recomandare · 1998</p></a>
+  </div>
+</section>
+
+<section class="section" id="noutati">
+  <h2>🆕 De descoperit</h2>
+  <div class="movie-grid">
+    <a href="trickortreat.html" class="movie-card" data-category="animatie mister aventura"><div class="poster"><img src="postere/trickortreat.jpg" alt="Trick or Treat Scooby-Doo"></div><h3>Trick or Treat Scooby-Doo!</h3><p>2022 · Animație · Mister</p></a>
+    <a href="hotel.html" class="movie-card" data-category="animatie comedie aventura"><div class="poster"><img src="postere/hotel.jpg" alt="Hotel Transylvania: Transformania"></div><h3>Hotel Transylvania 4</h3><p>2022 · Animație · Comedie</p></a>
+  </div>
+</section>
+
 <footer>
     <strong style="color:#bd75ff;">DeseneAnimate+</strong>
     <br>
     © 2026
     <br>
     Platformă dedicată animațiilor.
+    <div class="social-links">
+      <a href="https://www.tiktok.com/@deseneanimate047" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://discord.gg/upbDvH9CS" target="_blank" rel="noopener">Discord</a>
+      <a href="https://www.youtube.com/channel/UCTCdx653OFd2T854aFOaUiQ" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZY9tY-aoqDL-CJXG0lZUgbZHvwDE1ul8-dNmKzsEq_1KNzQ/viewform" target="_blank" rel="noopener">Contact / Raportează o problemă</a>
+    </div>
 </footer>
 
 <script>
@@ -588,8 +651,3 @@ filterButtons.forEach(button => {
         filterContent();
     });
 });
-
-</script>
-
-</body>
-</html>
