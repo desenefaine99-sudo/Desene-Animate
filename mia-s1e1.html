@@ -3,38 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Me and Mia - Episodul 1</title>
+
+<title>Vorbind cu unicornii | Me and Mia</title>
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    background: #100b1c;
+    background: #141414;
     color: white;
     font-family: Arial, sans-serif;
-    text-align: center;
 }
+
 header {
-    background: #24143b;
-    padding: 20px;
+    padding: 22px 5%;
+    background: #101010;
 }
+
 header a {
-    color: white;
+    color: #e50914;
     text-decoration: none;
-    font-size: 26px;
+    font-size: 27px;
     font-weight: bold;
 }
+
 .container {
-    max-width: 850px;
-    margin: 30px auto;
-    padding: 15px;
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 25px;
 }
+
+h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #aaa;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
 .player {
     position: relative;
     width: 100%;
     padding-top: 56.25%;
     overflow: hidden;
-    border-radius: 8px;
+    background: #000;
 }
+
 .player iframe {
     position: absolute;
     width: 100%;
@@ -43,25 +63,76 @@ header a {
     left: 0;
     border: 0;
 }
+
 .info {
-    background: #24143b;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 25px;
-    text-align: left;
+    margin-top: 35px;
+    padding: 10px 0 25px;
+    border-bottom: 1px solid #333;
 }
+
+.info h2 {
+    font-size: 25px;
+    margin-bottom: 22px;
+}
+
+.info p {
+    color: #ccc;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.info strong {
+    color: white;
+}
+
+.episode-description {
+    max-width: 850px;
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #bbb;
+}
+
 .buttons {
     display: flex;
     justify-content: space-between;
     gap: 15px;
-    margin-top: 25px;
+    margin: 30px 0;
 }
+
 .buttons a {
-    background: #7139a8;
-    color: white;
-    padding: 12px 18px;
-    border-radius: 8px;
+    background: white;
+    color: black;
+    padding: 13px 20px;
+    border-radius: 4px;
     text-decoration: none;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.buttons a:hover {
+    background: #ddd;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    border-top: 1px solid #292929;
+    margin-top: 50px;
+}
+
+@media(max-width: 600px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons a {
+        text-align: center;
+    }
 }
 </style>
 </head>
@@ -69,35 +140,71 @@ header a {
 <body>
 
 <header>
-<a href="meandmia.html">ME AND MIA</a>
+    <a href="meandmia.html">DeseneAnimate+</a>
 </header>
 
-<div class="container">
+<main class="container">
 
-<h1>Me and Mia</h1>
-<h2>Sezonul 1 - Episodul 1</h2>
+    <h1>Vorbind cu unicornii</h1>
 
-<div class="player">
-<iframe
-src="https://www.canva.com/design/DAHZmd2eVK4/-EBT1aE5GRpv72PUvvfNhg/watch?embed"
-allowfullscreen>
-</iframe>
-</div>
+    <div class="subtitle">
+        Me and Mia · Sezonul 1 · Episodul 1
+    </div>
 
-<div class="info">
-<h2>Despre episod</h2>
-<p><strong>Serial:</strong> Me and Mia</p>
-<p><strong>Sezon:</strong> 1</p>
-<p><strong>Episod:</strong> 1</p>
-<p><strong>Titlu:</strong> Episodul 1</p>
-<p>Descrierea episodului va fi adăugată aici.</p>
-</div>
+    <!-- PLAYER VIDEO -->
 
-<div class="buttons">
-<a href="meandmia.html">← Înapoi la serial</a>
-<a href="mia-s1e2.html">Episodul următor →</a>
-</div>
+    <div class="player">
+        <iframe
+            src="https://www.canva.com/design/DAHZmd2eVK4/-EBT1aE5GRpv72PUvvfNhg/watch?embed"
+            allowfullscreen>
+        </iframe>
+    </div>
 
-</div>
+    <!-- INFORMATII EPISOD -->
+
+    <section class="info">
+
+        <h2>Despre episod</h2>
+
+        <p><strong>Serial:</strong> Me and Mia</p>
+
+        <p><strong>Sezon:</strong> 1</p>
+
+        <p><strong>Episod:</strong> 1</p>
+
+        <p><strong>Titlu:</strong> Vorbind cu unicornii</p>
+
+        <div class="episode-description">
+            Mia descoperă o lume fascinantă, ascunsă dincolo de
+            imaginația ei, unde unicornii, magia și creaturile
+            fantastice fac parte dintr-un univers extraordinar.
+            În această aventură, ea începe să descopere misterele
+            tărâmului Centopia și legătura specială pe care o poate
+            avea cu locuitorii săi. O călătorie plină de magie,
+            prietenie și descoperiri uimitoare abia începe!
+        </div>
+
+    </section>
+
+    <!-- NAVIGARE -->
+
+    <div class="buttons">
+
+        <a href="meandmia.html">
+            ← Înapoi la serial
+        </a>
+
+        <a href="mia-s1e2.html">
+            Episodul următor →
+        </a>
+
+    </div>
+
+</main>
+
+<footer>
+    DeseneAnimate+ © 2026
+</footer>
+
 </body>
 </html>
