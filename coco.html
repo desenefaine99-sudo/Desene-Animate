@@ -1,92 +1,370 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coco (2017) - DeseneAnimate</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            background: #100b1c;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
+<title>Coco (2017) | DeseneAnimate+</title>
 
-        header {
-            background: #24143b;
-            padding: 20px;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        header a {
-            color: white;
-            text-decoration: none;
-            font-size: 28px;
-            font-weight: bold;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        .container {
-            max-width: 850px;
-            margin: 30px auto;
-            padding: 15px;
-        }
+body {
+    margin: 0;
+    background: #141414;
+    color: white;
+    font-family: Arial, sans-serif;
+}
 
-        iframe {
-            width: 100%;
-            height: 480px;
-            border: none;
-            border-radius: 8px;
-        }
+header {
+    padding: 22px 5%;
+    background: #101010;
+    position: relative;
+    z-index: 10;
+}
 
-        .info {
-            background: #24143b;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 25px;
-            text-align: left;
-        }
+header a {
+    color: #e50914;
+    font-size: 27px;
+    font-weight: bold;
+    text-decoration: none;
+}
 
-        .back {
-            display: inline-block;
-            margin: 25px;
-            color: #d6a5ff;
-            text-decoration: none;
-        }
-    </style>
+.hero {
+    min-height: 570px;
+    padding: 90px 7%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, #141414 5%, rgba(20,20,20,.85) 45%, transparent 100%),
+        linear-gradient(0deg, #141414, transparent 65%),
+        url("postere/coco.jpg") center 30% / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.label {
+    color: #e50914;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 65px);
+    margin: 18px 0;
+}
+
+.metadata {
+    color: #ccc;
+    font-size: 15px;
+    margin: 20px 0;
+}
+
+.description {
+    color: #ddd;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 4px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.button:hover {
+    background: #ddd;
+}
+
+.button.secondary {
+    background: rgba(100,100,100,.7);
+    color: white;
+}
+
+.button.secondary:hover {
+    background: rgba(130,130,130,.8);
+}
+
+.content {
+    max-width: 1150px;
+    margin: 45px auto;
+    padding: 0 30px;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.player-section {
+    margin-bottom: 65px;
+}
+
+.player {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background: #000;
+    overflow: hidden;
+}
+
+.player iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 0;
+}
+
+.info-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #333;
+}
+
+.info-description {
+    color: #bbb;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+.info-list p {
+    color: #aaa;
+    margin: 0 0 18px;
+    font-size: 14px;
+}
+
+.info-list strong {
+    color: white;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 35px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back:hover {
+    color: #e50914;
+}
+
+footer {
+    text-align: center;
+    padding: 35px;
+    color: #777;
+    border-top: 1px solid #292929;
+    margin-top: 60px;
+}
+
+@media(max-width: 700px) {
+    .hero {
+        min-height: 480px;
+        padding: 60px 7%;
+    }
+
+    .content {
+        padding: 0 17px;
+    }
+
+    .info-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .button {
+        text-align: center;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <a href="index.html">DeseneAnimate</a>
+    <a href="index.html">DeseneAnimate+</a>
 </header>
 
-<div class="container">
+<!-- PREZENTAREA FILMULUI -->
 
-    <h1>Coco (2017)</h1>
+<section class="hero">
 
-    <iframe
-        src="https://www.canva.com/design/DAHZj0l1FpE/K0FbCVS7AN7F8pUMNubSLQ/watch?embed"
-        allowfullscreen>
-    </iframe>
+    <div class="hero-content">
 
-    <div class="info">
-        <h2>Despre film</h2>
-        <p><strong>Titlu:</strong> Coco</p>
-        <p><strong>An:</strong> 2017</p>
-        <p><strong>Durată:</strong> 105 minute</p>
-        <p><strong>Regie:</strong> Lee Unkrich</p>
-        <p><strong>Gen:</strong> Animație, aventură, familie</p>
-        <p>
-            Miguel, un băiat pasionat de muzică, ajunge în Tărâmul Morților
-            și descoperă secrete importante despre familia sa.
+        <div class="label">FILM DE ANIMAȚIE</div>
+
+        <h1>Coco</h1>
+
+        <div class="metadata">
+            2017 · Animație · Aventură · Familie · 105 min
+        </div>
+
+        <p class="description">
+            În ciuda interdicției muzicii din familia sa, Miguel
+            visează să devină un muzician celebru, asemenea idolului
+            său, Ernesto de la Cruz. În timpul sărbătorii Día de los
+            Muertos, o întâmplare neașteptată îl poartă într-o lume
+            spectaculoasă a celor plecați dintre cei vii. Acolo,
+            Miguel descoperă secrete de familie, întâlnește personaje
+            uimitoare și pornește într-o călătorie emoționantă despre
+            iubire, amintiri și puterea muzicii.
         </p>
+
+        <div class="buttons">
+
+            <a href="#vizionare" class="button">
+                ▶ Redă filmul
+            </a>
+
+            <a href="#despre" class="button secondary">
+                ℹ Mai multe informații
+            </a>
+
+        </div>
+
     </div>
 
-    <a class="back" href="index.html">← Înapoi la filme</a>
+</section>
 
-</div>
+<main class="content">
+
+    <!-- PLAYER VIDEO -->
+
+    <section class="player-section" id="vizionare">
+
+        <h2>Vizionare</h2>
+
+        <div class="player">
+
+            <iframe
+                src="https://www.canva.com/design/DAHZj0l1FpE/K0FbCVS7AN7F8pUMNubSLQ/watch?embed"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </section>
+
+    <!-- DESPRE FILM -->
+
+    <section id="despre">
+
+        <h2>Despre film</h2>
+
+        <div class="info-section">
+
+            <div>
+
+                <p class="info-description">
+                    Coco este un film de animație lansat în 2017,
+                    produs de Pixar Animation Studios și distribuit
+                    de Walt Disney Pictures.
+
+                    <br><br>
+
+                    Povestea îl urmărește pe Miguel, un băiat pasionat
+                    de muzică, care ajunge în Ținutul Morților în
+                    timpul sărbătorii mexicane Día de los Muertos.
+
+                    <br><br>
+
+                    În această lume plină de culoare, el pornește
+                    într-o aventură extraordinară alături de
+                    fermecătorul și neastâmpăratul Héctor.
+
+                    <br><br>
+
+                    Filmul explorează teme precum familia,
+                    tradițiile, visurile și importanța de a-i
+                    păstra în amintire pe cei dragi.
+                </p>
+
+            </div>
+
+            <div class="info-list">
+
+                <p>
+                    <strong>Titlu:</strong><br>
+                    Coco
+                </p>
+
+                <p>
+                    <strong>Anul lansării:</strong><br>
+                    2017
+                </p>
+
+                <p>
+                    <strong>Durată:</strong><br>
+                    105 minute
+                </p>
+
+                <p>
+                    <strong>Gen:</strong><br>
+                    Animație, Aventură, Familie
+                </p>
+
+                <p>
+                    <strong>Regizor:</strong><br>
+                    Lee Unkrich
+                </p>
+
+                <p>
+                    <strong>Producție:</strong><br>
+                    Pixar Animation Studios
+                </p>
+
+                <p>
+                    <strong>Distribuție:</strong><br>
+                    Walt Disney Pictures
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <a href="index.html" class="back">
+        ← Înapoi la toate filmele
+    </a>
+
+</main>
+
+<footer>
+    DeseneAnimate+ © 2026
+    <br><br>
+    Platformă dedicată animațiilor.
+</footer>
 
 </body>
 </html>
