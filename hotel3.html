@@ -3,80 +3,208 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hotel Transylvania 3 | DeseneAnimate</title>
+
+<title>Hotel Transylvania 3 | DeseneAnimate+</title>
 
 <style>
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
-    background: #100b19;
+    background: #141414;
     color: white;
     font-family: Arial, sans-serif;
 }
 
 header {
-    background: #1c102b;
-    padding: 22px;
-    text-align: center;
-    border-bottom: 2px solid #7838b8;
+    padding: 22px 5%;
+    background: #101010;
+    position: relative;
+    z-index: 10;
 }
 
 header a {
-    color: #d9aaff;
-    text-decoration: none;
-    font-size: 26px;
+    color: #e50914;
+    font-size: 27px;
     font-weight: bold;
+    text-decoration: none;
 }
 
-.container {
-    max-width: 950px;
-    margin: 30px auto;
-    padding: 15px;
+.hero {
+    min-height: 570px;
+    padding: 90px 7%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, #141414 5%, rgba(20,20,20,.85) 45%, transparent 100%),
+        linear-gradient(0deg, #141414, transparent 65%),
+        url("postere/hotel3.jpg") center 30% / cover no-repeat;
 }
 
-h1 {
-    text-align: center;
-    color: #d9aaff;
+.hero-content {
+    max-width: 650px;
+}
+
+.label {
+    color: #e50914;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    margin: 18px 0;
+}
+
+.metadata {
+    color: #ccc;
+    font-size: 15px;
+    margin: 20px 0;
+}
+
+.description {
+    color: #ddd;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 4px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.button:hover {
+    background: #ddd;
+}
+
+.button.secondary {
+    background: rgba(100,100,100,.7);
+    color: white;
+}
+
+.button.secondary:hover {
+    background: rgba(130,130,130,.8);
+}
+
+.content {
+    max-width: 1150px;
+    margin: 45px auto;
+    padding: 0 30px;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.player-section {
+    margin-bottom: 65px;
 }
 
 .player {
+    position: relative;
     width: 100%;
-    max-width: 750px;
-    margin: 25px auto;
-    aspect-ratio: 16 / 9;
+    padding-top: 56.25%;
+    background: #000;
+    overflow: hidden;
 }
 
-iframe {
+.player iframe {
+    position: absolute;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
     border: 0;
-    border-radius: 12px;
 }
 
-.info {
-    background: #21152f;
-    padding: 22px;
-    border-radius: 12px;
-    margin-top: 25px;
-    line-height: 1.7;
+.info-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #333;
 }
 
-.info h2 { color: #d9aaff; }
+.info-description {
+    color: #bbb;
+    line-height: 1.9;
+    font-size: 15px;
+}
 
-.info p { color: #ddd; }
+.info-list p {
+    color: #aaa;
+    margin: 0 0 18px;
+    font-size: 14px;
+}
+
+.info-list strong {
+    color: white;
+}
 
 .back {
     display: inline-block;
-    margin-top: 20px;
-    color: #d9aaff;
+    margin-top: 35px;
+    color: white;
     text-decoration: none;
+    font-size: 14px;
+}
+
+.back:hover {
+    color: #e50914;
 }
 
 footer {
     text-align: center;
-    padding: 25px;
-    color: #999;
+    padding: 35px;
+    color: #777;
+    border-top: 1px solid #292929;
+    margin-top: 60px;
+}
+
+@media(max-width: 700px) {
+    .hero {
+        min-height: 480px;
+        padding: 60px 7%;
+    }
+
+    .content {
+        padding: 0 17px;
+    }
+
+    .info-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .button {
+        text-align: center;
+    }
 }
 </style>
 </head>
@@ -84,51 +212,163 @@ footer {
 <body>
 
 <header>
-    <a href="index.html">DeseneAnimate</a>
+    <a href="index.html">DeseneAnimate+</a>
 </header>
 
-<main class="container">
+<!-- PREZENTAREA FILMULUI -->
 
-    <h1>Hotel Transylvania 3 (2018)</h1>
+<section class="hero">
 
-    <div class="player">
-        <iframe
-            src="https://www.canva.com/design/DAHZgOTXRu4/LfETpnEiZfiFT0L7si07ow/watch?embed"
-            allowfullscreen>
-        </iframe>
+    <div class="hero-content">
+
+        <div class="label">FILM DE ANIMAȚIE</div>
+
+        <h1>Hotel Transylvania 3: Summer Vacation</h1>
+
+        <div class="metadata">
+            2018 · Animație · Comedie · Aventură · 97 min
+        </div>
+
+        <p class="description">
+            Dracula este mereu ocupat să aibă grijă de hotel și de
+            toți monștrii care îi trec pragul. De data aceasta,
+            Mavis îi pregătește o surpriză specială: o croazieră
+            spectaculoasă alături de familie și prieteni!
+            Vacanța pare perfectă, până când Dracula o întâlnește
+            pe misterioasa căpitană Ericka. Însă aceasta ascunde
+            un secret care ar putea schimba totul. O aventură
+            plină de umor, romantism și surprize îi așteaptă
+            pe toți la bord!
+        </p>
+
+        <div class="buttons">
+
+            <a href="#vizionare" class="button">
+                ▶ Redă filmul
+            </a>
+
+            <a href="#despre" class="button secondary">
+                ℹ Mai multe informații
+            </a>
+
+        </div>
+
     </div>
 
-    <section class="info">
-        <h2>Informații despre film</h2>
+</section>
 
-        <p><strong>Titlu:</strong> Hotel Transylvania 3: Summer Vacation</p>
-        <p><strong>An:</strong> 2018</p>
-        <p><strong>Durată:</strong> 97 de minute</p>
-        <p><strong>Regia:</strong> Genndy Tartakovsky</p>
+<main class="content">
 
-        <h2>Distribuție vocală</h2>
+    <!-- PLAYER VIDEO -->
 
-        <p>
-            Adam Sandler, Andy Samberg, Selena Gomez,
-            Kevin James, Kathryn Hahn, Steve Buscemi,
-            David Spade și Jim Gaffigan.
-        </p>
+    <section class="player-section" id="vizionare">
 
-        <h2>Descriere</h2>
+        <h2>Vizionare</h2>
 
-        <p>
-            Dracula și familia sa pleacă într-o croazieră de vacanță.
-            Călătoria devine neașteptată când Dracula se îndrăgostește
-            de căpitanul navei, Ericka.
-        </p>
+        <div class="player">
+
+            <iframe
+                src="https://www.canva.com/design/DAHZgOTXRu4/LfETpnEiZfiFT0L7si07ow/watch?embed"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
     </section>
 
-    <a class="back" href="index.html">← Înapoi la filme</a>
+    <!-- DESPRE FILM -->
+
+    <section id="despre">
+
+        <h2>Despre film</h2>
+
+        <div class="info-section">
+
+            <div>
+
+                <p class="info-description">
+                    Hotel Transylvania 3: Summer Vacation este
+                    al treilea film din îndrăgita serie Hotel
+                    Transylvania, lansat în anul 2018.
+
+                    <br><br>
+
+                    De data aceasta, Dracula și familia sa
+                    părăsesc hotelul pentru o vacanță pe mare.
+                    Croaziera le oferă ocazia să se relaxeze,
+                    să se distreze și să descopere locuri noi.
+
+                    <br><br>
+
+                    Totul se schimbă atunci când Dracula o
+                    întâlnește pe Ericka, căpitanul navei.
+                    Între cei doi apare o legătură neașteptată,
+                    însă Mavis începe să suspecteze că Ericka
+                    ascunde ceva.
+
+                    <br><br>
+
+                    Regizat de Genndy Tartakovsky, filmul
+                    continuă aventurile personajelor într-o
+                    poveste plină de comedie, familie și
+                    momente memorabile.
+                </p>
+
+            </div>
+
+            <div class="info-list">
+
+                <p>
+                    <strong>Titlu:</strong><br>
+                    Hotel Transylvania 3: Summer Vacation
+                </p>
+
+                <p>
+                    <strong>Anul lansării:</strong><br>
+                    2018
+                </p>
+
+                <p>
+                    <strong>Durată:</strong><br>
+                    97 minute
+                </p>
+
+                <p>
+                    <strong>Gen:</strong><br>
+                    Animație, Comedie, Aventură
+                </p>
+
+                <p>
+                    <strong>Regizor:</strong><br>
+                    Genndy Tartakovsky
+                </p>
+
+                <p>
+                    <strong>Producție:</strong><br>
+                    Sony Pictures Animation
+                </p>
+
+                <p>
+                    <strong>Distribuție:</strong><br>
+                    Sony Pictures Releasing
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <a href="index.html" class="back">
+        ← Înapoi la toate filmele
+    </a>
 
 </main>
 
 <footer>
-    DeseneAnimate Cinema
+    DeseneAnimate+ © 2026
+    <br><br>
+    Platformă dedicată animațiilor.
 </footer>
 
 </body>
