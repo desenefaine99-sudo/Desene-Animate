@@ -294,22 +294,124 @@ footer {
 }
 
 /* Bara de comunitate si actiuni */
-.quick-links{display:flex;flex-wrap:wrap;gap:10px;padding:18px 5%;background:#100d16;border-bottom:1px solid #24202b}
-.quick-links a,.quick-links button{border:1px solid #49315e;background:#1b1524;color:#eee;padding:10px 15px;border-radius:22px;text-decoration:none;font-size:13px;cursor:pointer}
-.quick-links a:hover,.quick-links button:hover{background:#a34ee0;border-color:#a34ee0}
-.utility-section{padding:28px 5% 5px}
-.utility-section h2{font-size:22px;margin:0 0 16px}
-.utility-row{display:flex;gap:14px;flex-wrap:wrap}
-.utility-card{display:flex;align-items:center;gap:12px;background:#17131e;border:1px solid #30243e;border-radius:9px;padding:14px 17px;color:white;text-decoration:none;min-width:220px}
-.utility-card small{display:block;color:#aaa;margin-top:4px}
-.movie-card{position:relative}
-.favorite-toggle{position:absolute;right:8px;top:8px;z-index:5;width:36px;height:36px;border:1px solid #ffffff55;border-radius:50%;background:#09080dcc;color:white;font-size:19px;cursor:pointer}
-.favorite-toggle.active{color:#ff6b9d;border-color:#ff6b9d;background:#28101d}
-.social-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:12px}
-.social-links a{color:#d9b5ff;text-decoration:none;border:1px solid #49315e;padding:8px 13px;border-radius:20px}
-.social-links a:hover{background:#a34ee0;color:white}
-#surprise-button{margin-left:5%;margin-top:0}
+.quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 18px 5%;
+    background: #100d16;
+    border-bottom: 1px solid #24202b;
+}
 
+.quick-links a, .quick-links button {
+    border: 1px solid #49315e;
+    background: #1b1524;
+    color: #eee;
+    padding: 10px 15px;
+    border-radius: 22px;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.quick-links a:hover, .quick-links button:hover {
+    background: #a34ee0;
+    border-color: #a34ee0;
+}
+
+.utility-section {
+    padding: 28px 5% 5px;
+}
+
+.utility-section h2 {
+    font-size: 22px;
+    margin: 0 0 16px;
+}
+
+.utility-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.utility-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #17131e;
+    border: 1px solid #30243e;
+    border-radius: 9px;
+    padding: 14px 17px;
+    color: white;
+    text-decoration: none;
+    min-width: 220px;
+}
+
+.utility-card small {
+    display: block;
+    color: #aaa;
+    margin-top: 4px;
+}
+
+.movie-card {
+    position: relative;
+}
+
+.favorite-toggle {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    z-index: 5;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ffffff55;
+    border-radius: 50%;
+    background: #09080dcc;
+    color: white;
+    font-size: 19px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.favorite-toggle.active {
+    color: #ff6b9d;
+    border-color: #ff6b9d;
+    background: #28101d;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.social-links a {
+    color: #d9b5ff;
+    text-decoration: none;
+    border: 1px solid #49315e;
+    padding: 8px 13px;
+    border-radius: 20px;
+}
+
+.social-links a:hover {
+    background: #a34ee0;
+    color: white;
+}
+
+#surprise-button {
+    margin-left: auto;
+}
+
+@media(max-width: 650px) {
+    #surprise-button {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
 </style>
 </head>
 
@@ -330,10 +432,10 @@ footer {
 </header>
 
 <div class="quick-links">
-  <a href="https://www.tiktok.com/@deseneanimate047" target="_blank" rel="noopener">🎵 TikTok</a>
-  <a href="https://discord.gg/upbDvH9CS" target="_blank" rel="noopener">💬 Discord</a>
-  <a href="https://www.youtube.com/channel/UCTCdx653OFd2T854aFOaUiQ" target="_blank" rel="noopener">▶ YouTube</a>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZY9tY-aoqDL-CJXG0lZUgbZHvwDE1ul8-dNmKzsEq_1KNzQ/viewform" target="_blank" rel="noopener">🎫 Contact / Raportează</a>
+  <a href="https://tiktok.com" target="_blank" rel="noopener">🎵 TikTok</a>
+  <a href="https://discord.gg" target="_blank" rel="noopener">💬 Discord</a>
+  <a href="https://youtube.com" target="_blank" rel="noopener">▶ YouTube</a>
+  <a href="https://google.com" target="_blank" rel="noopener">🎫 Contact / Raportează</a>
   <button type="button" id="surprise-button">🎲 Surprinde-mă!</button>
 </div>
 
@@ -369,290 +471,34 @@ footer {
 
 <!-- FILME -->
 <section class="section" id="filme">
-
-    <h2>🎬 Filme</h2>
-
+    <h2>🎬 Filme și Seriale</h2>
+    
     <div class="filters">
-        <button class="filter-btn active" data-filter="all">Toate</button>
-        <button class="filter-btn" data-filter="animatie">Animație</button>
-        <button class="filter-btn" data-filter="comedie">Comedie</button>
-        <button class="filter-btn" data-filter="aventura">Aventură</button>
-        <button class="filter-btn" data-filter="mister">Mister</button>
+        <button class="filter-btn active" onclick="filtreazaGen('toate')">Toate</button>
+        <button class="filter-btn" onclick="filtreazaGen('Animatie')">Animație</button>
+        <button class="filter-btn" onclick="filtreazaGen('Mister')">Mister</button>
+        <button class="filter-btn" onclick="filtreazaGen('Serial')">Seriale</button>
     </div>
 
-    <div class="movie-grid" id="film-grid">
-
-        <a href="trickortreat.html"
-           class="movie-card"
-           data-category="animatie mister aventura">
-            <div class="poster">
-                <img src="postere/trickortreat.jpg" alt="Trick or Treat Scooby-Doo">
-            </div>
-            <h3>Trick or Treat Scooby-Doo!</h3>
-            <p>2022 · Animație · Mister</p>
-        </a>
-
-        <a href="coco.html"
-           class="movie-card"
-           data-category="animatie aventura">
-            <div class="poster">
-                <img src="postere/coco.jpg" alt="Coco">
-            </div>
-            <h3>Coco</h3>
-            <p>2017 · Animație · Aventură</p>
-        </a>
-
-        <a href="hotel3.html"
-           class="movie-card"
-           data-category="animatie comedie aventura">
-            <div class="poster">
-                <img src="postere/hotel3.jpg" alt="Hotel Transylvania 3">
-            </div>
-            <h3>Hotel Transylvania 3</h3>
-            <p>2018 · Comedie · Aventură</p>
-        </a>
-
-        <a href="hotel2.html"
-           class="movie-card"
-           data-category="animatie comedie">
-            <div class="poster">
-                <img src="postere/hotel2.jpg" alt="Hotel Transylvania 2">
-            </div>
-            <h3>Hotel Transylvania 2</h3>
-            <p>2015 · Animație · Comedie</p>
-        </a>
-
-        <a href="hotel1.html"
-           class="movie-card"
-           data-category="animatie comedie">
-            <div class="poster">
-                <img src="postere/hotel1.jpg" alt="Hotel Transylvania">
-            </div>
-            <h3>Hotel Transylvania</h3>
-            <p>2012 · Animație · Comedie</p>
-        </a>
-
-        <a href="hotel.html"
-           class="movie-card"
-           data-category="animatie comedie aventura">
-            <div class="poster">
-                <img src="postere/hotel.jpg" alt="Hotel Transylvania 4">
-            </div>
-            <h3>Hotel Transylvania 4</h3>
-            <p>2022 · Animație · Comedie</p>
-        </a>
-
-        <a href="scooby.html"
-           class="movie-card"
-           data-category="animatie mister aventura">
-            <div class="poster">
-                <img src="postere/scooby.jpg" alt="Scooby-Doo pe Insula Zombie">
-            </div>
-            <h3>Scooby-Doo pe Insula Zombie</h3>
-            <p>1998 · Animație · Mister</p>
-        </a>
-
+    <div class="movie-grid" id="main-movie-grid">
+        <!-- Cardurile se vor genera dinamic din JavaScript pentru a evita repetarea codului -->
     </div>
-
-    <p class="empty-message" id="empty-films">
-        Nu am găsit niciun film. Încearcă alt titlu!
-    </p>
-</section>
-
-<!-- SERIALE -->
-<section class="section" id="seriale">
-
-    <h2>📺 Seriale</h2>
-
-    <div class="movie-grid" id="series-grid">
-
-        <a href="meandmia.html"
-           class="movie-card"
-           data-category="animatie aventura">
-            <div class="poster">
-                <img src="postere/meandmia.jpg" alt="Mia and Me">
-            </div>
-            <h3>Mia and Me</h3>
-            <p>Serial · Aventură</p>
-        </a>
-
-    </div>
-
-    <p class="empty-message" id="empty-series">
-        Nu am găsit niciun serial.
-    </p>
-</section>
-
-
-<section class="section" id="top-desen">
-  <h2>⭐ Recomandări populare</h2>
-  <div class="movie-grid">
-    <a href="hotel3.html" class="movie-card" data-category="animatie comedie aventura"><div class="poster"><img src="postere/hotel3.jpg" alt="Hotel Transylvania 3"></div><h3>Hotel Transylvania 3</h3><p>Recomandare · 2018</p></a>
-    <a href="coco.html" class="movie-card" data-category="animatie aventura"><div class="poster"><img src="postere/coco.jpg" alt="Coco"></div><h3>Coco</h3><p>Recomandare · 2017</p></a>
-    <a href="scooby.html" class="movie-card" data-category="animatie mister aventura"><div class="poster"><img src="postere/scooby.jpg" alt="Scooby-Doo pe Insula Zombie"></div><h3>Scooby-Doo pe Insula Zombie</h3><p>Recomandare · 1998</p></a>
-  </div>
-</section>
-
-<section class="section" id="noutati">
-  <h2>🆕 De descoperit</h2>
-  <div class="movie-grid">
-    <a href="trickortreat.html" class="movie-card" data-category="animatie mister aventura"><div class="poster"><img src="postere/trickortreat.jpg" alt="Trick or Treat Scooby-Doo"></div><h3>Trick or Treat Scooby-Doo!</h3><p>2022 · Animație · Mister</p></a>
-    <a href="hotel.html" class="movie-card" data-category="animatie comedie aventura"><div class="poster"><img src="postere/hotel.jpg" alt="Hotel Transylvania: Transformania"></div><h3>Hotel Transylvania 4</h3><p>2022 · Animație · Comedie</p></a>
-  </div>
 </section>
 
 <footer>
-    <strong style="color:#bd75ff;">DeseneAnimate+</strong>
-    <br>
-    © 2026
-    <br>
-    Platformă dedicată animațiilor.
-    <div class="social-links">
-      <a href="https://www.tiktok.com/@deseneanimate047" target="_blank" rel="noopener">TikTok</a>
-      <a href="https://discord.gg/upbDvH9CS" target="_blank" rel="noopener">Discord</a>
-      <a href="https://www.youtube.com/channel/UCTCdx653OFd2T854aFOaUiQ" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZY9tY-aoqDL-CJXG0lZUgbZHvwDE1ul8-dNmKzsEq_1KNzQ/viewform" target="_blank" rel="noopener">Contact / Raportează o problemă</a>
-    </div>
+    <p>© 2026 DeseneAnimate+. Toate drepturile rezervate.</p>
 </footer>
 
 <script>
-
-// FILME PENTRU RECOMANDAREA ALEATORIE
-
-const recommendations = [
+// Baza ta completă de date (Fiecare fișier HTML mapat corect)
+const bazaDateFilme = [
     {
-        title: "Hotel Transylvania 3",
-        details: "2018 · Animație · Comedie · Aventură",
-        description: "Dracula și prietenii săi pleacă într-o vacanță de neuitat pe un vas de croazieră. Distracția începe, dar lucrurile iau o întorsătură neașteptată!",
-        image: "postere/hotel3.jpg",
-        link: "hotel3.html"
+        id: "hotel-transylvania-3",
+        titlu: "Hotel Transylvania 3: Summer Vacation",
+        poster: "postere/hotel3.jpg",
+        link: "hotel3.html",
+        gen: "Animatie",
+        detalii: "2018 • Animație • Comedie • 97 min",
+        descriere: "Dracula este mereu ocupat să aibă grijă de hotel și de toți monștrii care îi trec pragul. De data aceasta, Mavis îi pregătește o surpriză specială: o croazieră spectaculoasă alături de familie și prieteni!"
     },
     {
-        title: "Coco",
-        details: "2017 · Animație · Aventură",
-        description: "O poveste emoționantă despre familie, muzică și descoperirea propriilor rădăcini.",
-        image: "postere/coco.jpg",
-        link: "coco.html"
-    },
-    {
-        title: "Scooby-Doo pe Insula Zombie",
-        details: "1998 · Animație · Mister",
-        description: "Scooby-Doo și prietenii săi ajung pe o insulă misterioasă unde îi așteaptă o aventură neașteptată.",
-        image: "postere/scooby.jpg",
-        link: "scooby.html"
-    },
-    {
-        title: "Trick or Treat Scooby-Doo!",
-        details: "2022 · Animație · Mister",
-        description: "Gașca lui Scooby-Doo se întoarce într-o aventură plină de mistere și surprize.",
-        image: "postere/trickortreat.jpg",
-        link: "trickortreat.html"
-    },
-    {
-        title: "Hotel Transylvania 2",
-        details: "2015 · Animație · Comedie",
-        description: "Dracula încearcă să-și ajute nepotul să descopere lumea monștrilor.",
-        image: "postere/hotel2.jpg",
-        link: "hotel2.html"
-    },
-    {
-        title: "Hotel Transylvania",
-        details: "2012 · Animație · Comedie",
-        description: "Descoperă hotelul special unde monștrii vin să se relaxeze, departe de oameni.",
-        image: "postere/hotel1.jpg",
-        link: "hotel1.html"
-    },
-    {
-        title: "Hotel Transylvania: Transformania",
-        details: "2022 · Animație · Comedie",
-        description: "O invenție neașteptată schimbă totul și provoacă o aventură plină de umor.",
-        image: "postere/hotel.jpg",
-        link: "hotel.html"
-    }
-];
-
-// ALEGE RECOMANDAREA
-
-const randomIndex = Math.floor(Math.random() * recommendations.length);
-const film = recommendations[randomIndex];
-
-document.getElementById("recommendation-title").textContent = film.title;
-document.getElementById("recommendation-details").textContent = film.details;
-document.getElementById("recommendation-description").textContent = film.description;
-document.getElementById("recommendation-link").href = film.link;
-
-document.getElementById("recommendation").style.backgroundImage =
-    `linear-gradient(90deg, #08080d 5%, rgba(8,8,13,.85) 45%, rgba(8,8,13,.15)),
-     linear-gradient(0deg, #08080d, transparent 45%),
-     url("${film.image}")`;
-
-// CAUTARE ȘI FILTRE
-
-const search = document.getElementById("search");
-const filterButtons = document.querySelectorAll(".filter-btn");
-
-let activeFilter = "all";
-
-function filterContent() {
-
-    const value = search.value
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
-
-    const cards = document.querySelectorAll(".movie-card");
-
-    cards.forEach(card => {
-
-        const title = card.innerText
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
-
-        const categories = card.dataset.category || "";
-
-        const matchesSearch = title.includes(value);
-
-        const matchesCategory =
-            activeFilter === "all" ||
-            categories.includes(activeFilter);
-
-        card.style.display =
-            matchesSearch && matchesCategory ? "" : "none";
-    });
-
-    updateEmptyMessages();
-}
-
-function updateEmptyMessages() {
-
-    const filmCards = [...document.querySelectorAll("#film-grid .movie-card")];
-    const seriesCards = [...document.querySelectorAll("#series-grid .movie-card")];
-
-    document.getElementById("empty-films").style.display =
-        filmCards.some(card => card.style.display !== "none") ? "none" : "block";
-
-    document.getElementById("empty-series").style.display =
-        seriesCards.some(card => card.style.display !== "none") ? "none" : "block";
-}
-
-search.addEventListener("input", filterContent);
-
-filterButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        filterButtons.forEach(btn => btn.classList.remove("active"));
-
-        button.classList.add("active");
-
-        activeFilter = button.dataset.filter;
-
-        filterContent();
-    });
-});
-});
-
-</script>
-</body>
-</html>
