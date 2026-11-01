@@ -1,8 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101010">
 <title>Me and Mia | DeseneAnimate+</title>
 
 <style>
@@ -37,7 +39,10 @@ header a {
     font-size: 29px;
     font-weight: 900;
     text-decoration: none;
+    letter-spacing: -1px;
 }
+
+/* HERO */
 
 .hero {
     min-height: 590px;
@@ -57,8 +62,14 @@ header a {
 }
 
 @keyframes appear {
-    from { opacity: 0; transform: translateY(25px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .tag {
@@ -78,6 +89,7 @@ header a {
 .metadata {
     color: #ddd;
     margin: 18px 0;
+    font-size: 15px;
 }
 
 .description {
@@ -105,6 +117,8 @@ header a {
     transform: scale(1.06);
 }
 
+/* CONȚINUT */
+
 .content {
     max-width: 1500px;
     margin: auto;
@@ -113,24 +127,38 @@ header a {
 
 h2 {
     font-size: 27px;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
+
+.section {
+    margin-bottom: 55px;
+}
+
+.about-text {
+    color: #bbb;
+    line-height: 1.9;
+    font-size: 15px;
+    max-width: 1100px;
+}
+
+/* INFORMAȚII */
 
 .details {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 25px;
-    margin-bottom: 65px;
+    margin: 25px 0 45px;
 }
 
 .details p {
     color: #bbb;
     line-height: 1.7;
+    margin-bottom: 0;
 }
 
 .details strong {
     color: #888;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 1px;
 }
 
@@ -304,6 +332,70 @@ h2 {
     width: 100%;
 }
 
+/* STUDIORI */
+
+.studio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.studio {
+    border-left: 3px solid #e50914;
+    padding: 18px;
+    background: linear-gradient(110deg, #202020, #141414);
+}
+
+.studio span {
+    color: #e50914;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.studio h3 {
+    font-size: 17px;
+    margin-bottom: 0;
+}
+
+/* DISTRIBUȚIE */
+
+.dub-season {
+    color: #e50914;
+    font-size: 19px;
+    margin: 30px 0 15px;
+}
+
+.cast-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: #303030;
+    margin-bottom: 35px;
+}
+
+.cast-list div {
+    background: #171717;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.cast-list span {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.cast-list strong {
+    color: white;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* FOOTER */
+
 footer {
     text-align: center;
     padding: 35px;
@@ -343,6 +435,14 @@ footer {
         width: 34px;
         height: 34px;
     }
+
+    .cast-list {
+        grid-template-columns: 1fr;
+    }
+
+    .about-text {
+        font-size: 14px;
+    }
 }
 
 @media(hover: none) {
@@ -360,129 +460,480 @@ footer {
     <a href="index.html">DeseneAnimate+</a>
 </header>
 
+<!-- PREZENTARE PRINCIPALĂ -->
+
 <section class="hero">
     <div class="hero-content">
-        <div class="tag">SERIAL ORIGINAL</div>
+
+        <div class="tag">SERIAL DE ANIMAȚIE</div>
 
         <h1>Me and Mia</h1>
 
         <div class="metadata">
-            Serial · Aventură · Fantasy
+            Serial · Aventură · Fantasy · 4 sezoane
         </div>
 
         <p class="description">
-            Descoperă universul Me and Mia și urmărește aventurile
-            personajelor într-o lume plină de mistere și surprize.
-            Alege episodul preferat și continuă povestea!
+            O carte magică, o lume misterioasă și o aventură
+            extraordinară! Descoperă Centopia alături de Mia,
+            Mo și Yuko, într-un univers plin de unicorni,
+            magie și prietenie.
         </p>
 
         <a href="mia-s1e1.html" class="play">
             ▶ Primul episod
         </a>
+
     </div>
 </section>
 
 <main class="content">
 
+<!-- DESPRE SERIAL -->
+
+<section class="section">
+
     <h2>Despre serial</h2>
 
+    <p class="about-text">
+        Mia and Me (Eu și Mia) este un serial fantasy pentru copii,
+        care combină scenele filmate cu actori reali și animația
+        computerizată 3D. Povestea urmărește aventurile Miei,
+        o fată care descoperă o carte magică prin intermediul
+        căreia poate călători în fascinantul tărâm Centopia.
+        Acolo, Mia se transformă într-un elf și descoperă că
+        poate comunica cu unicornii.
+    </p>
+
+    <p class="about-text">
+        În Centopia, Mia îi întâlnește pe Mo și Yuko, alături
+        de care pornește în numeroase aventuri. Cei trei încearcă
+        să protejeze lumea magică și creaturile sale de forțele
+        care amenință echilibrul regatului.
+    </p>
+
     <div class="details">
+
         <div>
-            <strong>TITLU</strong>
-            <p>Me and Mia</p>
+            <strong>TITLU ORIGINAL</strong>
+            <p>Mia and Me</p>
         </div>
 
         <div>
-            <strong>FORMAT</strong>
-            <p>Serial</p>
+            <strong>TITLU ROMÂNESC</strong>
+            <p>Eu și Mia</p>
+        </div>
+
+        <div>
+            <strong>CREATOR</strong>
+            <p>Gerhard Hahn</p>
+        </div>
+
+        <div>
+            <strong>PREMIERĂ</strong>
+            <p>2011–2012</p>
         </div>
 
         <div>
             <strong>GEN</strong>
-            <p>Aventură și fantasy</p>
+            <p>Fantasy, aventură, animație</p>
         </div>
 
         <div>
-            <strong>SEZON</strong>
-            <p>Sezonul 1</p>
+            <strong>FORMAT</strong>
+            <p>Live-action și CGI 3D</p>
         </div>
+
+        <div>
+            <strong>SEZOANE</strong>
+            <p>4</p>
+        </div>
+
+        <div>
+            <strong>EPISOADE</strong>
+            <p>104</p>
+        </div>
+
+        <div>
+            <strong>CANAL ÎN ROMÂNIA</strong>
+            <p>Minimax</p>
+        </div>
+
     </div>
 
+</section>
+
+<!-- EPISOADE -->
+
+<section class="section">
+
     <div class="season-heading">
+
         <h2 class="season-title">Sezonul 1 · Episoade</h2>
 
         <div class="carousel-controls">
-            <button class="carousel-btn" onclick="moveCarousel(-1)" aria-label="Episoade anterioare">‹</button>
-            <button class="carousel-btn" onclick="moveCarousel(1)" aria-label="Episoade următoare">›</button>
+            <button class="carousel-btn"
+                onclick="moveCarousel(-1)"
+                aria-label="Episoade anterioare">‹</button>
+
+            <button class="carousel-btn"
+                onclick="moveCarousel(1)"
+                aria-label="Episoade următoare">›</button>
         </div>
+
     </div>
 
     <div class="episode-carousel" id="episodeCarousel">
 
         <a href="mia-s1e1.html" class="episode">
+
             <div class="thumbnail">
-                <img src="postere/episoade/ep1.jpg" alt="Imagine din episodul 1">
+                <img src="postere/episoade/ep1.jpg"
+                     alt="Imagine din episodul 1">
+
                 <div class="episode-number">EP. 01</div>
                 <div class="play-circle">▶</div>
             </div>
 
             <div class="episode-info">
+
                 <h3>Vorbind cu unicornii</h3>
+
                 <p>
                     Mia descoperă o lume fascinantă, unde unicornii,
                     magia și creaturile fantastice fac parte dintr-un
                     univers extraordinar. O călătorie plină de magie
                     și prietenie abia începe!
                 </p>
-                <div class="duration">Sezonul 1 · Episodul 1</div>
+
+                <div class="duration">
+                    Sezonul 1 · Episodul 1
+                </div>
+
                 <div class="episode-progress"><span></span></div>
+
             </div>
+
         </a>
 
         <a href="mia-s1e2.html" class="episode">
+
             <div class="thumbnail">
-                <img src="postere/episoade/ep2.jpg" alt="Imagine din episodul 2">
+                <img src="postere/episoade/ep2.jpg"
+                     alt="Imagine din episodul 2">
+
                 <div class="episode-number">EP. 02</div>
                 <div class="play-circle">▶</div>
             </div>
 
             <div class="episode-info">
+
                 <h3>Speranța Centopiei</h3>
+
                 <p>
                     Mia află că regina Panthea capturează unicornii
                     pentru coarnele lor magice. Alături de Yuko și Mo,
                     încearcă să găsească o cale de a salva Centopia.
                 </p>
-                <div class="duration">Sezonul 1 · Episodul 2</div>
+
+                <div class="duration">
+                    Sezonul 1 · Episodul 2
+                </div>
+
                 <div class="episode-progress"><span></span></div>
+
             </div>
+
         </a>
 
         <a href="mia-s1e3.html" class="episode">
+
             <div class="thumbnail">
-                <img src="postere/episoade/ep3.jpg" alt="Imagine din episodul 3">
+                <img src="postere/episoade/ep3.jpg"
+                     alt="Imagine din episodul 3">
+
                 <div class="episode-number">EP. 03</div>
                 <div class="play-circle">▶</div>
             </div>
 
             <div class="episode-info">
+
                 <h3>Reasamblarea</h3>
+
                 <p>
-                    Mia îl ajută pe Phuddle să reasambleze Trumptus-ul.
-                    Cu ajutorul lui Lyria, cei doi găsesc planurile și
-                    încearcă să reconstruiască instrumentul.
+                    Mia îl ajută pe Phuddle să reasambleze
+                    Trumptus-ul. Cu ajutorul lui Lyria, cei doi
+                    găsesc planurile și încearcă să reconstruiască
+                    instrumentul.
                 </p>
-                <div class="duration">Sezonul 1 · Episodul 3</div>
+
+                <div class="duration">
+                    Sezonul 1 · Episodul 3
+                </div>
+
                 <div class="episode-progress"><span></span></div>
+
             </div>
+
         </a>
 
     </div>
+
+</section>
+
+<!-- PRODUCȚIE -->
+
+<section class="section">
+
+    <h2>Producție și animație</h2>
+
+    <p class="about-text">
+        Serialul a fost creat de Gerhard Hahn și realizat prin
+        colaborarea unor companii internaționale. Producția
+        îmbină filmările cu actori reali și animația CGI 3D,
+        prin care prind viață Centopia, unicornii și celelalte
+        creaturi fantastice.
+    </p>
+
+    <div class="details">
+
+        <div>
+            <strong>CREATOR</strong>
+            <p>Gerhard Hahn</p>
+        </div>
+
+        <div>
+            <strong>PRODUCȚIE</strong>
+            <p>Hahn & m4e Productions</p>
+        </div>
+
+        <div>
+            <strong>COMPANIE ASOCIATĂ</strong>
+            <p>Rainbow</p>
+        </div>
+
+        <div>
+            <strong>TEHNICĂ DE ANIMAȚIE</strong>
+            <p>Computer Generated Imagery – 3D</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DUBLAJ ROMÂNESC -->
+
+<section class="section">
+
+    <h2>Dublajul în limba română</h2>
+
+    <p class="about-text">
+        Versiunea românească a serialului a fost difuzată pe
+        Minimax și a beneficiat de colaborarea mai multor
+        studiouri de dublaj. De-a lungul sezoanelor,
+        personajele au primit voci diferite, interpretate
+        de actori români.
+    </p>
+
+    <div class="studio-grid">
+
+        <div class="studio">
+            <span>SEZONUL 1</span>
+            <h3>Zone Studio Oradea</h3>
+        </div>
+
+        <div class="studio">
+            <span>SEZOANELE 2–3</span>
+            <h3>BTI – Broadcast Text International</h3>
+        </div>
+
+        <div class="studio">
+            <span>SEZONUL 4</span>
+            <h3>Total Record</h3>
+        </div>
+
+    </div>
+
+    <h2>Actorii de dublaj</h2>
+
+    <h3 class="dub-season">Sezoanele 1–3</h3>
+
+    <div class="cast-list">
+
+        <div>
+            <span>Mia</span>
+            <strong>Olivia Fodor (S1–S2), Anca Sigmirean (S3)</strong>
+        </div>
+
+        <div>
+            <span>Mo</span>
+            <strong>Cosmin Petruț</strong>
+        </div>
+
+        <div>
+            <span>Yuko</span>
+            <strong>Ioana Dagău (S1), Ioana Perneș (S2), Daria Perneș (S3)</strong>
+        </div>
+
+        <div>
+            <span>Phuddle</span>
+            <strong>Richard Balint</strong>
+        </div>
+
+        <div>
+            <span>Dax</span>
+            <strong>Florian Silaghi</strong>
+        </div>
+
+        <div>
+            <span>Drakon</span>
+            <strong>Alexandru Rusu</strong>
+        </div>
+
+        <div>
+            <span>Gargona</span>
+            <strong>Mihaela Gherdan (S1), Alina Leonte (S2–S3)</strong>
+        </div>
+
+        <div>
+            <span>Fabio</span>
+            <strong>Andrei Lupu</strong>
+        </div>
+
+        <div>
+            <span>Luciana</span>
+            <strong>Corina Cernea</strong>
+        </div>
+
+        <div>
+            <span>Panthea / Malya</span>
+            <strong>Lucia Rogoz</strong>
+        </div>
+
+        <div>
+            <span>Raynor</span>
+            <strong>Sorin Ionescu</strong>
+        </div>
+
+    </div>
+
+    <h3 class="dub-season">Sezonul 4</h3>
+
+    <div class="cast-list">
+
+        <div>
+            <span>Mia</span>
+            <strong>Anca Sigmirean</strong>
+        </div>
+
+        <div>
+            <span>Mo</span>
+            <strong>Paul Zurbău</strong>
+        </div>
+
+        <div>
+            <span>Yuko</span>
+            <strong>Ștefana Dușe</strong>
+        </div>
+
+        <div>
+            <span>Phuddle</span>
+            <strong>Richard Balint</strong>
+        </div>
+
+        <div>
+            <span>Gargona</span>
+            <strong>Alina Leonte</strong>
+        </div>
+
+        <div>
+            <span>Onchao</span>
+            <strong>Cosmin Petruț</strong>
+        </div>
+
+        <div>
+            <span>Lyria</span>
+            <strong>Georgia Căprărin</strong>
+        </div>
+
+        <div>
+            <span>Drakon</span>
+            <strong>Alexandru Rusu</strong>
+        </div>
+
+        <div>
+            <span>Luciana</span>
+            <strong>Corina Cernea</strong>
+        </div>
+
+        <div>
+            <span>Raynor</span>
+            <strong>Sorin Ionescu</strong>
+        </div>
+
+    </div>
+
+    <p class="about-text">
+        Notă: distribuția vocală poate varia în funcție de sezon.
+        Lista este orientativă și poate fi completată pe măsură
+        ce sunt verificate creditele fiecărui sezon.
+    </p>
+
+</section>
+
+<!-- REGIE ȘI ADAPTARE -->
+
+<section class="section">
+
+    <h2>Regie și adaptare</h2>
+
+    <div class="details">
+
+        <div>
+            <strong>REGIE DUBLAJ</strong>
+            <p>
+                Gabriela Codrea, Alina Leonte, Ion Ruscuț,
+                Lucia Rogoz, Adrian Moraru și Corina Cernea
+            </p>
+        </div>
+
+        <div>
+            <strong>TRADUCERE ȘI ADAPTARE</strong>
+            <p>
+                Estera Chelariu (sezoanele 1–3),
+                Stelian Mierluț (sezonul 4)
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- UNIVERSUL CENTOPIA -->
+
+<section class="section">
+
+    <h2>Universul Centopia</h2>
+
+    <p class="about-text">
+        Centopia este un tărâm magic locuit de elfi, unicorni
+        și numeroase creaturi fantastice. Unicornii au un rol
+        important în echilibrul acestei lumi, iar Mia și prietenii
+        săi pornesc în aventuri pentru a-i proteja.
+        Prietenia, curajul și magia sunt elementele centrale
+        ale poveștii.
+    </p>
+
+</section>
 
 </main>
 
 <footer>
     DeseneAnimate+ © 2026
+    <br>
+    <span style="font-size:12px;">
+        Pagină dedicată universului Mia and Me
+    </span>
 </footer>
 
 <script>
@@ -498,3 +949,4 @@ function moveCarousel(direction) {
 
 </body>
 </html>
+```
