@@ -1,215 +1,687 @@
 <!DOCTYPE html>
+
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel Transylvania | DeseneAnimate+</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel Transylvania (2012) | DeseneAnimate+</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    padding: 0 6%;
+    background: #080808;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    color: #e50914;
+    font-size: 27px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back {
+    margin-left: auto;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.back:hover {
+    color: #e50914;
+}
+
+.hero {
+    min-height: 570px;
+    padding: 100px 7%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, #080808 5%, rgba(8,8,8,.85) 45%, rgba(8,8,8,.2)),
+        linear-gradient(0deg, #080808, transparent 45%),
+        url("postere/hotel.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.label {
+    color: #e50914;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    margin-bottom: 20px;
+}
+
+.hero-info {
+    color: #ccc;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.hero p {
+    line-height: 1.8;
+    color: #eee;
+    font-size: 17px;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 13px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    background: #e50914;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn.secondary {
+    background: #333;
+}
+
+.btn:hover {
+    opacity: .8;
+}
+
+.container {
+    padding: 45px 7%;
+}
+
+.section-title {
+    font-size: 27px;
+    margin-bottom: 22px;
+    border-left: 4px solid #e50914;
+    padding-left: 13px;
+}
+
+.description {
+    color: #ccc;
+    line-height: 1.9;
+    font-size: 16px;
+    max-width: 1100px;
+}
+
+.description p {
+    margin-bottom: 17px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.info-card {
+    background: #171717;
+    padding: 20px;
+    border-radius: 9px;
+    border: 1px solid #292929;
+}
+
+.info-card h3 {
+    color: #e50914;
+    font-size: 14px;
+    margin-bottom: 9px;
+}
+
+.info-card p {
+    color: #eee;
+    line-height: 1.6;
+}
+
+.cast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 13px;
+}
+
+.cast-card {
+    background: #171717;
+    border-radius: 8px;
+    padding: 16px;
+    border-left: 3px solid #e50914;
+}
+
+.cast-card strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.cast-card span {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.video-box {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    aspect-ratio: 16 / 9;
+    background: #151515;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.note {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #111;
+    color: #888;
+    font-size: 13px;
+}
+
+@media(max-width: 650px) {
+    .hero {
+        min-height: 520px;
+        padding: 70px 6%;
+        background-position: center;
     }
 
-    body {
-      background: #141414;
-      color: #fff;
-      font-family: Arial, sans-serif;
+    .container {
+        padding: 35px 6%;
     }
 
     header {
-      height: 70px;
-      padding: 0 5%;
-      display: flex;
-      align-items: center;
-      background: #080808;
+        padding: 0 5%;
     }
+}
+</style>
 
-    .logo {
-      color: #e50914;
-      font-size: 27px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .hero {
-      min-height: 500px;
-      padding: 80px 7%;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(to right, #141414 10%, rgba(20,20,20,.75) 55%, rgba(20,20,20,.2)),
-        linear-gradient(to top, #141414, transparent 45%),
-        url("postere/hotel1.jpg") center/cover no-repeat;
-    }
-
-    .hero-content {
-      max-width: 650px;
-    }
-
-    .label {
-      color: #e50914;
-      font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 15px;
-    }
-
-    h1 {
-      font-size: 48px;
-      margin-bottom: 18px;
-    }
-
-    .meta {
-      color: #ccc;
-      margin-bottom: 20px;
-      line-height: 1.8;
-    }
-
-    .description {
-      color: #ddd;
-      font-size: 17px;
-      line-height: 1.7;
-      margin-bottom: 25px;
-    }
-
-    .button {
-      display: inline-block;
-      background: #e50914;
-      color: white;
-      padding: 13px 24px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .section {
-      padding: 35px 7%;
-    }
-
-    h2 {
-      font-size: 25px;
-      margin-bottom: 22px;
-    }
-
-    .player {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #000;
-    }
-
-    .player iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .details {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      color: #ccc;
-      line-height: 1.8;
-    }
-
-    .details strong {
-      color: #fff;
-    }
-
-    .back {
-      display: inline-block;
-      color: #ccc;
-      text-decoration: none;
-      margin-top: 25px;
-    }
-
-    .back:hover {
-      color: #e50914;
-    }
-
-    footer {
-      padding: 25px;
-      text-align: center;
-      color: #777;
-      background: #080808;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 34px;
-      }
-
-      .hero {
-        padding: 60px 6%;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <header>
+<header>
     <a href="index.html" class="logo">DeseneAnimate+</a>
-  </header>
+    <a href="index.html" class="back">← Înapoi la pagina principală</a>
+</header>
 
-  <section class="hero">
+<section class="hero">
     <div class="hero-content">
-      <div class="label">FILM DE ANIMAȚIE</div>
+        <div class="label">FILM DE ANIMAȚIE</div>
 
-      <h1>Hotel Transylvania</h1>
+```
+    <h1>Hotel Transylvania</h1>
 
-      <div class="meta">
-        2012 · Animație · Comedie · Familie · 91 min
-      </div>
-
-      <p class="description">
-        Dracula conduce un hotel special, construit pentru ca monștrii
-        să se poată relaxa departe de lumea oamenilor. Totul se schimbă
-        când un tânăr turist pe nume Jonathan ajunge din întâmplare
-        la hotel și o întâlnește pe Mavis, fiica lui Dracula.
-        Apar situații amuzante, surprize și aventuri neașteptate!
-      </p>
-
-      <a href="#vizionare" class="button">▶ Vizionare</a>
+    <div class="hero-info">
+        2012 • 91 minute • Animație • Comedie • Aventură • Familie
     </div>
-  </section>
 
-  <section class="section" id="vizionare">
-    <h2>Urmărește filmul</h2>
+    <p>
+        Într-un hotel ascuns de lumea oamenilor, Dracula își adună
+        prietenii monștri pentru a sărbători ziua de naștere a fiicei
+        sale, Mavis. Totul pare perfect până când un tânăr om ajunge
+        din greșeală la hotel și schimbă complet planurile contelui.
+    </p>
 
-    <div class="player">
-      <iframe
-        src="https://www.canva.com/design/DAHZgKxKrSg/okLc1fz8grCz3T5uJTFxjA/watch?embed"
+    <div class="buttons">
+        <a href="#vizionare" class="btn">▶ Vizionare</a>
+        <a href="#poveste" class="btn secondary">Mai multe informații</a>
+    </div>
+</div>
+```
+
+</section>
+
+<section class="container" id="poveste">
+    <h2 class="section-title">Despre film</h2>
+
+```
+<div class="description">
+    <p>
+        Hotel Transylvania este o animație plină de umor și aventură,
+        care ne prezintă o lume în care monștrii legendari au propriul
+        lor refugiu. Hotelul Transylvania, deținut de contele Dracula,
+        este un loc spectaculos în care vampirii, vârcolacii, mumiile
+        și alte creaturi fantastice se pot bucura de liniște, departe
+        de oameni.
+    </p>
+
+    <p>
+        Dracula a construit acest hotel pentru a-și proteja fiica,
+        Mavis, de pericolele lumii oamenilor. Pentru el, siguranța
+        acesteia este cea mai importantă, iar regulile hotelului sunt
+        foarte stricte: oamenii nu au voie să intre.
+    </p>
+
+    <p>
+        Cu ocazia împlinirii vârstei de 118 ani a lui Mavis, Dracula
+        organizează o petrecere impresionantă și își invită cei mai
+        apropiați prieteni. Printre oaspeți se numără Frankenstein și
+        soția sa, Eunice, vârcolacul Wayne și familia lui, Omul
+        Invizibil Griffin și Mumia Murray.
+    </p>
+
+    <p>
+        Mavis este nerăbdătoare să descopere lumea din afara hotelului.
+        Ea visează să călătorească și să cunoască oameni, însă Dracula
+        încearcă să o convingă că lumea exterioară este periculoasă.
+        Diferența dintre dorința de independență a lui Mavis și
+        grija exagerată a tatălui său creează numeroase situații
+        amuzante și emoționante.
+    </p>
+
+    <p>
+        Situația se complică atunci când Jonathan, un tânăr călător,
+        ajunge din întâmplare la hotel. Apariția lui îi surprinde pe
+        toți monștrii, iar Dracula trebuie să găsească rapid o
+        soluție pentru a păstra secretul existenței hotelului.
+    </p>
+
+    <p>
+        Jonathan este fascinat de locul neobișnuit și de locuitorii
+        săi, iar întâlnirea cu Mavis devine începutul unei prietenii
+        speciale. Dracula încearcă să controleze situația, însă
+        lucrurile nu merg deloc conform planului.
+    </p>
+
+    <p>
+        Pe parcursul filmului, personajele descoperă că diferențele
+        dintre oameni și monștri nu sunt atât de importante pe cât
+        credeau. Povestea vorbește despre familie, prietenie,
+        încredere și curajul de a descoperi lumea.
+    </p>
+
+    <p>
+        Hotel Transylvania combină personaje clasice din poveștile
+        cu monștri cu un stil modern de animație, multă comedie și
+        momente emoționante. Este o aventură potrivită pentru întreaga
+        familie.
+    </p>
+</div>
+```
+
+</section>
+
+<section class="container">
+    <h2 class="section-title">Informații generale</h2>
+
+```
+<div class="info-grid">
+    <div class="info-card">
+        <h3>TITLU ORIGINAL</h3>
+        <p>Hotel Transylvania</p>
+    </div>
+
+    <div class="info-card">
+        <h3>TITLU ÎN ROMÂNĂ</h3>
+        <p>Hotel Transilvania</p>
+    </div>
+
+    <div class="info-card">
+        <h3>ANUL LANSĂRII</h3>
+        <p>2012</p>
+    </div>
+
+    <div class="info-card">
+        <h3>PREMIERA INTERNAȚIONALĂ</h3>
+        <p>28 septembrie 2012</p>
+    </div>
+
+    <div class="info-card">
+        <h3>PREMIERA ÎN ROMÂNIA</h3>
+        <p>19 octombrie 2012</p>
+    </div>
+
+    <div class="info-card">
+        <h3>DURATĂ</h3>
+        <p>91 de minute</p>
+    </div>
+
+    <div class="info-card">
+        <h3>ȚARA</h3>
+        <p>Statele Unite ale Americii</p>
+    </div>
+
+    <div class="info-card">
+        <h3>LIMBA ORIGINALĂ</h3>
+        <p>Engleză</p>
+    </div>
+
+    <div class="info-card">
+        <h3>FORMAT</h3>
+        <p>Animație 3D</p>
+    </div>
+
+    <div class="info-card">
+        <h3>GENURI</h3>
+        <p>Animație, Comedie, Aventură, Familie</p>
+    </div>
+
+    <div class="info-card">
+        <h3>CLASIFICARE</h3>
+        <p>PG</p>
+    </div>
+
+    <div class="info-card">
+        <h3>SERIA</h3>
+        <p>Hotel Transylvania – Filmul 1</p>
+    </div>
+</div>
+```
+
+</section>
+
+<section class="container">
+    <h2 class="section-title">Regie și scenariu</h2>
+
+```
+<div class="info-grid">
+    <div class="info-card">
+        <h3>REGIZOR</h3>
+        <p>Genndy Tartakovsky</p>
+    </div>
+
+    <div class="info-card">
+        <h3>SCENARIU</h3>
+        <p>Peter Baynham și Robert Smigel</p>
+    </div>
+
+    <div class="info-card">
+        <h3>POVESTE</h3>
+        <p>Todd Durham, Dan Hageman și Kevin Hageman</p>
+    </div>
+
+    <div class="info-card">
+        <h3>PRODUCĂTOR</h3>
+        <p>Michelle Murdocca</p>
+    </div>
+
+    <div class="info-card">
+        <h3>PRODUCĂTORI EXECUTIVI</h3>
+        <p>Adam Sandler, Robert Smigel și Allen Covert</p>
+    </div>
+
+    <div class="info-card">
+        <h3>MONTAJ</h3>
+        <p>Catherine Apple</p>
+    </div>
+
+    <div class="info-card">
+        <h3>DESIGN DE PRODUCȚIE</h3>
+        <p>Marcelo Vignali</p>
+    </div>
+
+    <div class="info-card">
+        <h3>MUZICĂ</h3>
+        <p>Mark Mothersbaugh</p>
+    </div>
+</div>
+```
+
+</section>
+
+<section class="container">
+    <h2 class="section-title">Studiouri și distribuție</h2>
+
+```
+<div class="info-grid">
+    <div class="info-card">
+        <h3>STUDIO DE ANIMAȚIE</h3>
+        <p>Sony Pictures Animation</p>
+    </div>
+
+    <div class="info-card">
+        <h3>ANIMAȚIE ȘI EFECTE VIZUALE</h3>
+        <p>Sony Pictures Imageworks</p>
+    </div>
+
+    <div class="info-card">
+        <h3>PREZENTAT DE</h3>
+        <p>Columbia Pictures</p>
+    </div>
+
+    <div class="info-card">
+        <h3>DISTRIBUITOR INTERNAȚIONAL</h3>
+        <p>Sony Pictures Releasing</p>
+    </div>
+
+    <div class="info-card">
+        <h3>DISTRIBUITOR ÎN ROMÂNIA</h3>
+        <p>InterComFilm Distribution</p>
+    </div>
+
+    <div class="info-card">
+        <h3>PRODUCȚIE</h3>
+        <p>2012</p>
+    </div>
+</div>
+```
+
+</section>
+
+<section class="container">
+    <h2 class="section-title">Distribuție vocală originală</h2>
+
+```
+<div class="cast-grid">
+    <div class="cast-card">
+        <strong>Adam Sandler</strong>
+        <span>Contele Dracula</span>
+    </div>
+
+    <div class="cast-card">
+        <strong>Andy Samberg</strong>
+        <span>Jonathan</span>
+    </div>
+
+    <div class="cast-card">
+        <strong>Selena Gomez</strong>
+        <span>Mavis</span>
+    </div>
+
+    <div class="cast-card">
+        <strong>Kevin James</strong>
+        <span>Frankenstein (Frank)</span>
+    </div>
+
+    <div class="cast-card">
+        <strong>Fran Drescher</strong>
+        <span>Eunice</span>
+    </div>
+
+    <div class="cast-card">
+        <strong>Steve Buscemi</strong>
+        <span>Wayne</span>
+    </div>
+
+    <div class="cast-card">
+        <strong>Molly Shannon</strong>
+        <span>Wanda</span>
+    </div>
+
+    <div class="cast-card">
+        <strong>David Spade</strong>
+        <span>Griffin – Omul Invizibil</span>
+    </div>
+
+    <div class="cast-card">
+        <strong>CeeLo Green</strong>
+        <span>Murray – Mumia</span>
+    </div>
+
+    <div class="cast-card">
+        <strong>Jon Lovitz</strong>
+        <span>Quasimodo</span>
+    </div>
+
+    <div class="cast-card">
+        <strong>Brian George</strong>
+        <span>Armura</span>
+    </div>
+
+    <div class="cast-card">
+        <strong>Luenell</strong>
+        <span>Capetele micșorate</span>
+    </div>
+</div>
+```
+
+</section>
+
+<section class="container">
+    <h2 class="section-title">Dublaj în limba română</h2>
+
+```
+<div class="cast-grid">
+    <div class="cast-card">
+        <strong>Claudiu Bleonț</strong>
+        <span>Dracula</span>
+    </div>
+
+    <div class="cast-card">
+        <strong>Gabriel Spahiu</strong>
+        <span>Vârcolacul</span>
+    </div>
+
+    <div class="cast-card">
+        <strong>Anca Sigartău</strong>
+        <span>Alte voci / regie de dublaj</span>
+    </div>
+</div>
+
+<p class="note">
+    Lista actorilor români este parțială și se bazează pe creditele
+    publicate disponibile. Nu sunt adăugate nume sau personaje
+    pentru care nu există confirmări suficiente.
+</p>
+```
+
+</section>
+
+<section class="container">
+    <h2 class="section-title">Personaje principale</h2>
+
+```
+<div class="info-grid">
+    <div class="info-card">
+        <h3>DRACULA</h3>
+        <p>
+            Proprietarul hotelului și tatăl lui Mavis. Este protector,
+            grijuliu și uneori exagerat de strict.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h3>MAVIS</h3>
+        <p>
+            Fiica lui Dracula. Este curioasă, curajoasă și își dorește
+            să descopere lumea din afara hotelului.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h3>JONATHAN</h3>
+        <p>
+            Un tânăr călător care ajunge accidental la hotel și
+            provoacă o mulțime de situații neașteptate.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h3>FRANKENSTEIN</h3>
+        <p>
+            Unul dintre cei mai buni prieteni ai lui Dracula și
+            unul dintre invitații speciali ai hotelului.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h3>WAYNE</h3>
+        <p>
+            Un vârcolac și un prieten al lui Dracula, care vine
+            la petrecere împreună cu familia sa.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h3>MURRAY</h3>
+        <p>
+            Mumia veselă și energică, unul dintre invitații
+            petrecerii lui Mavis.
+        </p>
+    </div>
+</div>
+```
+
+</section>
+
+<section class="container">
+    <h2 class="section-title">Curiozități</h2>
+
+```
+<div class="description">
+    <p>• Filmul este regizat de Genndy Tartakovsky.</p>
+    <p>• Hotelul este un refugiu pentru monștrii din întreaga lume.</p>
+    <p>• Mavis împlinește 118 ani în poveste.</p>
+    <p>• Filmul combină personaje inspirate din poveștile clasice cu monștri cu umor modern.</p>
+    <p>• Este primul film din seria Hotel Transylvania.</p>
+</div>
+```
+
+</section>
+
+<section class="container" id="vizionare">
+    <h2 class="section-title">Vizionare</h2>
+
+```
+<div class="video-box">
+    <iframe
+        src="https://www.canva.com/design/DAHZe8eF7bY/6EgRZcWylP95Yu2IYpEGcQ/watch?embed"
         allowfullscreen
         loading="lazy">
-      </iframe>
-    </div>
-  </section>
+    </iframe>
+</div>
+```
 
-  <section class="section">
-    <h2>Despre film</h2>
+</section>
 
-    <div class="details">
-      <p><strong>Titlu:</strong><br>Hotel Transylvania</p>
-
-      <p><strong>Anul lansării:</strong><br>2012</p>
-
-      <p><strong>Regizor:</strong><br>Genndy Tartakovsky</p>
-
-      <p><strong>Studio:</strong><br>Sony Pictures Animation</p>
-
-      <p><strong>Gen:</strong><br>Animație, Comedie, Familie</p>
-
-      <p><strong>Durată:</strong><br>91 de minute</p>
-    </div>
-
-    <a href="index.html" class="back">← Înapoi la pagina principală</a>
-  </section>
-
-  <footer>
-    DeseneAnimate+ © 2026
-  </footer>
+<footer>
+    DeseneAnimate+ © 2026 | Toate drepturile aparțin proprietarilor
+    materialelor respective.
+</footer>
 
 </body>
 </html>
