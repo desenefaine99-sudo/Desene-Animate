@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -18,7 +17,7 @@ html {
 body {
     margin: 0;
     background: #101010;
-    color: #fff;
+    color: white;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
 }
@@ -30,7 +29,7 @@ header {
     width: 100%;
     padding: 22px 5%;
     z-index: 10;
-    background: linear-gradient(to bottom, rgba(0,0,0,.85), transparent);
+    background: linear-gradient(to bottom, #000, transparent);
 }
 
 header a {
@@ -38,35 +37,28 @@ header a {
     font-size: 29px;
     font-weight: 900;
     text-decoration: none;
-    letter-spacing: -1px;
 }
 
 .hero {
-    min-height: 570px;
+    min-height: 590px;
     padding: 130px 7% 100px;
     display: flex;
     align-items: center;
     position: relative;
     background:
-        linear-gradient(90deg, #101010 3%, rgba(16,16,16,.8) 40%, transparent 100%),
-        linear-gradient(0deg, #101010 0%, transparent 65%),
+        linear-gradient(90deg, #101010 3%, rgba(16,16,16,.75) 45%, transparent),
+        linear-gradient(0deg, #101010, transparent 65%),
         url("postere/meandmia.jpg") center 30% / cover no-repeat;
 }
 
 .hero-content {
     max-width: 650px;
-    animation: heroEnter 1s ease both;
+    animation: appear 1s ease both;
 }
 
-@keyframes heroEnter {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes appear {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .tag {
@@ -86,7 +78,6 @@ header a {
 .metadata {
     color: #ddd;
     margin: 18px 0;
-    font-size: 15px;
 }
 
 .description {
@@ -112,12 +103,11 @@ header a {
 .play:hover {
     background: #ddd;
     transform: scale(1.06);
-    box-shadow: 0 5px 25px rgba(255,255,255,.2);
 }
 
 .content {
     max-width: 1500px;
-    margin: 0 auto;
+    margin: auto;
     padding: 35px 5%;
 }
 
@@ -144,16 +134,17 @@ h2 {
     letter-spacing: 1px;
 }
 
+/* CARUSEL NETFLIX */
+
 .season-heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 .season-title {
-    font-size: 22px;
-    color: #fff;
+    font-size: 23px;
     margin: 0;
 }
 
@@ -163,13 +154,13 @@ h2 {
 }
 
 .carousel-btn {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     border: 1px solid #555;
     border-radius: 50%;
     background: #222;
     color: white;
-    font-size: 20px;
+    font-size: 23px;
     cursor: pointer;
     transition: .2s;
 }
@@ -177,15 +168,14 @@ h2 {
 .carousel-btn:hover {
     background: #e50914;
     border-color: #e50914;
-    transform: scale(1.1);
 }
 
 .episode-carousel {
     display: flex;
-    gap: 18px;
+    gap: 20px;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 15px 5px 30px;
+    padding: 20px 5px 35px;
     scroll-behavior: smooth;
     scrollbar-width: none;
 }
@@ -195,42 +185,15 @@ h2 {
 }
 
 .episode {
-    flex: 0 0 290px;
-    min-width: 0;
-    background: #191919;
-    border-radius: 9px;
-    overflow: hidden;
+    flex: 0 0 310px;
     color: white;
     text-decoration: none;
-    position: relative;
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease;
-    animation: cardEnter .7s ease both;
-}
-
-.episode:nth-child(2) {
-    animation-delay: .12s;
-}
-
-.episode:nth-child(3) {
-    animation-delay: .24s;
-}
-
-@keyframes cardEnter {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    min-width: 0;
+    transition: transform .3s ease;
 }
 
 .episode:hover {
-    transform: scale(1.045) translateY(-5px);
-    box-shadow: 0 12px 35px rgba(0,0,0,.7);
+    transform: scale(1.045);
     z-index: 2;
 }
 
@@ -239,8 +202,9 @@ h2 {
     aspect-ratio: 16 / 9;
     position: relative;
     overflow: hidden;
-    background:
-        linear-gradient(135deg, #39204c, #151515);
+    border-radius: 5px;
+    background: linear-gradient(135deg, #39204c, #151515);
+    box-shadow: 0 5px 20px rgba(0,0,0,.5);
 }
 
 .thumbnail img {
@@ -248,7 +212,7 @@ h2 {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform .7s ease;
+    transition: transform .6s ease;
 }
 
 .episode:hover .thumbnail img {
@@ -259,36 +223,8 @@ h2 {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,.65),
-        transparent 65%
-    );
+    background: linear-gradient(to top, rgba(0,0,0,.65), transparent 65%);
     pointer-events: none;
-}
-
-.play-circle {
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(.75);
-    width: 55px;
-    height: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255,255,255,.9);
-    color: #111;
-    border-radius: 50%;
-    font-size: 21px;
-    opacity: 0;
-    transition: .3s;
-}
-
-.episode:hover .play-circle {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
 }
 
 .episode-number {
@@ -303,13 +239,37 @@ h2 {
     font-weight: bold;
 }
 
+.play-circle {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.7);
+    width: 58px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,.95);
+    color: #111;
+    border-radius: 50%;
+    font-size: 22px;
+    opacity: 0;
+    transition: .3s;
+}
+
+.episode:hover .play-circle {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 .episode-info {
-    padding: 17px;
+    padding: 13px 2px;
 }
 
 .episode-info h3 {
     font-size: 18px;
-    margin: 0 0 10px;
+    margin: 0 0 9px;
 }
 
 .episode-info p {
@@ -322,15 +282,14 @@ h2 {
 .duration {
     color: #e50914;
     font-size: 12px;
-    margin-top: 13px;
+    margin-top: 12px;
     font-weight: bold;
 }
 
 .episode-progress {
     height: 3px;
     background: #444;
-    margin-top: 14px;
-    overflow: hidden;
+    margin-top: 13px;
 }
 
 .episode-progress span {
@@ -373,24 +332,16 @@ footer {
     }
 
     .episode {
-        flex-basis: 245px;
-    }
-
-    .episode-info h3 {
-        font-size: 16px;
-    }
-
-    .episode-info p {
-        font-size: 12px;
-    }
-
-    .carousel-btn {
-        width: 33px;
-        height: 33px;
+        flex-basis: 260px;
     }
 
     .season-title {
         font-size: 19px;
+    }
+
+    .carousel-btn {
+        width: 34px;
+        height: 34px;
     }
 }
 
@@ -411,7 +362,6 @@ footer {
 
 <section class="hero">
     <div class="hero-content">
-
         <div class="tag">SERIAL ORIGINAL</div>
 
         <h1>Me and Mia</h1>
@@ -429,7 +379,6 @@ footer {
         <a href="mia-s1e1.html" class="play">
             ▶ Primul episod
         </a>
-
     </div>
 </section>
 
@@ -438,7 +387,6 @@ footer {
     <h2>Despre serial</h2>
 
     <div class="details">
-
         <div>
             <strong>TITLU</strong>
             <p>Me and Mia</p>
@@ -458,114 +406,75 @@ footer {
             <strong>SEZON</strong>
             <p>Sezonul 1</p>
         </div>
-
     </div>
 
     <div class="season-heading">
-
         <h2 class="season-title">Sezonul 1 · Episoade</h2>
 
         <div class="carousel-controls">
             <button class="carousel-btn" onclick="moveCarousel(-1)" aria-label="Episoade anterioare">‹</button>
             <button class="carousel-btn" onclick="moveCarousel(1)" aria-label="Episoade următoare">›</button>
         </div>
-
     </div>
 
     <div class="episode-carousel" id="episodeCarousel">
 
-        <!-- EPISODUL 1 -->
-
         <a href="mia-s1e1.html" class="episode">
-
             <div class="thumbnail">
-                <img src="" alt="Captură din episodul 1" data-episode="1">
+                <img src="postere/episoade/ep1.jpg" alt="Imagine din episodul 1">
                 <div class="episode-number">EP. 01</div>
                 <div class="play-circle">▶</div>
             </div>
 
             <div class="episode-info">
-
                 <h3>Vorbind cu unicornii</h3>
-
                 <p>
-                    Mia descoperă o lume fascinantă, ascunsă dincolo de
-                    imaginația ei, unde unicornii, magia și creaturile
-                    fantastice fac parte dintr-un univers extraordinar.
-                    În această aventură, ea începe să descopere misterele
-                    tărâmului Centopia și legătura specială pe care o poate
-                    avea cu locuitorii săi. O călătorie plină de magie,
-                    prietenie și descoperiri uimitoare abia începe!
+                    Mia descoperă o lume fascinantă, unde unicornii,
+                    magia și creaturile fantastice fac parte dintr-un
+                    univers extraordinar. O călătorie plină de magie
+                    și prietenie abia începe!
                 </p>
-
                 <div class="duration">Sezonul 1 · Episodul 1</div>
                 <div class="episode-progress"><span></span></div>
-
             </div>
-
         </a>
 
-        <!-- EPISODUL 2 -->
-
         <a href="mia-s1e2.html" class="episode">
-
             <div class="thumbnail">
-                <img src="" alt="Captură din episodul 2" data-episode="2">
+                <img src="postere/episoade/ep2.jpg" alt="Imagine din episodul 2">
                 <div class="episode-number">EP. 02</div>
                 <div class="play-circle">▶</div>
             </div>
 
             <div class="episode-info">
-
                 <h3>Speranța Centopiei</h3>
-
                 <p>
-                    Mia se întoarce în Centopia și descoperă că regina
-                    Panthea capturează unicornii pentru a le fura coarnele
-                    magice, iar fără puterea acestora, tărâmul începe să se
-                    ofilească. Alături de Yuko și Mo, Mia află că instrumentul
-                    Trumptus al lui Phuddle ar putea fi speranța de care
-                    Centopia are nevoie. Deși nimeni nu este convins la
-                    început de puterea lui, Mia descoperă că sunetul
-                    instrumentului poate învinge Munculus și poate salva
-                    unicornii!
+                    Mia află că regina Panthea capturează unicornii
+                    pentru coarnele lor magice. Alături de Yuko și Mo,
+                    încearcă să găsească o cale de a salva Centopia.
                 </p>
-
                 <div class="duration">Sezonul 1 · Episodul 2</div>
                 <div class="episode-progress"><span></span></div>
-
             </div>
-
         </a>
 
-        <!-- EPISODUL 3 -->
-
         <a href="mia-s1e3.html" class="episode">
-
             <div class="thumbnail">
-                <img src="" alt="Captură din episodul 3" data-episode="3">
+                <img src="postere/episoade/ep3.jpg" alt="Imagine din episodul 3">
                 <div class="episode-number">EP. 03</div>
                 <div class="play-circle">▶</div>
             </div>
 
             <div class="episode-info">
-
                 <h3>Reasamblarea</h3>
-
                 <p>
-                    Mia încearcă să-l ajute pe Phuddle să reasambleze
-                    Trumptus-ul, după ce acesta îl demontează și nu mai
-                    știe cum să-l pună la loc. Cu ajutorul lui Lyria,
-                    cei doi găsesc planurile și reconstruiesc instrumentul,
-                    în timp ce Mo și Yuko trebuie să apere unicornii
-                    de Munculus.
+                    Mia îl ajută pe Phuddle să reasambleze Trumptus-ul.
+                    Cu ajutorul lui Lyria, cei doi găsesc planurile și
+                    încearcă să reconstruiască instrumentul.
                 </p>
-
                 <div class="duration">Sezonul 1 · Episodul 3</div>
                 <div class="episode-progress"><span></span></div>
-
             </div>
-
         </a>
 
     </div>
@@ -577,64 +486,15 @@ footer {
 </footer>
 
 <script>
-/*
-  ADAUGĂ AICI LINKURI DIRECTE CĂTRE CAPTURI
-  pentru fiecare episod.
-
-  Fiecare episod poate avea mai multe imagini.
-  La fiecare reîncărcare se alege una aleatoriu.
-*/
-
-const episodeImages = {
-    1: [
-        // "https://siteul-tau.ro/imagine-ep1-1.jpg",
-        // "https://siteul-tau.ro/imagine-ep1-2.jpg"
-    ],
-
-    2: [
-        // "https://siteul-tau.ro/imagine-ep2-1.jpg",
-        // "https://siteul-tau.ro/imagine-ep2-2.jpg"
-    ],
-
-    3: [
-        // "https://siteul-tau.ro/imagine-ep3-1.jpg",
-        // "https://siteul-tau.ro/imagine-ep3-2.jpg"
-    ]
-};
-
-function loadRandomImages() {
-    document.querySelectorAll(".thumbnail img").forEach(img => {
-        const episode = img.dataset.episode;
-        const images = episodeImages[episode] || [];
-
-        if (images.length === 0) {
-            img.style.display = "none";
-            return;
-        }
-
-        const randomImage =
-            images[Math.floor(Math.random() * images.length)];
-
-        img.src = randomImage;
-
-        img.onerror = () => {
-            img.style.display = "none";
-        };
-    });
-}
-
 function moveCarousel(direction) {
     const carousel = document.getElementById("episodeCarousel");
 
     carousel.scrollBy({
-        left: direction * 320,
+        left: direction * 330,
         behavior: "smooth"
     });
 }
-
-loadRandomImages();
 </script>
 
 </body>
 </html>
-```
