@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mia și Eu – Fiul de aur</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #08080d;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            padding: 20px 6%;
+            background: #111116;
+            border-bottom: 2px solid #e50914;
+        }
+
+        header a {
+            color: #e50914;
+            text-decoration: none;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .back {
+            display: inline-block;
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .info {
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        .player {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #000;
+            box-shadow: 0 5px 25px #000;
+        }
+
+        .player iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .details {
+            margin-top: 30px;
+            padding: 25px;
+            background: #15151d;
+            border-radius: 12px;
+            line-height: 1.7;
+        }
+
+        .details h2 {
+            color: #e50914;
+            margin-bottom: 12px;
+        }
+
+        .episode-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .episode-nav a {
+            background: #e50914;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            color: #888;
+            padding: 30px 15px;
+            margin-top: 40px;
+            border-top: 1px solid #292929;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 25px; }
+            .episode-nav { flex-direction: column; }
+            .episode-nav a { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html">DeseneAnimate+</a>
+</header>
+
+<main class="container">
+    <a class="back" href="meandmia.html">← Înapoi la Mia și Eu</a>
+
+    <h1>Fiul de aur</h1>
+    <p class="info">Mia și Eu · Sezonul 1 · Episodul 5</p>
+
+    <div class="player">
+        <iframe
+            src="https://www.canva.com/design/DAHacH9E5js/6m9CFj2YHoilgr8KioxQDw/watch?embed"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <section class="details">
+        <h2>Despre episod</h2>
+        <p>
+            Urmărește episodul 5 din primul sezon al serialului
+            Mia și Eu, „Fiul de aur”.
+        </p>
+        <p style="margin-top: 12px;">
+            <strong>Serial:</strong> Mia și Eu<br>
+            <strong>Sezon:</strong> 1<br>
+            <strong>Episod:</strong> 5
+        </p>
+    </section>
+
+    <nav class="episode-nav">
+        <a href="mia-s1e4.html">← Episodul anterior</a>
+        <a href="meandmia.html">Toate episoadele</a>
+    </nav>
+</main>
+
+<footer>
+    DeseneAnimate+ · Mia și Eu
+</footer>
+
+</body>
+</html>
