@@ -192,6 +192,62 @@ h1 {
     border: none;
 }
 
+.player-options {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 0 auto 15px;
+    max-width: 1100px;
+}
+.player-btn {
+    padding: 12px 23px;
+    background: #222;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: .25s;
+}
+.player-btn:hover { background: #383838; transform: translateY(-2px); }
+.player-btn.active { background: #e50914; border-color: #e50914; }
+.video-box iframe { opacity: 1; transition: opacity .25s ease; }
+.player-status {
+    max-width: 1100px;
+    margin: 12px auto 0;
+    color: #aaa;
+    font-size: 13px;
+}
+.continue-box {
+    max-width: 1100px;
+    margin: 18px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 17px;
+    background: #1c1c1c;
+    border-radius: 9px;
+    border-left: 4px solid #e50914;
+}
+.continue-text { color: #ccc; font-size: 14px; line-height: 1.6; }
+.continue-text strong { color: #fff; font-size: 16px; }
+.continue-btn {
+    background: #e50914;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.continue-btn:hover { background: #ff2631; }
+@media(max-width: 650px) {
+    .player-btn { flex: 1; padding: 11px 10px; }
+}
+
 .note {
     color: #999;
     font-size: 13px;
@@ -241,7 +297,6 @@ footer {
         <div class="label">FILM DE ANIMAȚIE</div>
         <h1>Hotel Transylvania</h1>
 
-```
     <div class="hero-info">
         2012 • 91 minute • Animație • Comedie • Aventură
     </div>
@@ -258,14 +313,12 @@ footer {
         <a href="#poveste" class="btn secondary">Mai multe informații</a>
     </div>
 </div>
-```
 
 </section>
 
 <section class="container" id="poveste">
     <h2 class="section-title">Despre film</h2>
 
-```
 <div class="description">
     <p>
         Hotel Transylvania este o animație plină de umor și aventură,
@@ -327,7 +380,6 @@ footer {
         familie.
     </p>
 </div>
-```
 
 </section>
 
@@ -336,22 +388,32 @@ footer {
 <section class="container" id="vizionare">
     <h2 class="section-title">Vizionare – Hotel Transylvania (2012)</h2>
 
-```
-<div class="video-box">
-    <iframe
-        src="https://www.canva.com/design/DAHZe8eF7bY/6EgRZcWylP95Yu2IYpEGcQ/watch?embed"
-        allowfullscreen
-        loading="lazy">
-    </iframe>
-</div>
-```
+    <div class="player-options">
+        <button class="player-btn active" id="canvaBtn" onclick="changePlayer('canva')">CANVA</button>
+        <button class="player-btn" id="filemoonBtn" onclick="changePlayer('filemoon')">FILEMOON</button>
+    </div>
 
+    <div class="video-box">
+        <iframe id="videoFrame"
+            src="https://www.canva.com/design/DAHaikTHkQA/A9E-HD3jB1R3oNl5fsOYjw/watch?embed"
+            allowfullscreen allow="fullscreen" loading="eager"
+            title="Hotel Transylvania (2012)"></iframe>
+    </div>
+
+    <div class="player-status" id="playerStatus">Player activ: Canva</div>
+
+    <div class="continue-box">
+        <div class="continue-text">
+            <strong>Continuă vizionarea</strong><br>
+            Revino rapid la secțiunea de vizionare.
+        </div>
+        <button class="continue-btn" onclick="continueWatching()">▶ Continuă</button>
+    </div>
 </section>
 
 <section class="container">
     <h2 class="section-title">Informații generale</h2>
 
-```
 <div class="info-grid">
     <div class="info-card">
         <h3>TITLU ORIGINAL</h3>
@@ -413,14 +475,12 @@ footer {
         <p>Hotel Transylvania – Filmul 1</p>
     </div>
 </div>
-```
 
 </section>
 
 <section class="container">
     <h2 class="section-title">Regie și scenariu</h2>
 
-```
 <div class="info-grid">
     <div class="info-card">
         <h3>REGIZOR</h3>
@@ -452,14 +512,12 @@ footer {
         <p>Mark Mothersbaugh</p>
     </div>
 </div>
-```
 
 </section>
 
 <section class="container">
     <h2 class="section-title">Studiouri și producție</h2>
 
-```
 <div class="info-grid">
     <div class="info-card">
         <h3>STUDIO DE ANIMAȚIE</h3>
@@ -486,14 +544,12 @@ footer {
         <p>InterComFilm Distribution</p>
     </div>
 </div>
-```
 
 </section>
 
 <section class="container">
     <h2 class="section-title">Distribuție vocală originală</h2>
 
-```
 <div class="cast-grid">
     <div class="cast-card"><strong>Adam Sandler</strong><span>Contele Dracula</span></div>
     <div class="cast-card"><strong>Andy Samberg</strong><span>Jonathan</span></div>
@@ -508,14 +564,12 @@ footer {
     <div class="cast-card"><strong>Brian George</strong><span>Armura</span></div>
     <div class="cast-card"><strong>Luenell</strong><span>Capetele micșorate</span></div>
 </div>
-```
 
 </section>
 
 <section class="container">
     <h2 class="section-title">Dublaj în limba română</h2>
 
-```
 <div class="cast-grid">
     <div class="cast-card">
         <strong>Claudiu Bleonț</strong>
@@ -537,14 +591,12 @@ footer {
     Lista distribuției românești este parțială. Rolurile trebuie
     confruntate cu genericul versiunii dublate înainte de publicare.
 </p>
-```
 
 </section>
 
 <section class="container">
     <h2 class="section-title">Personaje principale</h2>
 
-```
 <div class="info-grid">
     <div class="info-card">
         <h3>DRACULA</h3>
@@ -576,14 +628,12 @@ footer {
         <p>Mumia veselă și energică, unul dintre invitații petrecerii lui Mavis.</p>
     </div>
 </div>
-```
 
 </section>
 
 <section class="container">
     <h2 class="section-title">Curiozități</h2>
 
-```
 <div class="description">
     <p>• Filmul este regizat de Genndy Tartakovsky.</p>
     <p>• Hotelul este un refugiu pentru monștrii din întreaga lume.</p>
@@ -591,13 +641,9 @@ footer {
     <p>• Filmul combină personaje inspirate din poveștile clasice cu monștri cu umor modern.</p>
     <p>• Este primul film din seria Hotel Transylvania.</p>
 </div>
-```
 
 </section>
 
 <footer>
     DeseneAnimate+ © 2026 | Materialele aparțin proprietarilor lor.
 </footer>
-
-</body>
-</html>
