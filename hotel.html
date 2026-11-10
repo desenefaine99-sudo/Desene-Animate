@@ -134,6 +134,18 @@
       border-radius: 12px;
       border: 1px solid #292929;
       box-shadow: 0 10px 35px rgba(0,0,0,.4);
+      animation: playerAppear .7s ease;
+    }
+
+    @keyframes playerAppear {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .player-options {
@@ -180,6 +192,8 @@
       height: 100%;
       border: none;
       display: block;
+      opacity: 1;
+      transition: opacity .3s ease;
     }
 
     .player-status {
@@ -199,6 +213,11 @@
       background: #1c1c1c;
       border-radius: 9px;
       border-left: 4px solid #e50914;
+      transition: .3s;
+    }
+
+    .continue-box:hover {
+      background: #252525;
     }
 
     .continue-text {
@@ -345,7 +364,7 @@
         <button class="player-btn active"
           id="canvaBtn"
           onclick="changePlayer('canva')">
-          C4NV4
+          CANVA
         </button>
 
         <button class="player-btn"
@@ -356,13 +375,14 @@
 
       </div>
 
-      <div class="player" id="videoPlayer">
+      <div class="player">
 
         <iframe
           id="videoFrame"
-          src="https://www.canva.com/design/DAHZe8eF7bY/6EgRZcWylP95Yu2IYpEGcQ/watch?embed"
+          src="https://www.canva.com/design/DAHaiSb7tBY/CDi-F8njk0UeeFogja9D8A/watch?embed"
           allowfullscreen
-          loading="lazy"
+          allow="fullscreen"
+          loading="eager"
           title="Hotel Transylvania 4">
         </iframe>
 
@@ -376,7 +396,7 @@
 
         <div class="continue-text">
           <strong>Continuă vizionarea</strong><br>
-          Revino la playerul folosit ultima dată.
+          Revino rapid la playerul folosit ultima dată.
         </div>
 
         <button class="continue-btn" onclick="continueWatching()">
@@ -440,7 +460,7 @@
   <script>
 
     const canvaLink =
-      "https://www.canva.com/design/DAHZe8eF7bY/6EgRZcWylP95Yu2IYpEGcQ/watch?embed";
+      "https://www.canva.com/design/DAHaiSb7tBY/CDi-F8njk0UeeFogja9D8A/watch?embed";
 
     const filemoonLink =
       "https://bysejikuar.com/e/gvu1vu0s2fz4";
@@ -450,11 +470,29 @@
     const filemoonBtn = document.getElementById("filemoonBtn");
     const status = document.getElementById("playerStatus");
 
-    let currentPlayer = localStorage.getItem("hotel4Player") || "canva";
+    let currentPlayer =
+      localStorage.getItem("hotel4Player") || "canva";
+
+    function updateButtons(player) {
+
+      canvaBtn.classList.toggle("active", player === "canva");
+      filemoonBtn.classList.toggle("active", player === "filemoon");
+
+      status.textContent =
+        "Player activ: " +
+        (player === "canva" ? "Canva" : "FileMoon");
+    }
 
     function changePlayer(player) {
 
-      if (player !== "canva" && player !== "filemoon") return;
+      if (player !== "canva" && player !== "filemoon") {
+        return;
+      }
+
+      if (player === currentPlayer) {
+        updateButtons(player);
+        return;
+      }
 
       currentPlayer = player;
 
@@ -464,35 +502,37 @@
 
       setTimeout(() => {
 
-        frame.src = player === "canva" ? canvaLink : filemoonLink;
+        frame.src =
+          player === "canva" ? canvaLink : filemoonLink;
 
         frame.style.opacity = "1";
 
-      }, 200);
+      }, 250);
 
-      canvaBtn.classList.toggle("active", player === "canva");
-      filemoonBtn.classList.toggle("active", player === "filemoon");
-
-      status.textContent =
-        "Player activ: " +
-        (player === "canva" ? "Canva" : "FileMoon");
-
+      updateButtons(player);
     }
 
     function continueWatching() {
-
-      changePlayer(currentPlayer);
 
       document.getElementById("vizionare").scrollIntoView({
         behavior: "smooth"
       });
 
+      updateButtons(currentPlayer);
     }
 
-    // Reține ultimul player folosit.
-    // Nu poate salva minutul exact deoarece playerele sunt externe.
+    // Restaurăm ultimul player selectat fără reîncărcare inutilă.
 
-    changePlayer(currentPlayer);
+    if (currentPlayer !== "canva" &&
+        currentPlayer !== "filemoon") {
+      currentPlayer = "canva";
+    }
+
+    if (currentPlayer === "filemoon") {
+      frame.src = filemoonLink;
+    }
+
+    updateButtons(currentPlayer);
 
   </script>
 
