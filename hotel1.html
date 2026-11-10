@@ -647,3 +647,47 @@ footer {
 <footer>
     DeseneAnimate+ © 2026 | Materialele aparțin proprietarilor lor.
 </footer>
+<script>
+const players = {
+    canva: "https://www.canva.com/design/DAHaikTHkQA/A9E-HD3jB1R3oNl5fsOYjw/watch?embed",
+    filemoon: "https://bysejikuar.com/e/5mdw7jkkjpnp"
+};
+
+function changePlayer(name) {
+    const frame = document.getElementById("videoFrame");
+    const status = document.getElementById("playerStatus");
+
+    if (!frame || !players[name]) return;
+
+    frame.src = players[name];
+
+    localStorage.setItem("hotelTransylvania2012Player", name);
+
+    status.textContent = "Player activ: " +
+        (name === "filemoon" ? "FileMoon" : "Canva");
+
+    document.getElementById("canvaBtn").classList.toggle(
+        "active", name === "canva"
+    );
+
+    document.getElementById("filemoonBtn").classList.toggle(
+        "active", name === "filemoon"
+    );
+}
+
+function continueWatching() {
+    document.getElementById("vizionare").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+    const savedPlayer = localStorage.getItem(
+        "hotelTransylvania2012Player"
+    );
+
+    if (savedPlayer && players[savedPlayer]) {
+        changePlayer(savedPlayer);
+    }
+});
+</script>
