@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
@@ -12,10 +12,31 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: #141414;
       color: #fff;
       font-family: Arial, sans-serif;
+      animation: fadeIn .7s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     header {
@@ -46,6 +67,7 @@
 
     .hero-content {
       max-width: 650px;
+      animation: slideUp .8s ease;
     }
 
     .label {
@@ -81,6 +103,12 @@
       border-radius: 4px;
       text-decoration: none;
       font-weight: bold;
+      transition: .2s;
+    }
+
+    .button:hover {
+      background: #b80710;
+      transform: translateY(-2px);
     }
 
     .section {
@@ -92,10 +120,58 @@
       margin-bottom: 22px;
     }
 
+    .player-section {
+      animation: slideUp .7s ease;
+    }
+
+    .player-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .player-button {
+      padding: 12px 22px;
+      border: 1px solid #555;
+      border-radius: 5px;
+      background: #292929;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .player-button:hover,
+    .player-button.active {
+      background: #e50914;
+      border-color: #e50914;
+      transform: translateY(-2px);
+    }
+
+    .continue-button {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 11px 18px;
+      border: none;
+      border-radius: 5px;
+      background: #444;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .continue-button:hover {
+      background: #666;
+    }
+
     .player {
       width: 100%;
       aspect-ratio: 16 / 9;
       background: #000;
+      overflow: hidden;
+      border-radius: 7px;
     }
 
     .player iframe {
@@ -143,6 +219,14 @@
       .hero {
         padding: 60px 6%;
       }
+
+      .player-buttons {
+        flex-direction: column;
+      }
+
+      .player-button {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -174,12 +258,31 @@
     </div>
   </section>
 
-  <section class="section" id="vizionare">
+  <section class="section player-section" id="vizionare">
     <h2>Urmărește filmul</h2>
+
+    <div class="player-buttons">
+
+      <button class="player-button" id="toonButton"
+        onclick="changePlayer('toon')">
+        ▶ ToonPlay
+      </button>
+
+      <button class="player-button" id="filemoonButton"
+        onclick="changePlayer('filemoon')">
+        ▶ FileMoon
+      </button>
+
+    </div>
+
+    <button class="continue-button" onclick="continueWatching()">
+      ▶ Continuă vizionarea
+    </button>
 
     <div class="player">
       <iframe
-        src="https://www.canva.com/design/DAHZfB6BDqc/PVtkZsPyLWzZM0ZxE4eg0w/watch?embed"
+        id="videoPlayer"
+        src="https://www.canva.com/design/DAHar0s4ecM/g56-ePtD8sPkY7h1RB5Bcw/watch?embed"
         allowfullscreen
         loading="lazy">
       </iframe>
@@ -209,6 +312,46 @@
   <footer>
     DeseneAnimate+ © 2026
   </footer>
+
+  <script>
+    const players = {
+      toon: "https://www.canva.com/design/DAHar0s4ecM/g56-ePtD8sPkY7h1RB5Bcw/watch?embed",
+      filemoon: "https://bysejikuar.com/e/hrlc5zdcn4gx"
+    };
+
+    const storageKey = "scoobyPlayer";
+
+    function changePlayer(type) {
+      const iframe = document.getElementById("videoPlayer");
+
+      if (!players[type]) return;
+
+      iframe.src = players[type];
+
+      localStorage.setItem(storageKey, type);
+
+      document.getElementById("toonButton").classList.toggle(
+        "active", type === "toon"
+      );
+
+      document.getElementById("filemoonButton").classList.toggle(
+        "active", type === "filemoon"
+      );
+    }
+
+    function continueWatching() {
+      const savedPlayer = localStorage.getItem(storageKey) || "toon";
+
+      changePlayer(savedPlayer);
+
+      document.getElementById("vizionare").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+    const savedPlayer = localStorage.getItem(storageKey) || "toon";
+    changePlayer(savedPlayer);
+  </script>
 
 </body>
 </html>
