@@ -20,6 +20,34 @@ body {
     background: #141414;
     color: white;
     font-family: Arial, sans-serif;
+    animation: fadeIn .7s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes playerAppear {
+    from {
+        opacity: 0;
+        transform: scale(.97);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 header {
@@ -49,6 +77,7 @@ header a {
 
 .hero-content {
     max-width: 650px;
+    animation: slideUp .8s ease;
 }
 
 .label {
@@ -91,10 +120,13 @@ header a {
     text-decoration: none;
     font-weight: bold;
     transition: .2s;
+    border: none;
+    cursor: pointer;
 }
 
 .button:hover {
     background: #ddd;
+    transform: translateY(-2px);
 }
 
 .button.secondary {
@@ -119,6 +151,49 @@ h2 {
 
 .player-section {
     margin-bottom: 65px;
+    animation: slideUp .7s ease;
+}
+
+.player-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.player-button {
+    padding: 12px 22px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #292929;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.player-button:hover,
+.player-button.active {
+    background: #e50914;
+    border-color: #e50914;
+    transform: translateY(-2px);
+}
+
+.continue-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 5px;
+    background: #444;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.continue-button:hover {
+    background: #666;
 }
 
 .player {
@@ -127,6 +202,8 @@ h2 {
     padding-top: 56.25%;
     background: #000;
     overflow: hidden;
+    border-radius: 7px;
+    animation: playerAppear .5s ease;
 }
 
 .player iframe {
@@ -205,6 +282,14 @@ footer {
     .button {
         text-align: center;
     }
+
+    .player-buttons {
+        flex-direction: column;
+    }
+
+    .player-button {
+        width: 100%;
+    }
 }
 </style>
 </head>
@@ -262,10 +347,29 @@ footer {
 
         <h2>Vizionare</h2>
 
+        <div class="player-buttons">
+
+            <button class="player-button" id="toonButton"
+                onclick="changePlayer('toon')">
+                ▶ ToonPlay
+            </button>
+
+            <button class="player-button" id="filemoonButton"
+                onclick="changePlayer('filemoon')">
+                ▶ FileMoon
+            </button>
+
+        </div>
+
+        <button class="continue-button" onclick="continueWatching()">
+            ▶ Continuă vizionarea
+        </button>
+
         <div class="player">
 
             <iframe
-                src="https://www.canva.com/design/DAHZmMxGYbo/DyWNX_3Fh9DZpUU4gv8DMw/watch?embed"
+                id="videoPlayer"
+                src="https://www.canva.com/design/DAHarwxA8jM/_wAEECvy_A-bC9n4rLhr-Q/watch?embed"
                 allowfullscreen>
             </iframe>
 
@@ -340,6 +444,53 @@ footer {
     <br><br>
     Platformă dedicată animațiilor.
 </footer>
+
+<script>
+
+const players = {
+    toon: "https://www.canva.com/design/DAHarwxA8jM/_wAEECvy_A-bC9n4rLhr-Q/watch?embed",
+    filemoon: "https://bysejikuar.com/e/bnvq7mfy6m8k"
+};
+
+const storageKey = "trickortreatPlayer";
+
+function changePlayer(type) {
+
+    const iframe = document.getElementById("videoPlayer");
+
+    if (!players[type]) return;
+
+    iframe.src = players[type];
+
+    localStorage.setItem(storageKey, type);
+
+    document.getElementById("toonButton").classList.toggle(
+        "active", type === "toon"
+    );
+
+    document.getElementById("filemoonButton").classList.toggle(
+        "active", type === "filemoon"
+    );
+}
+
+function continueWatching() {
+
+    const savedPlayer = localStorage.getItem(storageKey) || "toon";
+
+    changePlayer(savedPlayer);
+
+    document.getElementById("vizionare").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+// Încarcă ultimul player ales
+
+const savedPlayer = localStorage.getItem(storageKey) || "toon";
+
+changePlayer(savedPlayer);
+
+</script>
 
 </body>
 </html>
