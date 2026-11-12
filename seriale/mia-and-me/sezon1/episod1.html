@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vorbind cu unicornii | Me and Mia</title>
+<title>Vorbind cu unicornii | Mia and Me</title>
 
 <style>
 * {
@@ -53,6 +53,7 @@ h1 {
     padding-top: 56.25%;
     overflow: hidden;
     background: #000;
+    border-radius: 8px;
 }
 
 .player iframe {
@@ -62,6 +63,36 @@ h1 {
     top: 0;
     left: 0;
     border: 0;
+}
+
+.player-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.player-buttons button {
+    background: #292929;
+    color: white;
+    border: 1px solid #444;
+    padding: 12px 22px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.player-buttons button:hover,
+.player-buttons button.active {
+    background: #e50914;
+    border-color: #e50914;
+}
+
+.continue {
+    background: white !important;
+    color: black !important;
+    border-color: white !important;
 }
 
 .info {
@@ -133,6 +164,10 @@ footer {
     .buttons a {
         text-align: center;
     }
+
+    .player-buttons button {
+        flex: 1;
+    }
 }
 </style>
 </head>
@@ -140,7 +175,7 @@ footer {
 <body>
 
 <header>
-    <a href="meandmia.html">DeseneAnimate+</a>
+    <a href="../index.html">DeseneAnimate+</a>
 </header>
 
 <main class="container">
@@ -148,53 +183,55 @@ footer {
     <h1>Vorbind cu unicornii</h1>
 
     <div class="subtitle">
-        Me and Mia · Sezonul 1 · Episodul 1
+        Mia and Me · Sezonul 1 · Episodul 1
     </div>
 
-    <!-- PLAYER VIDEO -->
-
-    <div class="player">
+    <div class="player" id="player">
         <iframe
-            src="https://www.canva.com/design/DAHZmd2eVK4/-EBT1aE5GRpv72PUvvfNhg/watch?embed"
+            id="videoFrame"
+            src="https://www.canva.com/design/DAHaubPOUuE/Pph3sSQ-eKfOpkKm2OG7Og/watch?embed"
             allowfullscreen>
         </iframe>
     </div>
 
-    <!-- INFORMATII EPISOD -->
+    <div class="player-buttons">
+        <button id="toonButton" onclick="changePlayer('toon')">
+            ▶ ToonPlay
+        </button>
+
+        <button id="fileButton" onclick="changePlayer('file')">
+            ▶ FileMoon
+        </button>
+
+        <button class="continue" onclick="continueWatching()">
+            ↻ Continuă vizionarea
+        </button>
+    </div>
 
     <section class="info">
 
         <h2>Despre episod</h2>
 
-        <p><strong>Serial:</strong> Me and Mia</p>
-
+        <p><strong>Serial:</strong> Mia and Me</p>
         <p><strong>Sezon:</strong> 1</p>
-
         <p><strong>Episod:</strong> 1</p>
-
         <p><strong>Titlu:</strong> Vorbind cu unicornii</p>
 
         <div class="episode-description">
-            Mia descoperă o lume fascinantă, ascunsă dincolo de
-            imaginația ei, unde unicornii, magia și creaturile
-            fantastice fac parte dintr-un univers extraordinar.
-            În această aventură, ea începe să descopere misterele
-            tărâmului Centopia și legătura specială pe care o poate
-            avea cu locuitorii săi. O călătorie plină de magie,
-            prietenie și descoperiri uimitoare abia începe!
+            Mia descoperă lumea magică Centopia, unde întâlnește
+            unicorni și creaturi fantastice. O aventură plină de
+            magie și mister abia începe!
         </div>
 
     </section>
 
-    <!-- NAVIGARE -->
-
     <div class="buttons">
 
-        <a href="meandmia.html">
+        <a href="../index.html">
             ← Înapoi la serial
         </a>
 
-        <a href="mia-s1e2.html">
+        <a href="episod2.html">
             Episodul următor →
         </a>
 
@@ -205,6 +242,36 @@ footer {
 <footer>
     DeseneAnimate+ © 2026
 </footer>
+
+<script>
+const players = {
+    toon: "https://www.canva.com/design/DAHaubPOUuE/Pph3sSQ-eKfOpkKm2OG7Og/watch?embed",
+    file: "https://bysejikuar.com/e/418144agqcb9"
+};
+
+const storageKey = "miaAndMeEpisod1Player";
+
+function changePlayer(type) {
+    document.getElementById("videoFrame").src = players[type];
+
+    localStorage.setItem(storageKey, type);
+
+    document.getElementById("toonButton").classList.toggle("active", type === "toon");
+    document.getElementById("fileButton").classList.toggle("active", type === "file");
+}
+
+function continueWatching() {
+    const savedPlayer = localStorage.getItem(storageKey) || "toon";
+    changePlayer(savedPlayer);
+
+    document.getElementById("player").scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+
+changePlayer(localStorage.getItem(storageKey) || "toon");
+</script>
 
 </body>
 </html>
