@@ -45,10 +45,12 @@ header a {
         linear-gradient(90deg, #141414 5%, rgba(20,20,20,.85) 45%, transparent 100%),
         linear-gradient(0deg, #141414, transparent 65%),
         url("postere/coco.jpg") center 30% / cover no-repeat;
+    animation: fadeIn 1s ease;
 }
 
 .hero-content {
     max-width: 650px;
+    animation: slideUp .8s ease;
 }
 
 .label {
@@ -90,11 +92,12 @@ header a {
     color: black;
     text-decoration: none;
     font-weight: bold;
-    transition: .2s;
+    transition: .3s;
 }
 
 .button:hover {
     background: #ddd;
+    transform: translateY(-3px);
 }
 
 .button.secondary {
@@ -121,12 +124,61 @@ h2 {
     margin-bottom: 65px;
 }
 
+.player-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.player-btn {
+    padding: 13px 25px;
+    background: #252525;
+    color: white;
+    border: 2px solid #444;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.player-btn:hover {
+    border-color: #e50914;
+    transform: translateY(-3px);
+}
+
+.player-btn.active {
+    background: #e50914;
+    border-color: #e50914;
+}
+
+.continue-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    margin-bottom: 20px;
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.continue-btn:hover {
+    background: #444;
+    transform: translateY(-2px);
+}
+
 .player {
     position: relative;
     width: 100%;
     padding-top: 56.25%;
     background: #000;
     overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0,0,0,.4);
+    animation: playerAppear .4s ease;
 }
 
 .player iframe {
@@ -136,6 +188,12 @@ h2 {
     top: 0;
     left: 0;
     border: 0;
+}
+
+.player-info {
+    color: #888;
+    font-size: 13px;
+    margin-top: 12px;
 }
 
 .info-section {
@@ -182,6 +240,33 @@ footer {
     margin-top: 60px;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes playerAppear {
+    from {
+        opacity: .5;
+        transform: scale(.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 @media(max-width: 700px) {
     .hero {
         min-height: 480px;
@@ -204,6 +289,10 @@ footer {
 
     .button {
         text-align: center;
+    }
+
+    .player-btn {
+        padding: 12px 19px;
     }
 }
 </style>
@@ -264,14 +353,38 @@ footer {
 
         <h2>Vizionare</h2>
 
+        <div class="player-buttons">
+
+            <button class="player-btn active" id="toonplayBtn"
+                onclick="changePlayer('toonplay')">
+                ▶ ToonPlay
+            </button>
+
+            <button class="player-btn" id="filemoonBtn"
+                onclick="changePlayer('filemoon')">
+                ▶ FileMoon
+            </button>
+
+        </div>
+
+        <button class="continue-btn" onclick="continueWatching()">
+            ▶ Continuă vizionarea
+        </button>
+
         <div class="player">
 
             <iframe
-                src="https://www.canva.com/design/DAHZj0l1FpE/K0FbCVS7AN7F8pUMNubSLQ/watch?embed"
-                allowfullscreen>
+                id="videoPlayer"
+                src="https://www.canva.com/design/DAHar8tANCA/60UGMZvJ7TRraSaOWf92gA/watch?embed"
+                allowfullscreen
+                loading="lazy">
             </iframe>
 
         </div>
+
+        <p class="player-info">
+            Alege playerul preferat pentru a urmări filmul.
+        </p>
 
     </section>
 
@@ -365,6 +478,48 @@ footer {
     <br><br>
     Platformă dedicată animațiilor.
 </footer>
+
+<script>
+
+const players = {
+    toonplay: "https://www.canva.com/design/DAHar8tANCA/60UGMZvJ7TRraSaOWf92gA/watch?embed",
+
+    filemoon: "https://bysejikuar.com/e/fiylt4e13i4l"
+};
+
+const videoPlayer = document.getElementById("videoPlayer");
+const toonplayBtn = document.getElementById("toonplayBtn");
+const filemoonBtn = document.getElementById("filemoonBtn");
+
+let currentPlayer = localStorage.getItem("cocoPlayer") || "toonplay";
+
+function changePlayer(player) {
+
+    if (!players[player]) return;
+
+    currentPlayer = player;
+
+    videoPlayer.src = players[player];
+
+    localStorage.setItem("cocoPlayer", player);
+
+    toonplayBtn.classList.toggle("active", player === "toonplay");
+    filemoonBtn.classList.toggle("active", player === "filemoon");
+}
+
+function continueWatching() {
+
+    document.getElementById("vizionare").scrollIntoView({
+        behavior: "smooth"
+    });
+
+    changePlayer(currentPlayer);
+}
+
+// Restaurăm ultimul player selectat.
+changePlayer(currentPlayer);
+
+</script>
 
 </body>
 </html>
