@@ -52,7 +52,7 @@ header a {
     background:
         linear-gradient(90deg, #101010 3%, rgba(16,16,16,.75) 45%, transparent),
         linear-gradient(0deg, #101010, transparent 65%),
-        url("postere/meandmia.jpg") center 30% / cover no-repeat;
+        url("../../postere/meandmia.jpg") center 30% / cover no-repeat;
 }
 
 .hero-content {
@@ -161,7 +161,7 @@ h2 {
     letter-spacing: 1px;
 }
 
-/* CARUSEL NETFLIX */
+/* CARUSEL */
 
 .season-heading {
     display: flex;
@@ -456,10 +456,8 @@ footer {
 <body>
 
 <header>
-    <a href="index.html">DeseneAnimate+</a>
+    <a href="../../index.html">DeseneAnimate+</a>
 </header>
-
-<!-- PREZENTARE PRINCIPALĂ -->
 
 <section class="hero">
     <div class="hero-content">
@@ -479,7 +477,7 @@ footer {
             magie și prietenie.
         </p>
 
-        <a href="mia-s1e1.html" class="play">
+        <a href="sezon1/episod1.html" class="play">
             ▶ Primul episod
         </a>
 
@@ -487,8 +485,6 @@ footer {
 </section>
 
 <main class="content">
-
-<!-- DESPRE SERIAL -->
 
 <section class="section">
 
@@ -571,6 +567,7 @@ footer {
         <h2 class="season-title">Sezonul 1 · Episoade</h2>
 
         <div class="carousel-controls">
+
             <button class="carousel-btn"
                 onclick="moveCarousel(-1)"
                 aria-label="Episoade anterioare">‹</button>
@@ -578,16 +575,17 @@ footer {
             <button class="carousel-btn"
                 onclick="moveCarousel(1)"
                 aria-label="Episoade următoare">›</button>
+
         </div>
 
     </div>
 
     <div class="episode-carousel" id="episodeCarousel">
 
-        <a href="mia-s1e1.html" class="episode">
+        <a href="sezon1/episod1.html" class="episode">
 
             <div class="thumbnail">
-                <img src="postere/episoade/ep1.jpg"
+                <img src="../../postere/episoade/ep1.jpg"
                      alt="Imagine din episodul 1">
 
                 <div class="episode-number">EP. 01</div>
@@ -615,10 +613,10 @@ footer {
 
         </a>
 
-        <a href="mia-s1e2.html" class="episode">
+        <a href="sezon1/episod2.html" class="episode">
 
             <div class="thumbnail">
-                <img src="postere/episoade/ep2.jpg"
+                <img src="../../postere/episoade/ep2.jpg"
                      alt="Imagine din episodul 2">
 
                 <div class="episode-number">EP. 02</div>
@@ -645,10 +643,10 @@ footer {
 
         </a>
 
-        <a href="mia-s1e3.html" class="episode">
+        <a href="sezon1/episod3.html" class="episode">
 
             <div class="thumbnail">
-                <img src="postere/episoade/ep3.jpg"
+                <img src="../../postere/episoade/ep3.jpg"
                      alt="Imagine din episodul 3">
 
                 <div class="episode-number">EP. 03</div>
@@ -676,10 +674,10 @@ footer {
 
         </a>
 
-        <a href="mia-s1e4.html" class="episode">
+        <a href="sezon1/episod4.html" class="episode">
 
             <div class="thumbnail">
-                <img src="postere/episoade/ep4.jpg"
+                <img src="../../postere/episoade/ep4.jpg"
                      alt="Imagine din episodul 4">
 
                 <div class="episode-number">EP. 04</div>
@@ -691,7 +689,9 @@ footer {
                 <h3>Se pierde Trompetușa</h3>
 
                 <p>
-                    Mia și prietenii ei pornesc în căutarea lui Lyria, dar aventura se complică atunci când Trompetușa se pierde și ajunge în mâinile Pantheei.
+                    Mia și prietenii ei pornesc în căutarea lui Lyria,
+                    dar aventura se complică atunci când Trompetușa
+                    se pierde și ajunge în mâinile Pantheei.
                 </p>
 
                 <div class="duration">
@@ -704,10 +704,10 @@ footer {
 
         </a>
 
-        <a href="mia-s1e5.html" class="episode">
+        <a href="sezon1/episod5.html" class="episode">
 
             <div class="thumbnail">
-                <img src="postere/episoade/ep5.jpg"
+                <img src="../../postere/episoade/ep5.jpg"
                      alt="Imagine din episodul 5">
 
                 <div class="episode-number">EP. 05</div>
@@ -719,7 +719,10 @@ footer {
                 <h3>Fiul de aur</h3>
 
                 <p>
-                    Lyria se pregătește să nască, iar Mia și prietenii ei încearcă să o ajute să ajungă în siguranță la Peștera Nașterii, unde vine pe lume Onchao, unicornul cu corn de aur.
+                    Lyria se pregătește să nască, iar Mia și prietenii
+                    ei încearcă să o ajute să ajungă în siguranță la
+                    Peștera Nașterii, unde vine pe lume Onchao,
+                    unicornul cu corn de aur.
                 </p>
 
                 <div class="duration">
@@ -1003,5 +1006,4 @@ function moveCarousel(direction) {
 </script>
 
 </body>
-
 </html>
