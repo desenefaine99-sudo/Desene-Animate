@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -51,7 +50,34 @@
 
         .details {
             color: #c4b6d3;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            color: #ddd0e9;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .buttons button {
+            padding: 12px 20px;
+            border: 0;
+            border-radius: 8px;
+            background: #a34ee0;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .buttons button.active {
+            background: #e044a5;
         }
 
         .player {
@@ -60,6 +86,7 @@
             padding-top: 56.25%;
             overflow: hidden;
             border-radius: 12px;
+            background: black;
         }
 
         .player iframe {
@@ -70,9 +97,16 @@
             border: 0;
         }
 
-        .back {
-            display: inline-block;
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
             margin-top: 25px;
+        }
+
+        .navigation a {
+            display: inline-block;
             padding: 12px 20px;
             background: #a34ee0;
             color: white;
@@ -81,7 +115,8 @@
             font-weight: bold;
         }
 
-        .back:hover {
+        .navigation a:hover,
+        .buttons button:hover {
             background: #bd75ff;
         }
     </style>
@@ -90,31 +125,74 @@
 <body>
 
 <header>
-    <a href="index.html">DeseneAnimate+</a>
+    <a href="../../../index.html">DeseneAnimate+</a>
 </header>
 
 <main>
     <div class="episode">
+
         <h1>🦄 Mia și Eu – Speranța Centopiei</h1>
 
         <div class="details">
             Sezonul 1 · Episodul 2 · Animație · Aventură
         </div>
 
+        <div class="description">
+            Panthea capturează unicornii pentru a le lua coarnele.
+            Mia și prietenii ei trebuie să găsească o cale de a salva
+            Centopia, iar Trompetușa ar putea fi singura lor speranță.
+        </div>
+
+        <div class="buttons">
+            <button id="toonplayBtn" onclick="changePlayer('toonplay')">
+                ToonPlay
+            </button>
+
+            <button id="filemoonBtn" onclick="changePlayer('filemoon')">
+                FileMoon
+            </button>
+        </div>
+
         <div class="player">
             <iframe
-                src="https://www.canva.com/design/DAHZp0Nq-Ok/jKMmy2EzW-Pv8_LLCvaR9A/watch?embed"
-                loading="lazy"
-                allowfullscreen>
+                id="videoPlayer"
+                src=""
+                allowfullscreen
+                loading="lazy">
             </iframe>
         </div>
 
-        <a href="meandmia.html" class="back">
-            ← Înapoi la episoade
-        </a>
+        <div class="navigation">
+            <a href="../index.html">← Înapoi la episoade</a>
+            <a href="episod3.html">Episodul următor →</a>
+        </div>
+
     </div>
 </main>
 
+<script>
+    const players = {
+        toonplay: "https://www.canva.com/design/DAHauZj8zwo/z8HIDdAzWp4q_iVdKaBjIA/watch?embed",
+        filemoon: "https://bysejikuar.com/e/gyhgw8x0sm8b"
+    };
+
+    function changePlayer(name) {
+        document.getElementById("videoPlayer").src = players[name];
+
+        document.getElementById("toonplayBtn").classList.toggle(
+            "active", name === "toonplay"
+        );
+
+        document.getElementById("filemoonBtn").classList.toggle(
+            "active", name === "filemoon"
+        );
+
+        localStorage.setItem("miaAndMeEpisod2Player", name);
+    }
+
+    const savedPlayer = localStorage.getItem("miaAndMeEpisod2Player") || "toonplay";
+    changePlayer(savedPlayer);
+</script>
+
 </body>
 </html>
-```
