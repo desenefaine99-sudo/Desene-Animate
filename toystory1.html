@@ -1,0 +1,128 @@
+```html
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toy Story (1995) | Desene Faine</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #080808;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #111;
+  padding: 22px 6%;
+  border-bottom: 1px solid #292929;
+}
+
+header a {
+  color: #e50914;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 35px auto;
+}
+
+.back {
+  color: #bbb;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.year {
+  color: #aaa;
+  margin-bottom: 22px;
+}
+
+.video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0,0,0,.5);
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.description {
+  margin-top: 25px;
+  padding: 22px;
+  background: #151515;
+  border-radius: 8px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.description h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+@media(max-width:600px) {
+  h1 { font-size: 26px; }
+  .container { width: 94%; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="../index.html">DESENE FAINE</a>
+</header>
+
+<main class="container">
+
+  <a class="back" href="../index.html">← Înapoi la pagina principală</a>
+
+  <h1>Toy Story</h1>
+  <p class="year">1995 · Film de animație</p>
+
+  <div class="video-container">
+    <iframe
+      src="https://ok.ru/videoembed/5972568705654"
+      allowfullscreen
+      allow="autoplay; fullscreen; picture-in-picture">
+    </iframe>
+  </div>
+
+  <div class="description">
+    <h2>Despre film</h2>
+    <p>
+      Woody, jucăria preferată a lui Andy, își vede poziția amenințată
+      atunci când apare Buzz Lightyear, o nouă jucărie spectaculoasă.
+      Împreună, cei doi pornesc într-o aventură neașteptată.
+    </p>
+  </div>
+
+</main>
+
+</body>
+</html>
+```
