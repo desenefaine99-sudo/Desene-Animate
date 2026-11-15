@@ -8,7 +8,6 @@
 
 <style>
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -148,6 +147,68 @@ h2 {
 .episodes-section h2 {
     font-size: 27px;
     margin-bottom: 25px;
+}
+
+/* SELECTOR SEZOANE – STIL NETFLIX */
+
+.season-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.season-label {
+    color: #aaa;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.season-select {
+    position: relative;
+}
+
+.season-select select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: #252525;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 13px 45px 13px 17px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    min-width: 190px;
+    transition: .25s;
+}
+
+.season-select select:hover {
+    background: #333;
+    border-color: #e50914;
+}
+
+.season-select::after {
+    content: "▼";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 11px;
+    pointer-events: none;
+}
+
+.season-select select option {
+    background: #252525;
+    color: white;
+}
+
+.season-note {
+    color: #777;
+    font-size: 12px;
 }
 
 .episode-list {
@@ -302,6 +363,17 @@ footer {
     .episode-info h3 { font-size: 15px; }
     .episode-info p { font-size: 12px; }
     .episode-play { display: none; }
+
+    .season-bar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .season-select,
+    .season-select select {
+        width: 100%;
+    }
 }
 
 @media(hover:none) {
@@ -405,9 +477,26 @@ footer {
 </section>
 
 <section class="episodes-section" id="episoade">
-    <h2>Episoade · Sezonul 1</h2>
 
-    <div class="episode-list">
+    <h2 id="episode-heading">Episoade</h2>
+
+    <div class="season-bar">
+        <span class="season-label">Alege sezonul:</span>
+
+        <div class="season-select">
+            <select id="seasonSelect" aria-label="Alege sezonul">
+                <option value="1">Sezonul 1</option>
+                <option value="2" disabled>Sezonul 2 — În curând</option>
+                <option value="3" disabled>Sezonul 3 — În curând</option>
+            </select>
+        </div>
+
+        <span class="season-note" id="seasonNote">
+            17 episoade disponibile
+        </span>
+    </div>
+
+    <div class="episode-list" id="episodeList">
 
         <a href="sezon1/episod1.html" class="episode-row">
             <img src="../../postere/episoade/scooby-ep1.jpg" alt="Episodul 1">
@@ -636,6 +725,19 @@ footer {
         Pagină dedicată universului Scooby-Doo
     </span>
 </footer>
+
+<script>
+const seasonSelect = document.getElementById("seasonSelect");
+const episodeHeading = document.getElementById("episode-heading");
+const seasonNote = document.getElementById("seasonNote");
+
+seasonSelect.addEventListener("change", function () {
+    if (this.value === "1") {
+        episodeHeading.textContent = "Episoade · Sezonul 1";
+        seasonNote.textContent = "17 episoade disponibile";
+    }
+});
+</script>
 
 </body>
 </html>
