@@ -3,116 +3,225 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101010">
 <title>Scooby-Doo, Where Are You! | DeseneAnimate+</title>
 
 <style>
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-    margin:0;background:#080808;color:white;
-    font-family:Arial,sans-serif;
-    overflow-x:hidden
+    margin:0;background:#101010;color:white;
+    font-family:Arial,sans-serif;overflow-x:hidden
 }
+
 header{
-    padding:22px 6%;background:#080808;
-    display:flex;justify-content:space-between;
-    align-items:center;position:relative;z-index:5
+    position:absolute;top:0;left:0;width:100%;
+    padding:22px 5%;z-index:10;
+    background:linear-gradient(to bottom,#000,transparent)
 }
-.logo{color:#e50914;font-size:25px;font-weight:bold;text-decoration:none}
-header a.back{color:white;text-decoration:none;transition:.3s}
-header a.back:hover{color:#e50914}
+header a{
+    color:#e50914;font-size:29px;font-weight:900;
+    text-decoration:none;letter-spacing:-1px
+}
+
+/* HERO */
 
 .hero{
-    min-height:460px;padding:80px 7%;
-    display:flex;align-items:end;
+    min-height:590px;padding:130px 7% 100px;
+    display:flex;align-items:center;position:relative;
     background:
-    linear-gradient(90deg,#080808 5%,rgba(0,0,0,.8) 48%,transparent),
-    linear-gradient(0deg,#080808,transparent),
-    url("../../postere/scooby-doo-where-are-you.jpg") center/cover;
-    animation:heroAppear 1s ease
-}
-.hero-content{max-width:650px;animation:slideUp .8s ease}
-h1{font-size:clamp(32px,5vw,55px);margin:0 0 15px}
-.meta{color:#bbb;margin-bottom:18px}
-.description{font-size:17px;line-height:1.6;color:#ddd}
-
-.play{
-    display:inline-block;background:#e50914;color:white;
-    padding:13px 25px;border-radius:5px;text-decoration:none;
-    font-weight:bold;margin-top:15px;transition:.3s
-}
-.play:hover{
-    background:#ff2631;transform:scale(1.07);
-    box-shadow:0 0 25px #e5091480
+        linear-gradient(90deg,#101010 3%,rgba(16,16,16,.75) 45%,transparent),
+        linear-gradient(0deg,#101010,transparent 65%),
+        url("../../postere/scooby-doo-where-are-you.jpg") center 30%/cover no-repeat;
 }
 
-main{padding:35px 6% 70px}
-.season{font-size:25px;margin-bottom:25px}
+.hero-content{max-width:650px;animation:appear 1s ease both}
 
-.episode{
-    display:flex;gap:22px;padding:18px;
-    border:1px solid transparent;border-radius:10px;
-    align-items:center;cursor:pointer;
-    transition:transform .35s ease,background .35s ease,
-    border-color .35s ease,box-shadow .35s ease;
-    animation:slideUp .7s ease;
-    position:relative
-}
-.episode:hover{
-    transform:scale(1.025);
-    background:#191919;
-    border-color:#333;
-    box-shadow:0 12px 35px #0009
-}
-.episode img{
-    width:230px;aspect-ratio:16/9;
-    object-fit:cover;border-radius:7px;
-    background:#222;transition:transform .4s,filter .4s
-}
-.episode:hover img{
-    transform:scale(1.04);
-    filter:brightness(.65)
-}
-.number{font-size:24px;color:#777}
-.info{flex:1}
-.info h3{margin:0 0 10px;font-size:19px}
-.info p{color:#aaa;line-height:1.5;margin:0}
-
-.watch{
-    display:inline-block;color:white;background:#e50914;
-    text-decoration:none;margin-top:12px;font-weight:bold;
-    padding:10px 17px;border-radius:5px;transition:.3s
-}
-.watch:hover{background:#ff2631;transform:scale(1.05)}
-
-.episode::after{
-    content:"▶";position:absolute;
-    left:133px;top:50%;transform:translate(-50%,-50%) scale(.7);
-    font-size:35px;color:white;opacity:0;
-    transition:.3s;pointer-events:none
-}
-.episode:hover::after{
-    opacity:1;transform:translate(-50%,-50%) scale(1)
-}
-
-@keyframes heroAppear{
-    from{opacity:0}
-    to{opacity:1}
-}
-@keyframes slideUp{
+@keyframes appear{
     from{opacity:0;transform:translateY(25px)}
     to{opacity:1;transform:translateY(0)}
 }
 
+.tag{
+    color:#e50914;letter-spacing:4px;
+    font-weight:bold;font-size:13px
+}
+
+.hero h1{
+    font-size:clamp(40px,7vw,70px);
+    margin:15px 0;font-weight:900;
+    text-shadow:0 4px 20px #000
+}
+
+.metadata{color:#ddd;margin:18px 0;font-size:15px}
+
+.description{color:#eee;line-height:1.8;font-size:16px}
+
+.play{
+    display:inline-flex;align-items:center;gap:10px;
+    background:white;color:black;padding:14px 25px;
+    border-radius:5px;text-decoration:none;
+    margin-top:18px;font-weight:bold;transition:.25s
+}
+.play:hover{background:#ddd;transform:scale(1.06)}
+
+/* CONȚINUT */
+
+.content{
+    max-width:1500px;margin:auto;padding:35px 5%
+}
+h2{font-size:27px;margin-bottom:22px}
+.section{margin-bottom:55px}
+.about-text{
+    color:#bbb;line-height:1.9;
+    font-size:15px;max-width:1100px
+}
+
+/* INFORMAȚII */
+
+.details{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;margin:25px 0 45px
+}
+.details p{color:#bbb;line-height:1.7;margin-bottom:0}
+.details strong{
+    color:#888;font-size:12px;letter-spacing:1px
+}
+
+/* CARUSEL */
+
+.season-heading{
+    display:flex;justify-content:space-between;
+    align-items:center;margin-bottom:12px
+}
+.season-title{font-size:23px;margin:0}
+
+.carousel-controls{display:flex;gap:10px}
+
+.carousel-btn{
+    width:40px;height:40px;border:1px solid #555;
+    border-radius:50%;background:#222;color:white;
+    font-size:23px;cursor:pointer;transition:.2s
+}
+.carousel-btn:hover{
+    background:#e50914;border-color:#e50914
+}
+
+.episode-carousel{
+    display:flex;gap:20px;overflow-x:auto;
+    overflow-y:hidden;padding:20px 5px 35px;
+    scroll-behavior:smooth;scrollbar-width:none
+}
+.episode-carousel::-webkit-scrollbar{display:none}
+
+.episode{
+    flex:0 0 310px;color:white;text-decoration:none;
+    min-width:0;transition:transform .3s ease
+}
+.episode:hover{transform:scale(1.045);z-index:2}
+
+.thumbnail{
+    width:100%;aspect-ratio:16/9;
+    position:relative;overflow:hidden;border-radius:5px;
+    background:linear-gradient(135deg,#39204c,#151515);
+    box-shadow:0 5px 20px rgba(0,0,0,.5)
+}
+.thumbnail img{
+    width:100%;height:100%;object-fit:cover;
+    display:block;transition:transform .6s ease
+}
+.episode:hover .thumbnail img{transform:scale(1.12)}
+
+.thumbnail::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,.65),transparent 65%);
+    pointer-events:none
+}
+
+.episode-number{
+    position:absolute;z-index:3;top:12px;left:13px;
+    background:#e50914;padding:6px 10px;
+    border-radius:4px;font-size:12px;font-weight:bold
+}
+
+.play-circle{
+    position:absolute;z-index:3;top:50%;left:50%;
+    transform:translate(-50%,-50%) scale(.7);
+    width:58px;height:58px;display:flex;
+    justify-content:center;align-items:center;
+    background:rgba(255,255,255,.95);color:#111;
+    border-radius:50%;font-size:22px;
+    opacity:0;transition:.3s
+}
+.episode:hover .play-circle{
+    opacity:1;transform:translate(-50%,-50%) scale(1)
+}
+
+.episode-info{padding:13px 2px}
+.episode-info h3{font-size:18px;margin:0 0 9px}
+.episode-info p{
+    color:#aaa;font-size:13px;
+    line-height:1.6;margin:0
+}
+.duration{
+    color:#e50914;font-size:12px;
+    margin-top:12px;font-weight:bold
+}
+.episode-progress{
+    height:3px;background:#444;margin-top:13px
+}
+.episode-progress span{
+    display:block;height:100%;width:0;
+    background:#e50914;transition:width .5s
+}
+.episode:hover .episode-progress span{width:100%}
+
+/* PERSONAJE */
+
+.character-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;margin-top:25px
+}
+.character{
+    background:linear-gradient(110deg,#202020,#141414);
+    border-left:3px solid #e50914;padding:18px;
+    transition:.3s
+}
+.character:hover{transform:translateY(-5px);background:#292929}
+.character span{
+    color:#e50914;font-size:12px;
+    font-weight:bold;letter-spacing:2px
+}
+.character h3{font-size:17px;margin-bottom:0}
+
+/* FOOTER */
+
+footer{
+    text-align:center;padding:35px;color:#777;
+    margin-top:60px;border-top:1px solid #292929
+}
+
 @media(max-width:650px){
-    .hero{min-height:430px;padding:45px 6%}
-    .description{font-size:14px}
-    .episode{gap:12px;padding:12px}
-    .episode img{width:125px}
-    .number{display:none}
-    .info h3{font-size:15px}
-    .info p{font-size:12px}
-    .watch{font-size:12px;padding:8px 10px}
-    .episode::after{left:74px;font-size:25px}
+    .hero{
+        min-height:480px;padding:110px 7% 70px;
+        background-position:60% center
+    }
+    .hero h1{font-size:40px}
+    .hero .description{font-size:14px}
+    .content{padding:25px 17px}
+    .episode{flex-basis:260px}
+    .season-title{font-size:19px}
+    .carousel-btn{width:34px;height:34px}
+    .about-text{font-size:14px}
+}
+
+@media(hover:none){
+    .play-circle{
+        opacity:1;
+        transform:translate(-50%,-50%) scale(.85)
+    }
 }
 </style>
 </head>
@@ -120,45 +229,240 @@ main{padding:35px 6% 70px}
 <body>
 
 <header>
-<a class="logo" href="../../index.html">DeseneAnimate+</a>
-<a class="back" href="../../index.html">← Acasă</a>
+    <a href="../../index.html">DeseneAnimate+</a>
 </header>
 
 <section class="hero">
-<div class="hero-content">
-<h1>Scooby-Doo, Where Are You!</h1>
-<div class="meta">1969 • Animație • Mister • Aventură</div>
+    <div class="hero-content">
 
-<p class="description">
-Patru prieteni și un câine mare, dar ușor sperios, călătoresc prin locuri misterioase și ajung mereu în mijlocul unor întâmplări neobișnuite. Fred, Daphne, Velma, Shaggy și Scooby formează Mystery Inc., o echipă care investighează aparițiile unor monștri și fantome aparent înfricoșătoare. Cu mult curaj, istețime și câteva gustări pentru Scooby, grupul încearcă să descopere adevărul din spatele fiecărui mister.
-</p>
+        <div class="tag">SERIAL DE ANIMAȚIE</div>
 
-<a class="play" href="sezon1/episod1.html">▶ Vezi primul episod</a>
-</div>
+        <h1>Scooby-Doo, Where Are You!</h1>
+
+        <div class="metadata">
+            Serial · Animație · Mister · Aventură · 1969
+        </div>
+
+        <p class="description">
+            Patru prieteni și un câine mare, dar ușor sperios,
+            călătoresc prin locuri misterioase și ajung mereu
+            în mijlocul unor întâmplări neobișnuite. Fred,
+            Daphne, Velma, Shaggy și Scooby formează Mystery Inc.,
+            o echipă care investighează aparițiile unor monștri
+            și fantome aparent înfricoșătoare.
+        </p>
+
+        <a href="sezon1/episod1.html" class="play">
+            ▶ Primul episod
+        </a>
+
+    </div>
 </section>
 
-<main>
-<h2 class="season">Sezonul 1</h2>
+<main class="content">
 
-<a class="episode" href="sezon1/episod1.html" style="color:inherit;text-decoration:none">
+<section class="section">
 
-<span class="number">1</span>
+    <h2>Despre serial</h2>
 
-<img src="../../postere/episoade/scooby-ep1.jpg" alt="Episodul 1">
+    <p class="about-text">
+        Scooby-Doo, Where Are You! este un serial american de
+        animație lansat în 1969. Povestea urmărește aventurile
+        grupului Mystery Inc., format din Fred, Daphne, Velma,
+        Shaggy și câinele lor vorbitor, Scooby-Doo.
+        Împreună, prietenii călătoresc prin diferite locuri
+        și investighează mistere care par să implice fantome,
+        monștri și creaturi neobișnuite.
+    </p>
 
-<div class="info">
-<h3>1. Noaptea unui cavaler</h3>
+    <p class="about-text">
+        Cu ajutorul indiciilor, al spiritului de observație
+        și al lucrului în echipă, grupul încearcă să descopere
+        adevărul din spatele fiecărui mister. Iar când lucrurile
+        devin prea înfricoșătoare, Shaggy și Scooby găsesc
+        întotdeauna timp pentru ceva de mâncare!
+    </p>
 
-<p>
-O plimbare aparent obișnuită se transformă într-o aventură misterioasă pentru gașca Mystery Inc. Când întâlnesc un cavaler în armură care pare să fi prins viață, Fred, Daphne, Velma, Shaggy și Scooby pornesc pe urmele indiciilor. Între momente tensionate, urmăriri neașteptate și reacțiile amuzante ale lui Scooby și Shaggy, prietenii încearcă să afle cine se ascunde în spatele misteriosului personaj.
-</p>
+    <div class="details">
 
-<span class="watch">▶ Urmărește episodul</span>
-</div>
+        <div>
+            <strong>TITLU ORIGINAL</strong>
+            <p>Scooby-Doo, Where Are You!</p>
+        </div>
 
-</a>
+        <div>
+            <strong>PREMIERĂ</strong>
+            <p>1969</p>
+        </div>
+
+        <div>
+            <strong>GEN</strong>
+            <p>Animație, mister, comedie, aventură</p>
+        </div>
+
+        <div>
+            <strong>CREATORI</strong>
+            <p>Joe Ruby și Ken Spears</p>
+        </div>
+
+        <div>
+            <strong>PRODUCȚIE</strong>
+            <p>Hanna-Barbera</p>
+        </div>
+
+        <div>
+            <strong>PERSONAJE PRINCIPALE</strong>
+            <p>Scooby-Doo și Mystery Inc.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EPISOADE -->
+
+<section class="section">
+
+    <div class="season-heading">
+
+        <h2 class="season-title">Sezonul 1 · Episoade</h2>
+
+        <div class="carousel-controls">
+
+            <button class="carousel-btn"
+                onclick="moveCarousel(-1)"
+                aria-label="Episoade anterioare">‹</button>
+
+            <button class="carousel-btn"
+                onclick="moveCarousel(1)"
+                aria-label="Episoade următoare">›</button>
+
+        </div>
+
+    </div>
+
+    <div class="episode-carousel" id="episodeCarousel">
+
+        <a href="sezon1/episod1.html" class="episode">
+
+            <div class="thumbnail">
+
+                <img src="../../postere/episoade/scooby-ep1.jpg"
+                     alt="Scooby-Doo episodul 1">
+
+                <div class="episode-number">EP. 01</div>
+
+                <div class="play-circle">▶</div>
+
+            </div>
+
+            <div class="episode-info">
+
+                <h3>What a Night for a Knight</h3>
+
+                <p>
+                    O plimbare aparent obișnuită se transformă
+                    într-o aventură misterioasă. Când întâlnesc
+                    un cavaler în armură care pare să fi prins
+                    viață, prietenii pornesc pe urmele indiciilor
+                    pentru a descoperi adevărul.
+                </p>
+
+                <div class="duration">
+                    Sezonul 1 · Episodul 1
+                </div>
+
+                <div class="episode-progress">
+                    <span></span>
+                </div>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- PERSONAJE -->
+
+<section class="section">
+
+    <h2>Personajele principale</h2>
+
+    <p class="about-text">
+        Echipa Mystery Inc. este formată din cinci prieteni
+        care rezolvă împreună mistere și descoperă cine se
+        ascunde în spatele aparițiilor misterioase.
+    </p>
+
+    <div class="character-grid">
+
+        <div class="character">
+            <span>PERSONAJ</span>
+            <h3>🐶 Scooby-Doo</h3>
+        </div>
+
+        <div class="character">
+            <span>PERSONAJ</span>
+            <h3>Shaggy Rogers</h3>
+        </div>
+
+        <div class="character">
+            <span>PERSONAJ</span>
+            <h3>Fred Jones</h3>
+        </div>
+
+        <div class="character">
+            <span>PERSONAJ</span>
+            <h3>Daphne Blake</h3>
+        </div>
+
+        <div class="character">
+            <span>PERSONAJ</span>
+            <h3>Velma Dinkley</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- UNIVERSUL SERIALULUI -->
+
+<section class="section">
+
+    <h2>Misterele Mystery Inc.</h2>
+
+    <p class="about-text">
+        Fiecare aventură îi poartă pe Scooby și prietenii săi
+        într-un loc nou, unde îi așteaptă indicii, personaje
+        misterioase și situații neașteptate. Deși uneori
+        par înfricoșătoare, misterele au de obicei o explicație
+        care poate fi descoperită prin atenție și colaborare.
+    </p>
+
+</section>
 
 </main>
+
+<footer>
+    DeseneAnimate+ © 2026
+    <br>
+    <span style="font-size:12px;">
+        Pagină dedicată universului Scooby-Doo
+    </span>
+</footer>
+
+<script>
+function moveCarousel(direction){
+    const carousel=document.getElementById("episodeCarousel");
+
+    carousel.scrollBy({
+        left:direction*330,
+        behavior:"smooth"
+    });
+}
+</script>
 
 </body>
 </html>
