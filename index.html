@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -33,7 +34,6 @@ nav a:hover{color:#c88aff}
     linear-gradient(90deg,#08080d 5%,rgba(8,8,13,.85) 45%,rgba(8,8,13,.15)),
     linear-gradient(0deg,#08080d,transparent 45%),
     url("postere/hotel3.jpg") center 30%/cover no-repeat;
-    transition:background-image .4s ease
 }
 .hero-content{max-width:600px}
 .label{color:#c88aff;font-weight:bold;letter-spacing:3px;font-size:13px}
@@ -195,12 +195,15 @@ footer{
 
     <div class="movie-grid" id="film-grid">
 
-      <a href="filme/toy-story-1995.html" class="movie-card">
-     <img src="postere/toystory1.jpg" alt="Toy Story (1995)">
-      <h3>Toy Story</h3>
-      <span>1995</span>
-  </a>
-        
+        <a href="filme/toy-story-1995.html" class="movie-card"
+           data-category="animatie aventura">
+            <div class="poster">
+                <img src="postere/toystory1.jpg" alt="Toy Story">
+            </div>
+            <h3>Toy Story</h3>
+            <p>1995 · Animație · Aventură</p>
+        </a>
+
         <a href="compania-monstrilor.html" class="movie-card" data-category="animatie comedie aventura">
             <div class="poster"><img src="postere/compania-monstrilor.jpg" alt="Compania Monștrilor"></div>
             <h3>Compania Monștrilor</h3>
@@ -293,6 +296,10 @@ footer{
 <section class="section" id="top-desen">
     <h2>⭐ Recomandări populare</h2>
     <div class="movie-grid">
+        <a href="filme/toy-story-1995.html" class="movie-card">
+            <div class="poster"><img src="postere/toystory1.jpg" alt="Toy Story"></div>
+            <h3>Toy Story</h3><p>Recomandare · 1995</p>
+        </a>
         <a href="hotel3.html" class="movie-card">
             <div class="poster"><img src="postere/hotel3.jpg" alt="Hotel Transylvania 3"></div>
             <h3>Hotel Transylvania 3</h3><p>Recomandare · 2018</p>
@@ -316,7 +323,7 @@ footer{
             <h3>Trick or Treat Scooby-Doo!</h3><p>2022 · Animație · Mister</p>
         </a>
         <a href="hotel.html" class="movie-card">
-            <div class="poster"><img src="postere/hotel.jpg" alt="Hotel Transylvania: Transformania"></div>
+            <div class="poster"><img src="postere/hotel.jpg" alt="Hotel Transylvania 4"></div>
             <h3>Hotel Transylvania 4</h3><p>2022 · Animație · Comedie</p>
         </a>
         <a href="misterul-mumiei.html" class="movie-card">
@@ -345,6 +352,13 @@ footer{
 <script>
 const recommendations = [
     {
+        title:"Toy Story",
+        details:"1995 · Animație · Aventură",
+        description:"Woody și Buzz Lightyear pornesc într-o aventură neașteptată, într-o lume în care jucăriile prind viață.",
+        image:"postere/toystory1.jpg",
+        link:"filme/toy-story-1995.html"
+    },
+    {
         title:"Compania Monștrilor",
         details:"2001 · Animație · Comedie · Aventură",
         description:"Sulley și Mike Wazowski lucrează la Compania Monștrilor. Viața lor se schimbă când o fetiță pe nume Boo ajunge în lumea monștrilor.",
@@ -354,7 +368,7 @@ const recommendations = [
     {
         title:"Hotel Transylvania 3",
         details:"2018 · Animație · Comedie · Aventură",
-        description:"Dracula și prietenii săi pleacă într-o vacanță de neuitat pe un vas de croazieră. Distracția începe, dar lucrurile iau o întorsătură neașteptată!",
+        description:"Dracula și prietenii săi pleacă într-o vacanță de neuitat pe un vas de croazieră.",
         image:"postere/hotel3.jpg",link:"hotel3.html"
     },
     {
@@ -466,3 +480,4 @@ filterButtons.forEach(button=>{
 
 </body>
 </html>
+```
