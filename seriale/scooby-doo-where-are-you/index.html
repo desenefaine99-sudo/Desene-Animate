@@ -321,68 +321,233 @@ footer{
 
 <!-- EPISOADE -->
 
-<section class="section">
+```html
+<section class="episodes-section" id="episoade">
+    <h2>Episoade · Sezonul 1</h2>
 
-    <div class="season-heading">
+    <div class="episode-carousel">
 
-        <h2 class="season-title">Sezonul 1 · Episoade</h2>
+        <button class="carousel-btn prev" onclick="moveEpisodes(-1)">❮</button>
 
-        <div class="carousel-controls">
+        <div class="episode-track" id="episodeTrack">
 
-            <button class="carousel-btn"
-                onclick="moveCarousel(-1)"
-                aria-label="Episoade anterioare">‹</button>
+            <!-- EPISODUL 1 -->
+            <a href="sezon1/episod1.html" class="episode-card">
+                <div class="episode-image">
+                    <img src="../../postere/episoade/scooby-ep1.jpg" alt="Episodul 1">
+                    <div class="play-circle">▶</div>
+                    <span class="episode-number">1</span>
+                </div>
+                <h3>Noaptea unui Cavaler</h3>
+                <p>Episodul 1</p>
+            </a>
 
-            <button class="carousel-btn"
-                onclick="moveCarousel(1)"
-                aria-label="Episoade următoare">›</button>
+            <!-- EPISODUL 2 -->
+            <a href="sezon1/episod2.html" class="episode-card">
+                <div class="episode-image">
+                    <img src="../../postere/episoade/scooby-ep2.jpg" alt="Episodul 2">
+                    <div class="play-circle">▶</div>
+                    <span class="episode-number">2</span>
+                </div>
+                <h3>Un indiciu pentru Scooby-Doo</h3>
+                <p>Episodul 2</p>
+            </a>
+
+            <!-- EPISODUL 3 -->
+            <a href="sezon1/episod3.html" class="episode-card">
+                <div class="episode-image">
+                    <img src="../../postere/episoade/scooby-ep3.jpg" alt="Episodul 3">
+                    <div class="play-circle">▶</div>
+                    <span class="episode-number">3</span>
+                </div>
+                <h3>Haos la Castel</h3>
+                <p>Episodul 3</p>
+            </a>
+
+            <!-- EPISODUL 4 -->
+            <a href="sezon1/episod4.html" class="episode-card">
+                <div class="episode-image">
+                    <img src="../../postere/episoade/scooby-ep4.jpg" alt="Episodul 4">
+                    <div class="play-circle">▶</div>
+                    <span class="episode-number">4</span>
+                </div>
+                <h3>Vezi-ți de treaba ta!</h3>
+                <p>Episodul 4</p>
+            </a>
+
+            <!-- EPISODUL 5 -->
+            <a href="sezon1/episod5.html" class="episode-card">
+                <div class="episode-image">
+                    <img src="../../postere/episoade/scooby-ep5.jpg" alt="Episodul 5">
+                    <div class="play-circle">▶</div>
+                    <span class="episode-number">5</span>
+                </div>
+                <h3>Momeală pentru un hoț de câini</h3>
+                <p>Episodul 5</p>
+            </a>
 
         </div>
 
-    </div>
-
-    <div class="episode-carousel" id="episodeCarousel">
-
-        <a href="sezon1/episod1.html" class="episode">
-
-            <div class="thumbnail">
-
-                <img src="../../postere/episoade/scooby-ep1.jpg"
-                     alt="Scooby-Doo episodul 1">
-
-                <div class="episode-number">EP. 01</div>
-
-                <div class="play-circle">▶</div>
-
-            </div>
-
-            <div class="episode-info">
-
-                <h3>What a Night for a Knight</h3>
-
-                <p>
-                    O plimbare aparent obișnuită se transformă
-                    într-o aventură misterioasă. Când întâlnesc
-                    un cavaler în armură care pare să fi prins
-                    viață, prietenii pornesc pe urmele indiciilor
-                    pentru a descoperi adevărul.
-                </p>
-
-                <div class="duration">
-                    Sezonul 1 · Episodul 1
-                </div>
-
-                <div class="episode-progress">
-                    <span></span>
-                </div>
-
-            </div>
-
-        </a>
+        <button class="carousel-btn next" onclick="moveEpisodes(1)">❯</button>
 
     </div>
-
 </section>
+
+<style>
+.episodes-section {
+    margin-top: 55px;
+}
+
+.episodes-section h2 {
+    font-size: 27px;
+    margin-bottom: 22px;
+}
+
+.episode-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.episode-track {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    width: 100%;
+    padding: 15px 5px;
+}
+
+.episode-track::-webkit-scrollbar {
+    display: none;
+}
+
+.episode-card {
+    flex: 0 0 310px;
+    color: white;
+    text-decoration: none;
+    transition: transform .3s ease;
+}
+
+.episode-card:hover {
+    transform: scale(1.045);
+}
+
+.episode-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 9px;
+    overflow: hidden;
+    background: #222;
+}
+
+.episode-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.episode-card:hover img {
+    transform: scale(1.12);
+}
+
+.play-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.7);
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #e50914;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    opacity: 0;
+    transition: .3s ease;
+}
+
+.episode-card:hover .play-circle {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.episode-number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #e50914;
+    padding: 6px 11px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.episode-card h3 {
+    font-size: 17px;
+    margin: 13px 0 5px;
+}
+
+.episode-card p {
+    color: #999;
+    font-size: 14px;
+    margin: 0;
+}
+
+.carousel-btn {
+    position: absolute;
+    z-index: 5;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(20,20,20,.9);
+    color: white;
+    font-size: 19px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.carousel-btn:hover {
+    background: #e50914;
+}
+
+.carousel-btn.prev {
+    left: -18px;
+}
+
+.carousel-btn.next {
+    right: -18px;
+}
+
+@media (max-width: 600px) {
+    .episode-card {
+        flex-basis: 260px;
+    }
+
+    .carousel-btn {
+        display: none;
+    }
+
+    .play-circle {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+</style>
+
+<script>
+function moveEpisodes(direction) {
+    document.getElementById("episodeTrack").scrollBy({
+        left: direction * 330,
+        behavior: "smooth"
+    });
+}
+</script>
 
 <!-- PERSONAJE -->
 
