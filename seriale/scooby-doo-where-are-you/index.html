@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -8,13 +7,9 @@
 <title>Scooby-Doo, Where Are You! | DeseneAnimate+</title>
 
 <style>
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
@@ -23,8 +18,6 @@ body {
     font-family: Arial, sans-serif;
     overflow-x: hidden;
 }
-
-/* HEADER */
 
 header {
     position: absolute;
@@ -44,8 +37,6 @@ header a {
     letter-spacing: -1px;
 }
 
-/* HERO */
-
 .hero {
     min-height: 590px;
     padding: 130px 7% 100px;
@@ -64,14 +55,8 @@ header a {
 }
 
 @keyframes appear {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .tag {
@@ -119,8 +104,6 @@ header a {
     transform: scale(1.06);
 }
 
-/* CONȚINUT */
-
 .content {
     max-width: 1500px;
     margin: auto;
@@ -132,9 +115,7 @@ h2 {
     margin-bottom: 22px;
 }
 
-.section {
-    margin-bottom: 55px;
-}
+.section { margin-bottom: 55px; }
 
 .about-text {
     color: #bbb;
@@ -142,8 +123,6 @@ h2 {
     font-size: 15px;
     max-width: 1100px;
 }
-
-/* INFORMAȚII */
 
 .details {
     display: grid;
@@ -164,11 +143,7 @@ h2 {
     letter-spacing: 1px;
 }
 
-/* EPISOADE VERTICAL - STIL NETFLIX */
-
-.episodes-section {
-    margin: 55px 0;
-}
+.episodes-section { margin: 55px 0; }
 
 .episodes-section h2 {
     font-size: 27px;
@@ -192,10 +167,7 @@ h2 {
     color: white;
     position: relative;
     overflow: hidden;
-    transition:
-        transform .3s ease,
-        background .3s ease,
-        box-shadow .3s ease;
+    transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
     animation: episodeFade .65s ease both;
 }
 
@@ -206,14 +178,8 @@ h2 {
 .episode-row:nth-child(5) { animation-delay: .5s; }
 
 @keyframes episodeFade {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .episode-row:hover {
@@ -231,13 +197,9 @@ h2 {
     transition: transform .4s ease;
 }
 
-.episode-row:hover img {
-    transform: scale(1.06);
-}
+.episode-row:hover img { transform: scale(1.06); }
 
-.episode-info {
-    flex: 1;
-}
+.episode-info { flex: 1; }
 
 .episode-info span {
     color: #e50914;
@@ -278,11 +240,7 @@ h2 {
     transform: scale(1);
 }
 
-.episode-row:active {
-    transform: scale(.97);
-}
-
-/* PERSONAJE */
+.episode-row:active { transform: scale(.97); }
 
 .character-grid {
     display: grid;
@@ -315,8 +273,6 @@ h2 {
     margin-bottom: 0;
 }
 
-/* FOOTER */
-
 footer {
     text-align: center;
     padding: 35px;
@@ -325,8 +281,6 @@ footer {
     border-top: 1px solid #292929;
 }
 
-/* TELEFON */
-
 @media(max-width:650px) {
     .hero {
         min-height: 480px;
@@ -334,42 +288,20 @@ footer {
         background-position: 60% center;
     }
 
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .hero .description {
-        font-size: 14px;
-    }
-
-    .content {
-        padding: 25px 17px;
-    }
-
-    .about-text {
-        font-size: 14px;
-    }
+    .hero h1 { font-size: 40px; }
+    .hero .description { font-size: 14px; }
+    .content { padding: 25px 17px; }
+    .about-text { font-size: 14px; }
 
     .episode-row {
         gap: 12px;
         padding: 10px;
     }
 
-    .episode-row img {
-        width: 125px;
-    }
-
-    .episode-info h3 {
-        font-size: 15px;
-    }
-
-    .episode-info p {
-        font-size: 12px;
-    }
-
-    .episode-play {
-        display: none;
-    }
+    .episode-row img { width: 125px; }
+    .episode-info h3 { font-size: 15px; }
+    .episode-info p { font-size: 12px; }
+    .episode-play { display: none; }
 }
 
 @media(hover:none) {
@@ -397,13 +329,9 @@ footer {
     <a href="../../index.html">DeseneAnimate+</a>
 </header>
 
-<!-- HERO -->
-
 <section class="hero">
     <div class="hero-content">
-
         <div class="tag">SERIAL DE ANIMAȚIE</div>
-
         <h1>Scooby-Doo, Where Are You!</h1>
 
         <div class="metadata">
@@ -422,16 +350,12 @@ footer {
         <a href="sezon1/episod1.html" class="play">
             ▶ Primul episod
         </a>
-
     </div>
 </section>
 
 <main class="content">
 
-<!-- DESPRE SERIAL -->
-
 <section class="section">
-
     <h2>Despre serial</h2>
 
     <p class="about-text">
@@ -453,169 +377,212 @@ footer {
     </p>
 
     <div class="details">
-
         <div>
             <strong>TITLU ORIGINAL</strong>
             <p>Scooby-Doo, Where Are You!</p>
         </div>
-
         <div>
             <strong>PREMIERĂ</strong>
             <p>1969</p>
         </div>
-
         <div>
             <strong>GEN</strong>
             <p>Animație, mister, comedie, aventură</p>
         </div>
-
         <div>
             <strong>CREATORI</strong>
             <p>Joe Ruby și Ken Spears</p>
         </div>
-
         <div>
             <strong>PRODUCȚIE</strong>
             <p>Hanna-Barbera</p>
         </div>
-
         <div>
             <strong>PERSONAJE PRINCIPALE</strong>
             <p>Scooby-Doo și Mystery Inc.</p>
         </div>
-
     </div>
-
 </section>
 
-<!-- EPISOADE -->
-
 <section class="episodes-section" id="episoade">
-
     <h2>Episoade · Sezonul 1</h2>
 
     <div class="episode-list">
 
         <a href="sezon1/episod1.html" class="episode-row">
             <img src="../../postere/episoade/scooby-ep1.jpg" alt="Episodul 1">
-
             <div class="episode-info">
                 <span>EPISODUL 1</span>
                 <h3>Noaptea unui Cavaler</h3>
                 <p>Gașca Mystery Inc. întâlnește un cavaler misterios care pare să fi prins viață.</p>
             </div>
-
             <div class="episode-play">▶</div>
         </a>
 
         <a href="sezon1/episod2.html" class="episode-row">
             <img src="../../postere/episoade/scooby-ep2.jpg" alt="Episodul 2">
-
             <div class="episode-info">
                 <span>EPISODUL 2</span>
                 <h3>Un indiciu pentru Scooby-Doo</h3>
                 <p>Scooby și prietenii săi pornesc pe urmele unui nou mister.</p>
             </div>
-
             <div class="episode-play">▶</div>
         </a>
 
         <a href="sezon1/episod3.html" class="episode-row">
             <img src="../../postere/episoade/scooby-ep3.jpg" alt="Episodul 3">
-
             <div class="episode-info">
                 <span>EPISODUL 3</span>
                 <h3>Haos la Castel</h3>
                 <p>O vizită la un castel misterios se transformă într-o aventură neașteptată.</p>
             </div>
-
             <div class="episode-play">▶</div>
         </a>
 
         <a href="sezon1/episod4.html" class="episode-row">
             <img src="../../postere/episoade/scooby-ep4.jpg" alt="Episodul 4">
-
             <div class="episode-info">
                 <span>EPISODUL 4</span>
                 <h3>Vezi-ți de treaba ta!</h3>
                 <p>Gașca descoperă noi indicii într-o aventură plină de surprize.</p>
             </div>
-
             <div class="episode-play">▶</div>
         </a>
 
         <a href="sezon1/episod5.html" class="episode-row">
             <img src="../../postere/episoade/scooby-ep5.jpg" alt="Episodul 5">
-
             <div class="episode-info">
                 <span>EPISODUL 5</span>
                 <h3>Momeală pentru un hoț de câini</h3>
                 <p>Mystery Inc. investighează dispariția unor câini și încearcă să rezolve misterul.</p>
             </div>
+            <div class="episode-play">▶</div>
+        </a>
 
-            ```html
-<a href="sezon1/episod6.html" class="episode-row">
-  <img src="../../postere/episoade/scooby-ep6.jpg" alt="Episodul 6">
-  <div class="episode-info">
-    <span>EPISODUL 6</span>
-    <h3>Ce se-ntâmplă aici?</h3>
-    <p>Scooby și gașca Mystery Inc. pornesc într-o nouă aventură misterioasă!</p>
-  </div>
-  <div class="episode-play">▶</div>
-</a>
+        <a href="sezon1/episod6.html" class="episode-row">
+            <img src="../../postere/episoade/scooby-ep6.jpg" alt="Episodul 6">
+            <div class="episode-info">
+                <span>EPISODUL 6</span>
+                <h3>Ce se-ntâmplă aici?</h3>
+                <p>Scooby și gașca Mystery Inc. pornesc într-o nouă aventură misterioasă!</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
 
-<a href="sezon1/episod7.html" class="episode-row">
-  <img src="../../postere/episoade/scooby-ep7.jpg" alt="Episodul 7">
-  <div class="episode-info">
-    <span>EPISODUL 7</span>
-    <h3>Nu te maimuțări!</h3>
-    <p>O nouă aventură îi pune pe Scooby și prietenii săi pe urmele unui mister.</p>
-  </div>
-  <div class="episode-play">▶</div>
-</a>
+        <a href="sezon1/episod7.html" class="episode-row">
+            <img src="../../postere/episoade/scooby-ep7.jpg" alt="Episodul 7">
+            <div class="episode-info">
+                <span>EPISODUL 7</span>
+                <h3>Nu te maimuțări!</h3>
+                <p>O nouă aventură îi pune pe Scooby și prietenii săi pe urmele unui mister.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
 
-<a href="sezon1/episod8.html" class="episode-row">
-  <img src="../../postere/episoade/scooby-ep8.jpg" alt="Episodul 8">
-  <div class="episode-info">
-    <span>EPISODUL 8</span>
-    <h3>Hărmălaie în parcul de distracții</h3>
-    <p>Scooby și gașca ajung într-un parc de distracții plin de surprize.</p>
-  </div>
-  <div class="episode-play">▶</div>
-</a>
+        <a href="sezon1/episod8.html" class="episode-row">
+            <img src="../../postere/episoade/scooby-ep8.jpg" alt="Episodul 8">
+            <div class="episode-info">
+                <span>EPISODUL 8</span>
+                <h3>Hărmălaie în parcul de distracții</h3>
+                <p>Scooby și gașca ajung într-un parc de distracții plin de surprize.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
 
-<a href="sezon1/episod9.html" class="episode-row">
-  <img src="../../postere/episoade/scooby-ep9.jpg" alt="Episodul 9">
-  <div class="episode-info">
-    <span>EPISODUL 9</span>
-    <h3>Culmea din culise</h3>
-    <p>În culisele unei noi aventuri, Mystery Inc. descoperă un mister neașteptat.</p>
-  </div>
-  <div class="episode-play">▶</div>
-</a>
+        <a href="sezon1/episod9.html" class="episode-row">
+            <img src="../../postere/episoade/scooby-ep9.jpg" alt="Episodul 9">
+            <div class="episode-info">
+                <span>EPISODUL 9</span>
+                <h3>Culmea din culise</h3>
+                <p>În culisele unei noi aventuri, Mystery Inc. descoperă un mister neașteptat.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
 
-<a href="sezon1/episod10.html" class="episode-row">
-  <img src="../../postere/episoade/scooby-ep10.jpg" alt="Episodul 10">
-  <div class="episode-info">
-    <span>EPISODUL 10</span>
-    <h3>Tămbălău în cortul circului</h3>
-    <p>Scooby și prietenii săi ajung la circ, unde îi așteaptă un nou mister.</p>
-  </div>
-  <div class="episode-play">▶</div>
-</a>
-```
+        <a href="sezon1/episod10.html" class="episode-row">
+            <img src="../../postere/episoade/scooby-ep10.jpg" alt="Episodul 10">
+            <div class="episode-info">
+                <span>EPISODUL 10</span>
+                <h3>Tămbălău în cortul circului</h3>
+                <p>Scooby și prietenii săi ajung la circ, unde îi așteaptă un nou mister.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
 
+        <a href="sezon1/ep11.html" class="episode-row">
+            <img src="../../postere/episoade/scooby-ep11.jpg" alt="Episodul 11">
+            <div class="episode-info">
+                <span>EPISODUL 11</span>
+                <h3>O gloată de fantome la galop</h3>
+                <p>La Castelul Franken, gașca întâlnește personaje înfricoșătoare: Dracula, monstrul lui Frankenstein și un vârcolac.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon1/ep12.html" class="episode-row">
+            <img src="../../postere/episoade/scooby-ep12.jpg" alt="Episodul 12">
+            <div class="episode-info">
+                <span>EPISODUL 12</span>
+                <h3>Scooby-Doo și mumia</h3>
+                <p>O mumie misterioasă apare la un muzeu și pare să caute o monedă antică aflată la Shaggy.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon1/ep13.html" class="episode-row">
+            <img src="../../postere/episoade/scooby-ep13.jpg" alt="Episodul 13">
+            <div class="episode-info">
+                <span>EPISODUL 13</span>
+                <h3>Care este vrăjitoarea?</h3>
+                <p>Rătăciți într-o mlaștină, prietenii întâlnesc un zombie și investighează legenda unei vrăjitoare.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon1/ep14.html" class="episode-row">
+            <img src="../../postere/episoade/scooby-ep14.jpg" alt="Episodul 14">
+            <div class="episode-info">
+                <span>EPISODUL 14</span>
+                <h3>Dispari, corabie fantomă!</h3>
+                <p>Fantoma piratului Redbeard atacă nave, iar Mystery Inc. urcă la bordul corabiei misterioase.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon1/ep15.html" class="episode-row">
+            <img src="../../postere/episoade/scooby-ep15.jpg" alt="Episodul 15">
+            <div class="episode-info">
+                <span>EPISODUL 15</span>
+                <h3>Fantoma din spațiu</h3>
+                <p>La un aeroport abandonat, gașca dă peste o creatură misterioasă care pare venită din spațiu.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon1/ep16.html" class="episode-row">
+            <img src="../../postere/episoade/scooby-ep16.jpg" alt="Episodul 16">
+            <div class="episode-info">
+                <span>EPISODUL 16</span>
+                <h3>O noapte de groază</h3>
+                <p>Shaggy trebuie să petreacă o noapte într-un conac bântuit pentru a primi o moștenire.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon1/ep17.html" class="episode-row">
+            <img src="../../postere/episoade/scooby-ep17.jpg" alt="Episodul 17">
+            <div class="episode-info">
+                <span>EPISODUL 17 · FINAL DE SEZON</span>
+                <h3>Fantoma Zăpezii</h3>
+                <p>Într-o excursie la schi, Scooby și prietenii săi investighează apariția misterioasei Fantome a Zăpezii.</p>
+            </div>
             <div class="episode-play">▶</div>
         </a>
 
     </div>
-
 </section>
 
-<!-- PERSONAJE -->
-
 <section class="section">
-
     <h2>Personajele principale</h2>
 
     <p class="about-text">
@@ -625,40 +592,30 @@ footer {
     </p>
 
     <div class="character-grid">
-
         <div class="character">
             <span>PERSONAJ</span>
             <h3>🐶 Scooby-Doo</h3>
         </div>
-
         <div class="character">
             <span>PERSONAJ</span>
             <h3>Shaggy Rogers</h3>
         </div>
-
         <div class="character">
             <span>PERSONAJ</span>
             <h3>Fred Jones</h3>
         </div>
-
         <div class="character">
             <span>PERSONAJ</span>
             <h3>Daphne Blake</h3>
         </div>
-
         <div class="character">
             <span>PERSONAJ</span>
             <h3>Velma Dinkley</h3>
         </div>
-
     </div>
-
 </section>
 
-<!-- UNIVERSUL SERIALULUI -->
-
 <section class="section">
-
     <h2>Misterele Mystery Inc.</h2>
 
     <p class="about-text">
@@ -668,7 +625,6 @@ footer {
         par înfricoșătoare, misterele au de obicei o explicație
         care poate fi descoperită prin atenție și colaborare.
     </p>
-
 </section>
 
 </main>
@@ -683,4 +639,3 @@ footer {
 
 </body>
 </html>
-```
