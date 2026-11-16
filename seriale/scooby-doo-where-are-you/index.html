@@ -478,7 +478,7 @@ footer {
 
 <section class="episodes-section" id="episoade">
 
-    <h2 id="episode-heading">Episoade</h2>
+    <h2 id="episode-heading">Episoade · Sezonul 1</h2>
 
     <div class="season-bar">
         <span class="season-label">Alege sezonul:</span>
@@ -486,8 +486,7 @@ footer {
         <div class="season-select">
             <select id="seasonSelect" aria-label="Alege sezonul">
                 <option value="1">Sezonul 1</option>
-                <option value="2" disabled>Sezonul 2 — În curând</option>
-                <option value="3" disabled>Sezonul 3 — În curând</option>
+                <option value="2">Sezonul 2</option>
             </select>
         </div>
 
@@ -730,9 +729,100 @@ footer {
 const seasonSelect = document.getElementById("seasonSelect");
 const episodeHeading = document.getElementById("episode-heading");
 const seasonNote = document.getElementById("seasonNote");
+const episodeList = document.getElementById("episodeList");
+
+// Păstrăm lista originală a sezonului 1 exact așa cum este.
+const season1Episodes = episodeList.innerHTML;
+
+const season2Episodes = `
+    <a href="sezon2/episod1.html" class="episode-row">
+        <img src="../../postere/episoade/scooby-s2-ep1.jpg" alt="Episodul 1">
+        <div class="episode-info">
+            <span>EPISODUL 1</span>
+            <h3>Nu te poți ascunde!</h3>
+            <p>Scooby și prietenii săi pornesc într-o nouă aventură plină de mistere și întâmplări neașteptate.</p>
+        </div>
+        <div class="episode-play">▶</div>
+    </a>
+
+    <a href="sezon2/episod2.html" class="episode-row">
+        <img src="../../postere/episoade/scooby-s2-ep2.jpg" alt="Episodul 2">
+        <div class="episode-info">
+            <span>EPISODUL 2</span>
+            <h3>Încurcături cu măști</h3>
+            <p>O nouă aventură îi pune pe Scooby și gașca pe urmele unui mister în care apar măști și personaje ciudate.</p>
+        </div>
+        <div class="episode-play">▶</div>
+    </a>
+
+    <a href="sezon2/episod3.html" class="episode-row">
+        <img src="../../postere/episoade/scooby-s2-ep3.jpg" alt="Episodul 3">
+        <div class="episode-info">
+            <span>EPISODUL 3</span>
+            <h3>Aoleu, monstrul!</h3>
+            <p>Gașca investighează apariția unui monstru misterios și încearcă să afle cine se ascunde în spatele lui.</p>
+        </div>
+        <div class="episode-play">▶</div>
+    </a>
+
+    <a href="sezon2/episod4.html" class="episode-row">
+        <img src="../../postere/episoade/scooby-s2-ep4.jpg" alt="Episodul 4">
+        <div class="episode-info">
+            <span>EPISODUL 4</span>
+            <h3>Scooby a-nghețat de frică</h3>
+            <p>O întâlnire neașteptată îi pune la încercare curajul lui Scooby și al prietenilor săi.</p>
+        </div>
+        <div class="episode-play">▶</div>
+    </a>
+
+    <a href="sezon2/episod5.html" class="episode-row">
+        <img src="../../postere/episoade/scooby-s2-ep5.jpg" alt="Episodul 5">
+        <div class="episode-info">
+            <span>EPISODUL 5</span>
+            <h3>Belelele în casa bântuită</h3>
+            <p>Scooby și gașca ajung într-o casă bântuită, unde încearcă să dezlege un nou mister.</p>
+        </div>
+        <div class="episode-play">▶</div>
+    </a>
+
+    <a href="sezon2/episod6.html" class="episode-row">
+        <img src="../../postere/episoade/scooby-s2-ep6.jpg" alt="Episodul 6">
+        <div class="episode-info">
+            <span>EPISODUL 6</span>
+            <h3>O sperietură în Hawaii</h3>
+            <p>O excursie în Hawaii se transformă într-o aventură misterioasă pentru Mystery Inc.</p>
+        </div>
+        <div class="episode-play">▶</div>
+    </a>
+
+    <a href="sezon2/episod7.html" class="episode-row">
+        <img src="../../postere/episoade/scooby-s2-ep7.jpg" alt="Episodul 7">
+        <div class="episode-info">
+            <span>EPISODUL 7</span>
+            <h3>Cui îi e frică de vârcolacul cel rău?</h3>
+            <p>Un vârcolac misterios îi determină pe Scooby și prietenii săi să înceapă o nouă investigație.</p>
+        </div>
+        <div class="episode-play">▶</div>
+    </a>
+
+    <a href="sezon2/episod8.html" class="episode-row">
+        <img src="../../postere/episoade/scooby-s2-ep8.jpg" alt="Episodul 8">
+        <div class="episode-info">
+            <span>EPISODUL 8</span>
+            <h3>Nu te juca cu o fantomă!</h3>
+            <p>O apariție misterioasă le dă planurile peste cap, iar prietenii încearcă să afle adevărul.</p>
+        </div>
+        <div class="episode-play">▶</div>
+    </a>
+`;
 
 seasonSelect.addEventListener("change", function () {
-    if (this.value === "1") {
+    if (this.value === "2") {
+        episodeList.innerHTML = season2Episodes;
+        episodeHeading.textContent = "Episoade · Sezonul 2";
+        seasonNote.textContent = "8 episoade disponibile";
+    } else {
+        episodeList.innerHTML = season1Episodes;
         episodeHeading.textContent = "Episoade · Sezonul 1";
         seasonNote.textContent = "17 episoade disponibile";
     }
