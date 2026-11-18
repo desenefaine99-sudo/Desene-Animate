@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
 <title>Ben 10 Classic – DeseneAnimate+</title>
 
 <style>
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
@@ -99,13 +98,20 @@ main {
 
 .episode-poster {
     height: 135px;
+    overflow: hidden;
     background: linear-gradient(135deg, #263d12, #101010);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #8bc34a;
-    font-size: 42px;
-    font-weight: bold;
+}
+
+.episode-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .3s;
+}
+
+.episode:hover .episode-poster img {
+    transform: scale(1.06);
 }
 
 .episode-info {
@@ -157,6 +163,13 @@ footer {
         font-size: 14px;
     }
 }
+
+@media(prefers-reduced-motion:reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
 </style>
 </head>
 
@@ -186,7 +199,9 @@ footer {
     <div class="episodes">
 
         <a class="episode" href="sezon1/episod1.html">
-            <div class="episode-poster">01</div>
+            <div class="episode-poster">
+                <img src="../../postere/episoade/ben10-ep1.jpg" alt="Ben 10 - Episodul 1">
+            </div>
             <div class="episode-info">
                 <span>EPISODUL 1</span>
                 <h3>Și apoi au fost 10</h3>
@@ -194,7 +209,9 @@ footer {
         </a>
 
         <a class="episode" href="sezon1/episod2.html">
-            <div class="episode-poster">02</div>
+            <div class="episode-poster">
+                <img src="../../postere/episoade/ben10-ep2.jpg" alt="Ben 10 - Episodul 2">
+            </div>
             <div class="episode-info">
                 <span>EPISODUL 2</span>
                 <h3>Washington Preistoric</h3>
@@ -202,7 +219,9 @@ footer {
         </a>
 
         <a class="episode" href="sezon1/episod3.html">
-            <div class="episode-poster">03</div>
+            <div class="episode-poster">
+                <img src="../../postere/episoade/ben10-ep3.jpg" alt="Ben 10 - Episodul 3">
+            </div>
             <div class="episode-info">
                 <span>EPISODUL 3</span>
                 <h3>Kraken</h3>
@@ -210,7 +229,9 @@ footer {
         </a>
 
         <a class="episode" href="sezon1/episod4.html">
-            <div class="episode-poster">04</div>
+            <div class="episode-poster">
+                <img src="../../postere/episoade/ben10-ep4.jpg" alt="Ben 10 - Episodul 4">
+            </div>
             <div class="episode-info">
                 <span>EPISODUL 4</span>
                 <h3>Pensionare permanentă</h3>
@@ -218,7 +239,9 @@ footer {
         </a>
 
         <a class="episode" href="sezon1/episod5.html">
-            <div class="episode-poster">05</div>
+            <div class="episode-poster">
+                <img src="../../postere/episoade/ben10-ep5.jpg" alt="Ben 10 - Episodul 5">
+            </div>
             <div class="episode-info">
                 <span>EPISODUL 5</span>
                 <h3>Vânătoarea</h3>
@@ -226,7 +249,9 @@ footer {
         </a>
 
         <a class="episode" href="sezon1/episod6.html">
-            <div class="episode-poster">06</div>
+            <div class="episode-poster">
+                <img src="../../postere/episoade/ben10-ep6.jpg" alt="Ben 10 - Episodul 6">
+            </div>
             <div class="episode-info">
                 <span>EPISODUL 6</span>
                 <h3>Capcana turistică</h3>
@@ -234,7 +259,9 @@ footer {
         </a>
 
         <a class="episode" href="sezon1/episod7.html">
-            <div class="episode-poster">07</div>
+            <div class="episode-poster">
+                <img src="../../postere/episoade/ben10-ep7.jpg" alt="Ben 10 - Episodul 7">
+            </div>
             <div class="episode-info">
                 <span>EPISODUL 7</span>
                 <h3>Kevin 11</h3>
@@ -242,7 +269,9 @@ footer {
         </a>
 
         <a class="episode" href="sezon1/episod8.html">
-            <div class="episode-poster">08</div>
+            <div class="episode-poster">
+                <img src="../../postere/episoade/ben10-ep8.jpg" alt="Ben 10 - Episodul 8">
+            </div>
             <div class="episode-info">
                 <span>EPISODUL 8</span>
                 <h3>Alianța</h3>
@@ -250,7 +279,9 @@ footer {
         </a>
 
         <a class="episode" href="sezon1/episod9.html">
-            <div class="episode-poster">09</div>
+            <div class="episode-poster">
+                <img src="../../postere/episoade/ben10-ep9.jpg" alt="Ben 10 - Episodul 9">
+            </div>
             <div class="episode-info">
                 <span>EPISODUL 9</span>
                 <h3>Cine râde la urmă</h3>
@@ -258,7 +289,9 @@ footer {
         </a>
 
         <a class="episode" href="sezon1/episod10.html">
-            <div class="episode-poster">10</div>
+            <div class="episode-poster">
+                <img src="../../postere/episoade/ben10-ep10.jpg" alt="Ben 10 - Episodul 10">
+            </div>
             <div class="episode-info">
                 <span>EPISODUL 10</span>
                 <h3>Norocoasa</h3>
@@ -266,7 +299,9 @@ footer {
         </a>
 
         <a class="episode" href="sezon1/episod11.html">
-            <div class="episode-poster">11</div>
+            <div class="episode-poster">
+                <img src="../../postere/episoade/ben10-ep11.jpg" alt="Ben 10 - Episodul 11">
+            </div>
             <div class="episode-info">
                 <span>EPISODUL 11</span>
                 <h3>O problemă minoră</h3>
@@ -274,7 +309,9 @@ footer {
         </a>
 
         <a class="episode" href="sezon1/episod12.html">
-            <div class="episode-poster">12</div>
+            <div class="episode-poster">
+                <img src="../../postere/episoade/ben10-ep12.jpg" alt="Ben 10 - Episodul 12">
+            </div>
             <div class="episode-info">
                 <span>EPISODUL 12</span>
                 <h3>Efecte secundare</h3>
@@ -282,7 +319,9 @@ footer {
         </a>
 
         <a class="episode" href="sezon1/episod13.html">
-            <div class="episode-poster">13</div>
+            <div class="episode-poster">
+                <img src="../../postere/episoade/ben10-ep13.jpg" alt="Ben 10 - Episodul 13">
+            </div>
             <div class="episode-info">
                 <span>EPISODUL 13</span>
                 <h3>Secrete</h3>
