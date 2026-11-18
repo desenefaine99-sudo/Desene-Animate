@@ -41,16 +41,17 @@ header a {
     letter-spacing: -1px;
 }
 
+/* BANNER PRINCIPAL - STIL NETFLIX */
 .hero {
-    min-height: 590px;
-    padding: 130px 7% 100px;
+    min-height: 650px;
+    padding: 150px 7% 100px;
     display: flex;
     align-items: center;
     position: relative;
     background:
-        linear-gradient(90deg, #101010 3%, rgba(16,16,16,.75) 45%, transparent),
-        linear-gradient(0deg, #101010, transparent 65%),
-        linear-gradient(120deg, #101010, #252525, #101010);
+        linear-gradient(90deg, #101010 0%, rgba(16,16,16,.85) 30%, rgba(16,16,16,.25) 75%, transparent 100%),
+        linear-gradient(0deg, #101010 0%, transparent 55%),
+        url("../../postere/ben10-classic.jpg") center 25% / cover no-repeat;
 }
 
 .hero-content {
@@ -307,9 +308,10 @@ footer {
     border-top: 1px solid #292929;
 }
 
+/* TELEFON */
 @media (max-width: 650px) {
     .hero {
-        min-height: 480px;
+        min-height: 540px;
         padding: 110px 7% 70px;
         background-position: 60% center;
     }
