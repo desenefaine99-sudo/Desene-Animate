@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ben 10 Classic – DeseneAnimate+</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #080808;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #111;
+    padding: 18px 6%;
+    border-bottom: 3px solid #8bc34a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.back-home {
+    color: #8bc34a;
+    font-size: 15px;
+}
+
+.hero {
+    padding: 65px 7%;
+    background: linear-gradient(90deg, #080808, #17200d);
+    border-bottom: 1px solid #252525;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin: 0 0 12px;
+}
+
+.hero p {
+    color: #ccc;
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+.info {
+    color: #8bc34a !important;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+main {
+    max-width: 1250px;
+    margin: auto;
+    padding: 35px 20px;
+}
+
+.section-title {
+    font-size: 25px;
+    margin-bottom: 22px;
+    border-left: 4px solid #8bc34a;
+    padding-left: 12px;
+}
+
+.episodes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 20px;
+}
+
+.episode {
+    display: block;
+    background: #151515;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    transition: transform .2s, background .2s;
+    border: 1px solid #252525;
+}
+
+.episode:hover {
+    transform: translateY(-5px);
+    background: #202020;
+    border-color: #8bc34a;
+}
+
+.episode-poster {
+    height: 135px;
+    background: linear-gradient(135deg, #263d12, #101010);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8bc34a;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.episode-info {
+    padding: 15px;
+}
+
+.episode-info span {
+    color: #8bc34a;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.episode-info h3 {
+    margin: 8px 0 0;
+    font-size: 17px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #777;
+    border-top: 1px solid #252525;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 40px 6%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .episodes {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .episode-poster {
+        height: 105px;
+    }
+
+    .episode-info {
+        padding: 11px;
+    }
+
+    .episode-info h3 {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="../../index.html">DeseneAnimate+</a>
+    <a class="back-home" href="../../index.html">← Acasă</a>
+</header>
+
+<section class="hero">
+    <p class="info">SERIAL ANIMAT · 2005 · ACȚIUNE · AVENTURĂ</p>
+    <h1>Ben 10 Classic</h1>
+    <p>
+        În timpul vacanței de vară, Ben Tennyson descoperă Omnitrixul,
+        un dispozitiv extraterestru care îi permite să se transforme
+        în diferite forme de viață extraterestre. Alături de Gwen și
+        bunicul Max, Ben pornește în aventuri extraordinare.
+    </p>
+    <p class="info">SEZONUL 1 · 13 EPISOADE</p>
+</section>
+
+<main>
+
+    <h2 class="section-title">Sezonul 1</h2>
+
+    <div class="episodes">
+
+        <a class="episode" href="sezon1/episod1.html">
+            <div class="episode-poster">01</div>
+            <div class="episode-info">
+                <span>EPISODUL 1</span>
+                <h3>Și apoi au fost 10</h3>
+            </div>
+        </a>
+
+        <a class="episode" href="sezon1/episod2.html">
+            <div class="episode-poster">02</div>
+            <div class="episode-info">
+                <span>EPISODUL 2</span>
+                <h3>Washington Preistoric</h3>
+            </div>
+        </a>
+
+        <a class="episode" href="sezon1/episod3.html">
+            <div class="episode-poster">03</div>
+            <div class="episode-info">
+                <span>EPISODUL 3</span>
+                <h3>Kraken</h3>
+            </div>
+        </a>
+
+        <a class="episode" href="sezon1/episod4.html">
+            <div class="episode-poster">04</div>
+            <div class="episode-info">
+                <span>EPISODUL 4</span>
+                <h3>Pensionare permanentă</h3>
+            </div>
+        </a>
+
+        <a class="episode" href="sezon1/episod5.html">
+            <div class="episode-poster">05</div>
+            <div class="episode-info">
+                <span>EPISODUL 5</span>
+                <h3>Vânătoarea</h3>
+            </div>
+        </a>
+
+        <a class="episode" href="sezon1/episod6.html">
+            <div class="episode-poster">06</div>
+            <div class="episode-info">
+                <span>EPISODUL 6</span>
+                <h3>Capcana turistică</h3>
+            </div>
+        </a>
+
+        <a class="episode" href="sezon1/episod7.html">
+            <div class="episode-poster">07</div>
+            <div class="episode-info">
+                <span>EPISODUL 7</span>
+                <h3>Kevin 11</h3>
+            </div>
+        </a>
+
+        <a class="episode" href="sezon1/episod8.html">
+            <div class="episode-poster">08</div>
+            <div class="episode-info">
+                <span>EPISODUL 8</span>
+                <h3>Alianța</h3>
+            </div>
+        </a>
+
+        <a class="episode" href="sezon1/episod9.html">
+            <div class="episode-poster">09</div>
+            <div class="episode-info">
+                <span>EPISODUL 9</span>
+                <h3>Cine râde la urmă</h3>
+            </div>
+        </a>
+
+        <a class="episode" href="sezon1/episod10.html">
+            <div class="episode-poster">10</div>
+            <div class="episode-info">
+                <span>EPISODUL 10</span>
+                <h3>Norocoasa</h3>
+            </div>
+        </a>
+
+        <a class="episode" href="sezon1/episod11.html">
+            <div class="episode-poster">11</div>
+            <div class="episode-info">
+                <span>EPISODUL 11</span>
+                <h3>O problemă minoră</h3>
+            </div>
+        </a>
+
+        <a class="episode" href="sezon1/episod12.html">
+            <div class="episode-poster">12</div>
+            <div class="episode-info">
+                <span>EPISODUL 12</span>
+                <h3>Efecte secundare</h3>
+            </div>
+        </a>
+
+        <a class="episode" href="sezon1/episod13.html">
+            <div class="episode-poster">13</div>
+            <div class="episode-info">
+                <span>EPISODUL 13</span>
+                <h3>Secrete</h3>
+            </div>
+        </a>
+
+    </div>
+
+</main>
+
+<footer>
+    DeseneAnimate+ · Ben 10 Classic
+</footer>
+
+</body>
+</html>
