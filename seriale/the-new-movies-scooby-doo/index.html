@@ -3,83 +3,313 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The New Movies Scooby-Doo | DeseneAnimate+</title>
+<meta name="theme-color" content="#101010">
+<title>The New Scooby-Doo Movies | DeseneAnimate+</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
- background:#101010;color:white;
- font-family:Arial,sans-serif;
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: #101010;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
-header{
- padding:20px 6%;
- background:#080808;
- display:flex;align-items:center;justify-content:space-between;
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 22px 5%;
+    z-index: 10;
+    background: linear-gradient(to bottom,#000,transparent);
 }
-.logo{color:#e50914;font-size:25px;font-weight:bold}
-header a{color:white;text-decoration:none}
-.hero{
- min-height:390px;
- padding:100px 7% 65px;
- background:linear-gradient(90deg,#000 10%,#0009 65%,#0005),
- linear-gradient(0deg,#101010,transparent),
- url("../../postere/the-new-movies-scooby-doo.jpg") center/cover;
- animation:fade .9s ease;
+
+header a {
+    color: #e50914;
+    font-size: 29px;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: -1px;
 }
-.hero h1{font-size:42px;margin-bottom:15px}
-.hero p{max-width:600px;line-height:1.6;color:#ddd}
-.badge{
- display:inline-block;background:#e50914;
- padding:6px 12px;border-radius:4px;
- margin-bottom:15px;font-size:13px;
+
+.hero {
+    min-height: 590px;
+    padding: 130px 7% 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background:
+        linear-gradient(90deg,#101010 3%,rgba(16,16,16,.75) 45%,transparent),
+        linear-gradient(0deg,#101010,transparent 65%),
+        url("../../postere/the-new-movies-scooby-doo.jpg") center 30%/cover no-repeat;
 }
-section{padding:30px 6%}
-h2{font-size:23px;margin-bottom:20px}
-.player{
- width:100%;aspect-ratio:16/9;
- background:#000;border-radius:12px;
- overflow:hidden;
- box-shadow:0 5px 25px #0009;
+
+.hero-content {
+    max-width: 650px;
+    animation: appear 1s ease both;
 }
-.player iframe{width:100%;height:100%;border:0}
-.episode-row{
- display:flex;gap:15px;overflow-x:auto;
- padding:5px 2px 20px;
- scroll-behavior:smooth;
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
 }
-.episode{
- flex:0 0 210px;
- background:#1b1b1b;border-radius:9px;
- overflow:hidden;transition:.3s;
- cursor:pointer;
+
+.tag {
+    color: #e50914;
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-size: 13px;
 }
-.episode:hover{transform:scale(1.05)}
-.episode img{
- width:100%;height:120px;object-fit:cover;
- background:#292929;
+
+.hero h1 {
+    font-size: clamp(40px,7vw,70px);
+    margin: 15px 0;
+    font-weight: 900;
+    text-shadow: 0 4px 20px #000;
 }
-.episode-info{padding:12px}
-.episode-info h3{font-size:15px;margin-bottom:7px}
-.episode-info p{font-size:12px;color:#aaa}
-.details{color:#bbb;line-height:1.8}
-footer{
- text-align:center;padding:30px;
- color:#777;background:#080808;margin-top:30px;
+
+.metadata {
+    color: #ddd;
+    margin: 18px 0;
+    font-size: 15px;
 }
-.reveal{opacity:0;transform:translateY(25px);transition:.7s}
-.reveal.show{opacity:1;transform:translateY(0)}
-@keyframes fade{
- from{opacity:0}to{opacity:1}
+
+.description {
+    color: #eee;
+    line-height: 1.8;
+    font-size: 16px;
 }
-@media(max-width:600px){
- .hero{padding:75px 6% 45px;min-height:330px}
- .hero h1{font-size:30px}
- .episode{flex-basis:170px}
- .episode img{height:100px}
+
+.play {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    color: black;
+    padding: 14px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 18px;
+    font-weight: bold;
+    transition: .25s;
 }
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{animation:none!important;transition:none!important}
- .reveal{opacity:1;transform:none}
+
+.play:hover {
+    background: #ddd;
+    transform: scale(1.06);
+}
+
+.content {
+    max-width: 1500px;
+    margin: auto;
+    padding: 35px 5%;
+}
+
+h2 {
+    font-size: 27px;
+    margin-bottom: 22px;
+}
+
+.section { margin-bottom: 55px; }
+
+.about-text {
+    color: #bbb;
+    line-height: 1.9;
+    font-size: 15px;
+    max-width: 1100px;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap: 25px;
+    margin: 25px 0 45px;
+}
+
+.details p {
+    color: #bbb;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.details strong {
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.episodes-section { margin: 55px 0; }
+
+.episodes-section h2 {
+    font-size: 27px;
+    margin-bottom: 25px;
+}
+
+.episode-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.episode-row {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 14px;
+    background: #181818;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+    animation: episodeFade .65s ease both;
+}
+
+@keyframes episodeFade {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.episode-row:hover {
+    background: #292929;
+    transform: scale(1.015);
+    box-shadow: 0 8px 25px rgba(0,0,0,.4);
+}
+
+.episode-row img {
+    width: 230px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 7px;
+    flex-shrink: 0;
+    transition: transform .4s ease;
+}
+
+.episode-row:hover img { transform: scale(1.06); }
+
+.episode-info { flex: 1; }
+
+.episode-info span {
+    color: #e50914;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.episode-info h3 {
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.episode-info p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.episode-play {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #e50914;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: scale(.6);
+    transition: .3s ease;
+}
+
+.episode-row:hover .episode-play {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.character {
+    background: linear-gradient(110deg,#202020,#141414);
+    border-left: 3px solid #e50914;
+    padding: 18px;
+    transition: .3s;
+}
+
+.character:hover {
+    transform: translateY(-5px);
+    background: #292929;
+}
+
+.character span {
+    color: #e50914;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.character h3 {
+    font-size: 17px;
+    margin-bottom: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 35px;
+    color: #777;
+    margin-top: 60px;
+    border-top: 1px solid #292929;
+}
+
+@media(max-width:650px) {
+    .hero {
+        min-height: 480px;
+        padding: 110px 7% 70px;
+        background-position: 60% center;
+    }
+
+    .hero h1 { font-size: 40px; }
+    .hero .description { font-size: 14px; }
+    .content { padding: 25px 17px; }
+    .about-text { font-size: 14px; }
+
+    .episode-row {
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .episode-row img { width: 125px; }
+    .episode-info h3 { font-size: 15px; }
+    .episode-info p { font-size: 12px; }
+    .episode-play { display: none; }
+}
+
+@media(hover:none) {
+    .episode-play {
+        opacity: 1;
+        transform: scale(.85);
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
 }
 </style>
 </head>
@@ -87,66 +317,182 @@ footer{
 <body>
 
 <header>
- <div class="logo">DeseneAnimate+</div>
- <a href="../../index.html">Acasă</a>
+    <a href="../../index.html">DeseneAnimate+</a>
 </header>
 
-<div class="hero">
- <span class="badge">SERIAL ANIMAT</span>
- <h1>The New Movies Scooby-Doo</h1>
- <p>Scooby-Doo și gașca lui se intalnesc cu CEI 3 NATANGI.</p>
-</div>
+<section class="hero">
+    <div class="hero-content">
 
-<section class="reveal">
- <h2>▶ Urmărește episodul</h2>
- <div class="player">
-  <iframe
-   src="https://filmedublate.net/embed/filmsrv.php?search=noile-filme-cu-scooby-doo-s01e01"
-   allowfullscreen>
-  </iframe>
- </div>
+        <div class="tag">SERIAL DE ANIMAȚIE</div>
+
+        <h1>The New Scooby-Doo Movies</h1>
+
+        <div class="metadata">
+            Serial · Animație · Mister · Comedie · 1972
+        </div>
+
+        <p class="description">
+            Scooby-Doo și gașca Mystery Inc. se întorc cu
+            aventuri noi și mistere neașteptate. De această
+            dată, prietenii întâlnesc personaje surprinzătoare
+            și pornesc în investigații pline de suspans,
+            umor și situații amuzante.
+        </p>
+
+        <a href="episod1.html" class="play">
+            ▶ Primul episod
+        </a>
+
+    </div>
 </section>
 
-<section class="reveal">
- <h2>Episoade</h2>
- <div class="episode-row">
+<main class="content">
 
-  <div class="episode">
-   <img src="../../postere/episoade/scooby-s1-e1.jpg" alt="Episodul 1">
-   <div class="episode-info">
-    <h3>Episodul 1</h3>
-    <p>O nouă aventură începe!</p>
-   </div>
-  </div>
+<section class="section">
 
- </div>
+    <h2>Despre serial</h2>
+
+    <p class="about-text">
+        The New Scooby-Doo Movies este un serial american
+        de animație în care Scooby-Doo, Shaggy, Fred,
+        Daphne și Velma pornesc în noi aventuri misterioase.
+        Echipa Mystery Inc. întâlnește personaje diferite
+        și ajunge în situații neobișnuite, încercând să
+        descopere adevărul din spatele fiecărui mister.
+    </p>
+
+    <p class="about-text">
+        Cu mult umor, indicii și momente neașteptate,
+        Scooby și prietenii săi încearcă să rezolve
+        fiecare caz. Iar pentru Scooby și Shaggy,
+        nicio aventură nu este completă fără ceva bun de mâncare!
+    </p>
+
+    <div class="details">
+
+        <div>
+            <strong>TITLU ORIGINAL</strong>
+            <p>The New Scooby-Doo Movies</p>
+        </div>
+
+        <div>
+            <strong>PREMIERĂ</strong>
+            <p>1972</p>
+        </div>
+
+        <div>
+            <strong>GEN</strong>
+            <p>Animație, mister, comedie, aventură</p>
+        </div>
+
+        <div>
+            <strong>PRODUCȚIE</strong>
+            <p>Hanna-Barbera</p>
+        </div>
+
+        <div>
+            <strong>PERSONAJE PRINCIPALE</strong>
+            <p>Scooby-Doo și Mystery Inc.</p>
+        </div>
+
+    </div>
+
 </section>
 
-<section class="reveal">
- <h2>Despre serial</h2>
- <p class="details">
-  Titlu: The New Movies Scooby-Doo<br>
-  Gen: Animație, Mister, Aventură<br>
-  Personaje: Scooby-Doo, Shaggy, Fred, Daphne și Velma
- </p>
+<section class="episodes-section" id="episoade">
+
+    <h2>Episoade · Sezonul 1</h2>
+
+    <div class="episode-list">
+
+        <a href="episod1.html" class="episode-row">
+
+            <img
+                src="../../postere/episoade/scooby-s1-e1.jpg"
+                alt="Episodul 1">
+
+            <div class="episode-info">
+                <span>EPISODUL 1</span>
+                <h3>Primul episod</h3>
+                <p>
+                    Scooby-Doo și prietenii săi pornesc
+                    într-o nouă aventură plină de mistere.
+                </p>
+            </div>
+
+            <div class="episode-play">▶</div>
+
+        </a>
+
+    </div>
+
 </section>
+
+<section class="section">
+
+    <h2>Personajele principale</h2>
+
+    <p class="about-text">
+        Gașca Mystery Inc. este pregătită să rezolve
+        noi mistere. Fiecare membru al echipei contribuie
+        la descoperirea adevărului.
+    </p>
+
+    <div class="character-grid">
+
+        <div class="character">
+            <span>PERSONAJ</span>
+            <h3>🐶 Scooby-Doo</h3>
+        </div>
+
+        <div class="character">
+            <span>PERSONAJ</span>
+            <h3>Shaggy Rogers</h3>
+        </div>
+
+        <div class="character">
+            <span>PERSONAJ</span>
+            <h3>Fred Jones</h3>
+        </div>
+
+        <div class="character">
+            <span>PERSONAJ</span>
+            <h3>Daphne Blake</h3>
+        </div>
+
+        <div class="character">
+            <span>PERSONAJ</span>
+            <h3>Velma Dinkley</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>Aventurile Mystery Inc.</h2>
+
+    <p class="about-text">
+        Fiecare aventură îi poartă pe Scooby și prietenii
+        săi într-un loc nou, unde îi așteaptă indicii,
+        personaje noi si interesante.
+        Cu ajutorul echipei, încearcă să afle cine se
+        ascunde în spatele întâmplărilor misterioase.
+        Aceasta serie este in colaborare cu mai multe universuri.
+    </p>
+
+</section>
+
+</main>
 
 <footer>
- © 2026 DeseneAnimate+ | Toate drepturile rezervate
+    DeseneAnimate+ © 2026
+    <br>
+    <span style="font-size:12px;">
+        Pagină dedicată universului Scooby-Doo
+    </span>
 </footer>
-
-<script>
-const observer=new IntersectionObserver(entries=>{
- entries.forEach(entry=>{
-  if(entry.isIntersecting){
-   entry.target.classList.add("show");
-   observer.unobserve(entry.target);
-  }
- });
-},{threshold:.12});
-
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
-</script>
 
 </body>
 </html>
