@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The New Movies Scooby-Doo | DeseneAnimate+</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ background:#101010;color:white;
+ font-family:Arial,sans-serif;
+}
+header{
+ padding:20px 6%;
+ background:#080808;
+ display:flex;align-items:center;justify-content:space-between;
+}
+.logo{color:#e50914;font-size:25px;font-weight:bold}
+header a{color:white;text-decoration:none}
+.hero{
+ min-height:390px;
+ padding:100px 7% 65px;
+ background:linear-gradient(90deg,#000 10%,#0009 65%,#0005),
+ linear-gradient(0deg,#101010,transparent),
+ url("../../postere/the-new-movies-scooby-doo.jpg") center/cover;
+ animation:fade .9s ease;
+}
+.hero h1{font-size:42px;margin-bottom:15px}
+.hero p{max-width:600px;line-height:1.6;color:#ddd}
+.badge{
+ display:inline-block;background:#e50914;
+ padding:6px 12px;border-radius:4px;
+ margin-bottom:15px;font-size:13px;
+}
+section{padding:30px 6%}
+h2{font-size:23px;margin-bottom:20px}
+.player{
+ width:100%;aspect-ratio:16/9;
+ background:#000;border-radius:12px;
+ overflow:hidden;
+ box-shadow:0 5px 25px #0009;
+}
+.player iframe{width:100%;height:100%;border:0}
+.episode-row{
+ display:flex;gap:15px;overflow-x:auto;
+ padding:5px 2px 20px;
+ scroll-behavior:smooth;
+}
+.episode{
+ flex:0 0 210px;
+ background:#1b1b1b;border-radius:9px;
+ overflow:hidden;transition:.3s;
+ cursor:pointer;
+}
+.episode:hover{transform:scale(1.05)}
+.episode img{
+ width:100%;height:120px;object-fit:cover;
+ background:#292929;
+}
+.episode-info{padding:12px}
+.episode-info h3{font-size:15px;margin-bottom:7px}
+.episode-info p{font-size:12px;color:#aaa}
+.details{color:#bbb;line-height:1.8}
+footer{
+ text-align:center;padding:30px;
+ color:#777;background:#080808;margin-top:30px;
+}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s}
+.reveal.show{opacity:1;transform:translateY(0)}
+@keyframes fade{
+ from{opacity:0}to{opacity:1}
+}
+@media(max-width:600px){
+ .hero{padding:75px 6% 45px;min-height:330px}
+ .hero h1{font-size:30px}
+ .episode{flex-basis:170px}
+ .episode img{height:100px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="logo">DeseneAnimate+</div>
+ <a href="../../index.html">Acasă</a>
+</header>
+
+<div class="hero">
+ <span class="badge">SERIAL ANIMAT</span>
+ <h1>The New Movies Scooby-Doo</h1>
+ <p>Scooby-Doo și gașca lui se intalnesc cu CEI 3 NATANGI.</p>
+</div>
+
+<section class="reveal">
+ <h2>▶ Urmărește episodul</h2>
+ <div class="player">
+  <iframe
+   src="https://filmedublate.net/embed/filmsrv.php?search=noile-filme-cu-scooby-doo-s01e01"
+   allowfullscreen>
+  </iframe>
+ </div>
+</section>
+
+<section class="reveal">
+ <h2>Episoade</h2>
+ <div class="episode-row">
+
+  <div class="episode">
+   <img src="../../postere/episoade/scooby-s1-e1.jpg" alt="Episodul 1">
+   <div class="episode-info">
+    <h3>Episodul 1</h3>
+    <p>O nouă aventură începe!</p>
+   </div>
+  </div>
+
+ </div>
+</section>
+
+<section class="reveal">
+ <h2>Despre serial</h2>
+ <p class="details">
+  Titlu: The New Movies Scooby-Doo<br>
+  Gen: Animație, Mister, Aventură<br>
+  Personaje: Scooby-Doo, Shaggy, Fred, Daphne și Velma
+ </p>
+</section>
+
+<footer>
+ © 2026 DeseneAnimate+ | Toate drepturile rezervate
+</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add("show");
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
