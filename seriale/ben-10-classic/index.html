@@ -41,7 +41,6 @@ header a {
     letter-spacing: -1px;
 }
 
-/* BANNER PRINCIPAL - STIL NETFLIX */
 .hero {
     min-height: 650px;
     padding: 150px 7% 100px;
@@ -165,10 +164,43 @@ h2 {
     margin-bottom: 25px;
 }
 
+.season-selector {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.season-btn {
+    background: #222;
+    color: white;
+    border: 1px solid #444;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.season-btn:hover,
+.season-btn.active {
+    background: #e50914;
+    border-color: #e50914;
+}
+
 .episode-list {
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+.season-list {
+    display: none;
+}
+
+.season-list.active {
+    display: flex;
 }
 
 .episode-row {
@@ -308,7 +340,6 @@ footer {
     border-top: 1px solid #292929;
 }
 
-/* TELEFON */
 @media (max-width: 650px) {
     .hero {
         min-height: 540px;
@@ -351,6 +382,11 @@ footer {
 
     .episode-play {
         display: none;
+    }
+
+    .season-btn {
+        padding: 11px 18px;
+        font-size: 14px;
     }
 }
 
@@ -450,14 +486,30 @@ footer {
 </section>
 
 <section class="episodes-section" id="episoade">
-    <h2>Episoade · Sezonul 1</h2>
 
-    <div class="episode-list">
+    <h2>Episoade Ben 10 Classic</h2>
+
+    <div class="season-selector">
+        <button class="season-btn active"
+                onclick="schimbaSezon(1)"
+                id="btn-sezon1">
+            Sezonul 1
+        </button>
+
+        <button class="season-btn"
+                onclick="schimbaSezon(2)"
+                id="btn-sezon2">
+            Sezonul 2
+        </button>
+    </div>
+
+    <!-- SEZONUL 1 -->
+    <div class="episode-list season-list active" id="sezon1">
 
         <a href="sezon1/episod1.html" class="episode-row">
             <img src="../../postere/episoade/ben10-s1-e1.jpg" alt="Episodul 1">
             <div class="episode-info">
-                <span>EPISODUL 1</span>
+                <span>SEZONUL 1 · EPISODUL 1</span>
                 <h3>Și apoi au fost 10</h3>
                 <p>În timpul unei excursii cu bunicul Max și Gwen, Ben descoperă Omnitrixul și află că poate deveni zece extratereștri diferiți.</p>
             </div>
@@ -467,7 +519,7 @@ footer {
         <a href="sezon1/episod2.html" class="episode-row">
             <img src="../../postere/episoade/ben10-s1-e2.jpg" alt="Episodul 2">
             <div class="episode-info">
-                <span>EPISODUL 2</span>
+                <span>SEZONUL 1 · EPISODUL 2</span>
                 <h3>Washington Preistoric</h3>
                 <p>Ben și familia sa ajung la Washington, unde întâlnesc o creatură misterioasă care provoacă probleme.</p>
             </div>
@@ -477,7 +529,7 @@ footer {
         <a href="sezon1/episod3.html" class="episode-row">
             <img src="../../postere/episoade/ben10-s1-e3.jpg" alt="Episodul 3">
             <div class="episode-info">
-                <span>EPISODUL 3</span>
+                <span>SEZONUL 1 · EPISODUL 3</span>
                 <h3>Kraken</h3>
                 <p>Ben descoperă existența unei creaturi misterioase în apă și încearcă să afle ce se ascunde în spatele aparițiilor sale.</p>
             </div>
@@ -487,7 +539,7 @@ footer {
         <a href="sezon1/episod4.html" class="episode-row">
             <img src="../../postere/episoade/ben10-s1-e4.jpg" alt="Episodul 4">
             <div class="episode-info">
-                <span>EPISODUL 4</span>
+                <span>SEZONUL 1 · EPISODUL 4</span>
                 <h3>Pensionare permanentă</h3>
                 <p>Ben, Gwen și Max întâlnesc un grup de bătrâni care ascund o surpriză neobișnuită.</p>
             </div>
@@ -497,7 +549,7 @@ footer {
         <a href="sezon1/episod5.html" class="episode-row">
             <img src="../../postere/episoade/ben10-s1-e5.jpg" alt="Episodul 5">
             <div class="episode-info">
-                <span>EPISODUL 5</span>
+                <span>SEZONUL 1 · EPISODUL 5</span>
                 <h3>Vânătoarea</h3>
                 <p>Ben ajunge în vizorul unor urmăritori care sunt interesați de puterile Omnitrixului.</p>
             </div>
@@ -507,7 +559,7 @@ footer {
         <a href="sezon1/episod6.html" class="episode-row">
             <img src="../../postere/episoade/ben10-s1-e6.jpg" alt="Episodul 6">
             <div class="episode-info">
-                <span>EPISODUL 6</span>
+                <span>SEZONUL 1 · EPISODUL 6</span>
                 <h3>Capcana turistică</h3>
                 <p>O oprire într-o zonă turistică se transformă într-o aventură neașteptată pentru Ben și familia sa.</p>
             </div>
@@ -517,7 +569,7 @@ footer {
         <a href="sezon1/episod7.html" class="episode-row">
             <img src="../../postere/episoade/ben10-s1-e7.jpg" alt="Episodul 7">
             <div class="episode-info">
-                <span>EPISODUL 7</span>
+                <span>SEZONUL 1 · EPISODUL 7</span>
                 <h3>Kevin 11</h3>
                 <p>Ben îl întâlnește pe Kevin, un băiat care poate absorbi energie și puteri. Prietenia lor se transformă într-un conflict periculos.</p>
             </div>
@@ -527,7 +579,7 @@ footer {
         <a href="sezon1/episod8.html" class="episode-row">
             <img src="../../postere/episoade/ben10-s1-e8.jpg" alt="Episodul 8">
             <div class="episode-info">
-                <span>EPISODUL 8</span>
+                <span>SEZONUL 1 · EPISODUL 8</span>
                 <h3>Alianța</h3>
                 <p>Mai mulți vânători de recompense pornesc în urmărirea Omnitrixului, iar Ben trebuie să se apere.</p>
             </div>
@@ -537,7 +589,7 @@ footer {
         <a href="sezon1/episod9.html" class="episode-row">
             <img src="../../postere/episoade/ben10-s1-e9.jpg" alt="Episodul 9">
             <div class="episode-info">
-                <span>EPISODUL 9</span>
+                <span>SEZONUL 1 · EPISODUL 9</span>
                 <h3>Cine râde la urmă</h3>
                 <p>La un parc de distracții, Ben, Gwen și Max îl întâlnesc pe Zombozo, un clovn misterios care fură energia oamenilor.</p>
             </div>
@@ -547,7 +599,7 @@ footer {
         <a href="sezon1/episod10.html" class="episode-row">
             <img src="../../postere/episoade/ben10-s1-e10.jpg" alt="Episodul 10">
             <div class="episode-info">
-                <span>EPISODUL 10</span>
+                <span>SEZONUL 1 · EPISODUL 10</span>
                 <h3>Norocoasa</h3>
                 <p>Gwen găsește o carte de magie și începe să învețe vrăji, în timp ce Ben trebuie să-l oprească pe magicianul Hex.</p>
             </div>
@@ -557,7 +609,7 @@ footer {
         <a href="sezon1/episod11.html" class="episode-row">
             <img src="../../postere/episoade/ben10-s1-e11.jpg" alt="Episodul 11">
             <div class="episode-info">
-                <span>EPISODUL 11</span>
+                <span>SEZONUL 1 · EPISODUL 11</span>
                 <h3>O problemă minoră</h3>
                 <p>Omnitrixul se defectează și Ben rămâne blocat în forma lui Grey Matter, ajungând în mâinile unor oameni periculoși.</p>
             </div>
@@ -567,7 +619,7 @@ footer {
         <a href="sezon1/episod12.html" class="episode-row">
             <img src="../../postere/episoade/ben10-s1-e12.jpg" alt="Episodul 12">
             <div class="episode-info">
-                <span>EPISODUL 12</span>
+                <span>SEZONUL 1 · EPISODUL 12</span>
                 <h3>Efecte secundare</h3>
                 <p>O răceală îi afectează transformările lui Ben, tocmai când trebuie să oprească un răufăcător care controlează insectele.</p>
             </div>
@@ -577,7 +629,7 @@ footer {
         <a href="sezon1/episod13.html" class="episode-row">
             <img src="../../postere/episoade/ben10-s1-e13.jpg" alt="Episodul 13">
             <div class="episode-info">
-                <span>EPISODUL 13 · FINAL DE SEZON</span>
+                <span>SEZONUL 1 · EPISODUL 13 · FINAL DE SEZON</span>
                 <h3>Secrete</h3>
                 <p>Vilgax ajunge pe Pământ și îl capturează pe Ben pentru a recupera Omnitrixul. Gwen și Max încearcă să-l salveze.</p>
             </div>
@@ -585,6 +637,142 @@ footer {
         </a>
 
     </div>
+
+    <!-- SEZONUL 2 -->
+    <div class="episode-list season-list" id="sezon2">
+
+        <a href="sezon2/episod1.html" class="episode-row">
+            <img src="../../postere/episoade/ben10-s2-e1.jpg" alt="Episodul 1">
+            <div class="episode-info">
+                <span>SEZONUL 2 · EPISODUL 1</span>
+                <h3>Adevărul</h3>
+                <p>Ben, Gwen și Max îl întâlnesc pe Phil, un fost partener al bunicului Max, care folosește un dispozitiv periculos pentru a captura extratereștri.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon2/episod2.html" class="episode-row">
+            <img src="../../postere/episoade/ben10-s2-e2.jpg" alt="Episodul 2">
+            <div class="episode-info">
+                <span>SEZONUL 2 · EPISODUL 2</span>
+                <h3>Cel Măreț</h3>
+                <p>În Yellowstone, Ben descoperă o nouă transformare a Omnitrixului și trebuie să înfrunte o creatură uriașă care amenință zona.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon2/episod3.html" class="episode-row">
+            <img src="../../postere/episoade/ben10-s2-e3.jpg" alt="Episodul 3">
+            <div class="episode-info">
+                <span>SEZONUL 2 · EPISODUL 3</span>
+                <h3>Înscenarea</h3>
+                <p>Kevin își folosește puterile pentru a-l implica pe Ben într-o serie de probleme, făcându-l să pară vinovat.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon2/episod4.html" class="episode-row">
+            <img src="../../postere/episoade/ben10-s2-e4.jpg" alt="Episodul 4">
+            <div class="episode-info">
+                <span>SEZONUL 2 · EPISODUL 4</span>
+                <h3>Gwen 10</h3>
+                <p>Într-o realitate alternativă, Gwen găsește Omnitrixul în locul lui Ben și trebuie să învețe să-i folosească puterile.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon2/episod5.html" class="episode-row">
+            <img src="../../postere/episoade/ben10-s2-e5.jpg" alt="Episodul 5">
+            <div class="episode-info">
+                <span>SEZONUL 2 · EPISODUL 5</span>
+                <h3>Combatanți Intergalactici</h3>
+                <p>Ben și Kevin ajung pe o navă spațială unde sunt obligați să participe la lupte între adversari din diferite lumi.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon2/episod6.html" class="episode-row">
+            <img src="../../postere/episoade/ben10-s2-e6.jpg" alt="Episodul 6">
+            <div class="episode-info">
+                <span>SEZONUL 2 · EPISODUL 6</span>
+                <h3>Echipa Forțelor Intergalactice</h3>
+                <p>Ben întâlnește o echipă de supereroi extratereștri și ajunge să colaboreze cu ei împotriva unor adversari periculoși.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon2/episod7.html" class="episode-row">
+            <img src="../../postere/episoade/ben10-s2-e7.jpg" alt="Episodul 7">
+            <div class="episode-info">
+                <span>SEZONUL 2 · EPISODUL 7</span>
+                <h3>Tabăra Groazei</h3>
+                <p>Într-o tabără de vară apar ciuperci extraterestre misterioase, iar Ben descoperă o nouă transformare a Omnitrixului.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon2/episod8.html" class="episode-row">
+            <img src="../../postere/episoade/ben10-s2-e8.jpg" alt="Episodul 8">
+            <div class="episode-info">
+                <span>SEZONUL 2 · EPISODUL 8</span>
+                <h3>Arma Supremă</h3>
+                <p>Ben, Gwen și Max pornesc în căutarea unei arme legendare, dar Cavalerii Eterni au propriile planuri.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon2/episod9.html" class="episode-row">
+            <img src="../../postere/episoade/ben10-s2-e9.jpg" alt="Episodul 9">
+            <div class="episode-info">
+                <span>SEZONUL 2 · EPISODUL 9</span>
+                <h3>Ghinion</h3>
+                <p>Gwen găsește un talisman magic care îi oferă noroc și puteri speciale, însă Hex și Charmcaster vor să-l obțină.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon2/episod10.html" class="episode-row">
+            <img src="../../postere/episoade/ben10-s2-e10.jpg" alt="Episodul 10">
+            <div class="episode-info">
+                <span>SEZONUL 2 · EPISODUL 10</span>
+                <h3>Secretul din adâncuri</h3>
+                <p>Într-un complex subacvatic, Ben descoperă că o sursă de energie extraterestră a fost furată și folosită în scopuri periculoase.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon2/episod11.html" class="episode-row">
+            <img src="../../postere/episoade/ben10-s2-e11.jpg" alt="Episodul 11">
+            <div class="episode-info">
+                <span>SEZONUL 2 · EPISODUL 11</span>
+                <h3>Speriat de stafie</h3>
+                <p>Ghostfreak reușește să scape din Omnitrix, iar Ben trebuie să găsească o cale de a-l opri.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon2/episod12.html" class="episode-row">
+            <img src="../../postere/episoade/ben10-s2-e12.jpg" alt="Episodul 12">
+            <div class="episode-info">
+                <span>SEZONUL 2 · EPISODUL 12</span>
+                <h3>Dr. Animo și raza mutantă</h3>
+                <p>Omnitrixul începe să funcționeze defectuos, iar Dr. Animo revine cu un nou plan care provoacă probleme.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+        <a href="sezon2/episod13.html" class="episode-row">
+            <img src="../../postere/episoade/ben10-s2-e13.jpg" alt="Episodul 13">
+            <div class="episode-info">
+                <span>SEZONUL 2 · EPISODUL 13 · FINAL DE SEZON</span>
+                <h3>Răzbunarea</h3>
+                <p>Ben și familia sa se confruntă cu o nouă amenințare, iar aventura îi pune din nou la încercare.</p>
+            </div>
+            <div class="episode-play">▶</div>
+        </a>
+
+    </div>
+
 </section>
 
 <section class="section">
@@ -601,18 +789,22 @@ footer {
             <span>PERSONAJ</span>
             <h3>Ben Tennyson</h3>
         </div>
+
         <div class="character">
             <span>PERSONAJ</span>
             <h3>Gwen Tennyson</h3>
         </div>
+
         <div class="character">
             <span>PERSONAJ</span>
             <h3>Bunicul Max</h3>
         </div>
+
         <div class="character">
             <span>PERSONAJ</span>
             <h3>Vilgax</h3>
         </div>
+
         <div class="character">
             <span>PERSONAJ</span>
             <h3>Kevin 11</h3>
@@ -641,6 +833,21 @@ footer {
         Pagină dedicată universului Ben 10
     </span>
 </footer>
+
+<script>
+function schimbaSezon(numar) {
+    document.querySelectorAll('.season-list').forEach(lista => {
+        lista.classList.remove('active');
+    });
+
+    document.querySelectorAll('.season-btn').forEach(buton => {
+        buton.classList.remove('active');
+    });
+
+    document.getElementById('sezon' + numar).classList.add('active');
+    document.getElementById('btn-sezon' + numar).classList.add('active');
+}
+</script>
 
 </body>
 </html>
