@@ -7,403 +7,168 @@
 <title>Ben 10 Classic | DeseneAnimate+</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    margin:0;background:#101010;color:white;
+    font-family:Arial,sans-serif;overflow-x:hidden
 }
-
-html {
-    scroll-behavior: smooth;
+header{
+    position:absolute;top:0;left:0;width:100%;
+    padding:22px 5%;z-index:10;
+    background:linear-gradient(to bottom,#000,transparent)
 }
-
-body {
-    margin: 0;
-    background: #101010;
-    color: white;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
+header a{
+    color:#e50914;font-size:29px;font-weight:900;
+    text-decoration:none;letter-spacing:-1px
 }
-
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 22px 5%;
-    z-index: 10;
-    background: linear-gradient(to bottom, #000, transparent);
-}
-
-header a {
-    color: #e50914;
-    font-size: 29px;
-    font-weight: 900;
-    text-decoration: none;
-    letter-spacing: -1px;
-}
-
-.hero {
-    min-height: 650px;
-    padding: 150px 7% 100px;
-    display: flex;
-    align-items: center;
-    position: relative;
+.hero{
+    min-height:650px;padding:150px 7% 100px;
+    display:flex;align-items:center;position:relative;
     background:
-        linear-gradient(90deg, #101010 0%, rgba(16,16,16,.85) 30%, rgba(16,16,16,.25) 75%, transparent 100%),
-        linear-gradient(0deg, #101010 0%, transparent 55%),
-        url("../../postere/ben10-classic.jpg") center 25% / cover no-repeat;
+    linear-gradient(90deg,#101010 0%,rgba(16,16,16,.85) 30%,rgba(16,16,16,.25) 75%,transparent 100%),
+    linear-gradient(0deg,#101010 0%,transparent 55%),
+    url("../../postere/ben10-classic.jpg") center 25%/cover no-repeat
 }
-
-.hero-content {
-    max-width: 650px;
-    animation: appear 1s ease both;
+.hero-content{max-width:650px;animation:appear 1s ease both}
+@keyframes appear{
+    from{opacity:0;transform:translateY(25px)}
+    to{opacity:1;transform:translateY(0)}
 }
-
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
+.tag{
+    color:#e50914;letter-spacing:4px;
+    font-weight:bold;font-size:13px
+}
+.hero h1{
+    font-size:clamp(40px,7vw,70px);
+    margin:15px 0;font-weight:900;
+    text-shadow:0 4px 20px #000
+}
+.metadata{color:#ddd;margin:18px 0;font-size:15px}
+.description{color:#eee;line-height:1.8;font-size:16px}
+.play{
+    display:inline-flex;align-items:center;gap:10px;
+    background:white;color:black;padding:14px 25px;
+    border-radius:5px;text-decoration:none;
+    margin-top:18px;font-weight:bold;transition:.25s
+}
+.play:hover{background:#ddd;transform:scale(1.06)}
+.content{max-width:1500px;margin:auto;padding:35px 5%}
+h2{font-size:27px;margin-bottom:22px}
+.section{margin-bottom:55px}
+.about-text{
+    color:#bbb;line-height:1.9;font-size:15px;
+    max-width:1100px
+}
+.details{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;margin:25px 0 45px
+}
+.details p{color:#bbb;line-height:1.7;margin-bottom:0}
+.details strong{
+    color:#888;font-size:12px;letter-spacing:1px
+}
+.episodes-section{margin:55px 0}
+.episodes-section h2{font-size:27px;margin-bottom:25px}
+.season-selector{
+    display:flex;gap:12px;margin-bottom:25px;flex-wrap:wrap
+}
+.season-btn{
+    background:#222;color:white;border:1px solid #444;
+    padding:12px 25px;border-radius:6px;
+    font-size:15px;font-weight:bold;cursor:pointer;
+    transition:.3s
+}
+.season-btn:hover,.season-btn.active{
+    background:#e50914;border-color:#e50914
+}
+.episode-list{
+    display:flex;flex-direction:column;gap:15px
+}
+.season-list{display:none}
+.season-list.active{display:flex}
+.episode-row{
+    display:flex;align-items:center;gap:22px;
+    padding:14px;background:#181818;
+    border-radius:10px;text-decoration:none;color:white;
+    position:relative;overflow:hidden;
+    transition:transform .3s,background .3s,box-shadow .3s
+}
+.episode-row:hover{
+    background:#292929;transform:scale(1.015);
+    box-shadow:0 8px 25px rgba(0,0,0,.4)
+}
+.episode-row img{
+    width:230px;aspect-ratio:16/9;
+    object-fit:cover;border-radius:7px;
+    flex-shrink:0;transition:transform .4s
+}
+.episode-row:hover img{transform:scale(1.06)}
+.episode-info{flex:1}
+.episode-info span{
+    color:#e50914;font-size:12px;
+    font-weight:bold;letter-spacing:1px
+}
+.episode-info h3{font-size:20px;margin:8px 0}
+.episode-info p{
+    color:#aaa;font-size:14px;
+    line-height:1.6;margin:0
+}
+.episode-play{
+    width:48px;height:48px;border-radius:50%;
+    background:#e50914;color:white;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;opacity:0;transform:scale(.6);
+    transition:.3s
+}
+.episode-row:hover .episode-play{
+    opacity:1;transform:scale(1)
+}
+.character-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;margin-top:25px
+}
+.character{
+    background:linear-gradient(110deg,#202020,#141414);
+    border-left:3px solid #e50914;padding:18px;
+    transition:.3s
+}
+.character:hover{transform:translateY(-5px);background:#292929}
+.character span{
+    color:#e50914;font-size:12px;
+    font-weight:bold;letter-spacing:2px
+}
+.character h3{font-size:17px;margin-bottom:0}
+footer{
+    text-align:center;padding:35px;color:#777;
+    margin-top:60px;border-top:1px solid #292929
+}
+@media(max-width:650px){
+    .hero{
+        min-height:540px;padding:110px 7% 70px;
+        background-position:60% center
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    .hero h1{font-size:40px}
+    .hero .description{font-size:14px}
+    .content{padding:25px 17px}
+    .about-text{font-size:14px}
+    .episode-row{gap:12px;padding:10px}
+    .episode-row img{width:125px}
+    .episode-info h3{font-size:15px}
+    .episode-info p{font-size:12px}
+    .episode-play{display:none}
+    .season-btn{padding:11px 18px;font-size:14px}
 }
-
-.tag {
-    color: #e50914;
-    letter-spacing: 4px;
-    font-weight: bold;
-    font-size: 13px;
+@media(hover:none){
+    .episode-play{opacity:1;transform:scale(.85)}
 }
-
-.hero h1 {
-    font-size: clamp(40px, 7vw, 70px);
-    margin: 15px 0;
-    font-weight: 900;
-    text-shadow: 0 4px 20px #000;
-}
-
-.metadata {
-    color: #ddd;
-    margin: 18px 0;
-    font-size: 15px;
-}
-
-.description {
-    color: #eee;
-    line-height: 1.8;
-    font-size: 16px;
-}
-
-.play {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: white;
-    color: black;
-    padding: 14px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 18px;
-    font-weight: bold;
-    transition: .25s;
-}
-
-.play:hover {
-    background: #ddd;
-    transform: scale(1.06);
-}
-
-.content {
-    max-width: 1500px;
-    margin: auto;
-    padding: 35px 5%;
-}
-
-h2 {
-    font-size: 27px;
-    margin-bottom: 22px;
-}
-
-.section {
-    margin-bottom: 55px;
-}
-
-.about-text {
-    color: #bbb;
-    line-height: 1.9;
-    font-size: 15px;
-    max-width: 1100px;
-}
-
-.details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 25px;
-    margin: 25px 0 45px;
-}
-
-.details p {
-    color: #bbb;
-    line-height: 1.7;
-    margin-bottom: 0;
-}
-
-.details strong {
-    color: #888;
-    font-size: 12px;
-    letter-spacing: 1px;
-}
-
-.episodes-section {
-    margin: 55px 0;
-}
-
-.episodes-section h2 {
-    font-size: 27px;
-    margin-bottom: 25px;
-}
-
-.season-selector {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
-}
-
-.season-btn {
-    background: #222;
-    color: white;
-    border: 1px solid #444;
-    padding: 12px 25px;
-    border-radius: 6px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.season-btn:hover,
-.season-btn.active {
-    background: #e50914;
-    border-color: #e50914;
-}
-
-.episode-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.season-list {
-    display: none;
-}
-
-.season-list.active {
-    display: flex;
-}
-
-.episode-row {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    padding: 14px;
-    background: #181818;
-    border-radius: 10px;
-    text-decoration: none;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
-    animation: episodeFade .65s ease both;
-}
-
-.episode-row:nth-child(1) { animation-delay: .1s; }
-.episode-row:nth-child(2) { animation-delay: .2s; }
-.episode-row:nth-child(3) { animation-delay: .3s; }
-.episode-row:nth-child(4) { animation-delay: .4s; }
-.episode-row:nth-child(5) { animation-delay: .5s; }
-
-@keyframes episodeFade {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.episode-row:hover {
-    background: #292929;
-    transform: scale(1.015);
-    box-shadow: 0 8px 25px rgba(0,0,0,.4);
-}
-
-.episode-row img {
-    width: 230px;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 7px;
-    flex-shrink: 0;
-    transition: transform .4s ease;
-}
-
-.episode-row:hover img {
-    transform: scale(1.06);
-}
-
-.episode-info {
-    flex: 1;
-}
-
-.episode-info span {
-    color: #e50914;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.episode-info h3 {
-    font-size: 20px;
-    margin: 8px 0;
-}
-
-.episode-info p {
-    color: #aaa;
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.episode-play {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #e50914;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    opacity: 0;
-    transform: scale(.6);
-    transition: .3s ease;
-}
-
-.episode-row:hover .episode-play {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.episode-row:active {
-    transform: scale(.97);
-}
-
-.character-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.character {
-    background: linear-gradient(110deg, #202020, #141414);
-    border-left: 3px solid #e50914;
-    padding: 18px;
-    transition: .3s;
-}
-
-.character:hover {
-    transform: translateY(-5px);
-    background: #292929;
-}
-
-.character span {
-    color: #e50914;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.character h3 {
-    font-size: 17px;
-    margin-bottom: 0;
-}
-
-footer {
-    text-align: center;
-    padding: 35px;
-    color: #777;
-    margin-top: 60px;
-    border-top: 1px solid #292929;
-}
-
-@media (max-width: 650px) {
-    .hero {
-        min-height: 540px;
-        padding: 110px 7% 70px;
-        background-position: 60% center;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .hero .description {
-        font-size: 14px;
-    }
-
-    .content {
-        padding: 25px 17px;
-    }
-
-    .about-text {
-        font-size: 14px;
-    }
-
-    .episode-row {
-        gap: 12px;
-        padding: 10px;
-    }
-
-    .episode-row img {
-        width: 125px;
-    }
-
-    .episode-info h3 {
-        font-size: 15px;
-    }
-
-    .episode-info p {
-        font-size: 12px;
-    }
-
-    .episode-play {
-        display: none;
-    }
-
-    .season-btn {
-        padding: 11px 18px;
-        font-size: 14px;
-    }
-}
-
-@media (hover: none) {
-    .episode-play {
-        opacity: 1;
-        transform: scale(.85);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
+@media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+        animation:none!important;
+        transition:none!important;
+        scroll-behavior:auto!important
     }
 }
 </style>
@@ -425,10 +190,10 @@ footer {
         </div>
 
         <p class="description">
-            În timpul vacanței de vară, Ben Tennyson descoperă Omnitrixul,
-            un dispozitiv extraterestru care îi permite să se transforme
-            în diferite forme de viață extraterestre. Alături de Gwen și
-            bunicul Max, Ben pornește în aventuri extraordinare.
+            În timpul vacanței de vară, Ben Tennyson descoperă
+            Omnitrixul, un dispozitiv extraterestru care îi permite
+            să se transforme în diferite forme de viață extraterestre.
+            Alături de Gwen și bunicul Max, Ben pornește în aventuri extraordinare.
         </p>
 
         <a href="sezon1/episod1.html" class="play">
@@ -458,320 +223,359 @@ footer {
     </p>
 
     <div class="details">
-        <div>
-            <strong>TITLU ORIGINAL</strong>
-            <p>Ben 10</p>
-        </div>
-        <div>
-            <strong>PREMIERĂ</strong>
-            <p>2005</p>
-        </div>
-        <div>
-            <strong>GEN</strong>
-            <p>Animație, acțiune, aventură, SF</p>
-        </div>
-        <div>
-            <strong>CREATORI</strong>
-            <p>Man of Action</p>
-        </div>
-        <div>
-            <strong>PRODUCȚIE</strong>
-            <p>Cartoon Network Studios</p>
-        </div>
-        <div>
-            <strong>PERSONAJE PRINCIPALE</strong>
-            <p>Ben, Gwen și Max</p>
-        </div>
+        <div><strong>TITLU ORIGINAL</strong><p>Ben 10</p></div>
+        <div><strong>PREMIERĂ</strong><p>2005</p></div>
+        <div><strong>GEN</strong><p>Animație, acțiune, aventură, SF</p></div>
+        <div><strong>CREATORI</strong><p>Man of Action</p></div>
+        <div><strong>PRODUCȚIE</strong><p>Cartoon Network Studios</p></div>
+        <div><strong>PERSONAJE PRINCIPALE</strong><p>Ben, Gwen și Max</p></div>
     </div>
 </section>
 
 <section class="episodes-section" id="episoade">
 
-    <h2>Episoade Ben 10 Classic</h2>
+<h2>Episoade Ben 10 Classic</h2>
 
-    <div class="season-selector">
-        <button class="season-btn active"
-                onclick="schimbaSezon(1)"
-                id="btn-sezon1">
-            Sezonul 1
-        </button>
+<div class="season-selector">
+    <button class="season-btn active" onclick="schimbaSezon(1)" id="btn-sezon1">
+        Sezonul 1
+    </button>
 
-        <button class="season-btn"
-                onclick="schimbaSezon(2)"
-                id="btn-sezon2">
-            Sezonul 2
-        </button>
-    </div>
+    <button class="season-btn" onclick="schimbaSezon(2)" id="btn-sezon2">
+        Sezonul 2
+    </button>
 
-    <!-- SEZONUL 1 -->
-    <div class="episode-list season-list active" id="sezon1">
+    <button class="season-btn" onclick="schimbaSezon(3)" id="btn-sezon3">
+        Sezonul 3
+    </button>
+</div>
 
-        <a href="sezon1/episod1.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s1-e1.jpg" alt="Episodul 1">
-            <div class="episode-info">
-                <span>SEZONUL 1 · EPISODUL 1</span>
-                <h3>Și apoi au fost 10</h3>
-                <p>În timpul unei excursii cu bunicul Max și Gwen, Ben descoperă Omnitrixul și află că poate deveni zece extratereștri diferiți.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<!-- SEZONUL 1 -->
+<div class="episode-list season-list active" id="sezon1">
 
-        <a href="sezon1/episod2.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s1-e2.jpg" alt="Episodul 2">
-            <div class="episode-info">
-                <span>SEZONUL 1 · EPISODUL 2</span>
-                <h3>Washington Preistoric</h3>
-                <p>Ben și familia sa ajung la Washington, unde întâlnesc o creatură misterioasă care provoacă probleme.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon1/episod1.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s1-e1.jpg" alt="Episodul 1">
+<div class="episode-info">
+<span>SEZONUL 1 · EPISODUL 1</span>
+<h3>Și apoi au fost 10</h3>
+<p>Ben descoperă Omnitrixul și află că poate deveni zece extratereștri diferiți.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon1/episod3.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s1-e3.jpg" alt="Episodul 3">
-            <div class="episode-info">
-                <span>SEZONUL 1 · EPISODUL 3</span>
-                <h3>Kraken</h3>
-                <p>Ben descoperă existența unei creaturi misterioase în apă și încearcă să afle ce se ascunde în spatele aparițiilor sale.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon1/episod2.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s1-e2.jpg" alt="Episodul 2">
+<div class="episode-info">
+<span>SEZONUL 1 · EPISODUL 2</span>
+<h3>Washington Preistoric</h3>
+<p>Ben și familia sa întâlnesc o creatură misterioasă care provoacă probleme.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon1/episod4.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s1-e4.jpg" alt="Episodul 4">
-            <div class="episode-info">
-                <span>SEZONUL 1 · EPISODUL 4</span>
-                <h3>Pensionare permanentă</h3>
-                <p>Ben, Gwen și Max întâlnesc un grup de bătrâni care ascund o surpriză neobișnuită.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon1/episod3.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s1-e3.jpg" alt="Episodul 3">
+<div class="episode-info">
+<span>SEZONUL 1 · EPISODUL 3</span>
+<h3>Kraken</h3>
+<p>Ben descoperă existența unei creaturi misterioase în apă.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon1/episod5.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s1-e5.jpg" alt="Episodul 5">
-            <div class="episode-info">
-                <span>SEZONUL 1 · EPISODUL 5</span>
-                <h3>Vânătoarea</h3>
-                <p>Ben ajunge în vizorul unor urmăritori care sunt interesați de puterile Omnitrixului.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon1/episod4.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s1-e4.jpg" alt="Episodul 4">
+<div class="episode-info">
+<span>SEZONUL 1 · EPISODUL 4</span>
+<h3>Pensionare permanentă</h3>
+<p>Ben, Gwen și Max întâlnesc un grup de bătrâni care ascund o surpriză neobișnuită.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon1/episod6.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s1-e6.jpg" alt="Episodul 6">
-            <div class="episode-info">
-                <span>SEZONUL 1 · EPISODUL 6</span>
-                <h3>Capcana turistică</h3>
-                <p>O oprire într-o zonă turistică se transformă într-o aventură neașteptată pentru Ben și familia sa.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon1/episod5.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s1-e5.jpg" alt="Episodul 5">
+<div class="episode-info">
+<span>SEZONUL 1 · EPISODUL 5</span>
+<h3>Vânătoarea</h3>
+<p>Ben ajunge în vizorul unor urmăritori interesați de puterile Omnitrixului.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon1/episod7.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s1-e7.jpg" alt="Episodul 7">
-            <div class="episode-info">
-                <span>SEZONUL 1 · EPISODUL 7</span>
-                <h3>Kevin 11</h3>
-                <p>Ben îl întâlnește pe Kevin, un băiat care poate absorbi energie și puteri. Prietenia lor se transformă într-un conflict periculos.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon1/episod6.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s1-e6.jpg" alt="Episodul 6">
+<div class="episode-info">
+<span>SEZONUL 1 · EPISODUL 6</span>
+<h3>Capcana turistică</h3>
+<p>O oprire într-o zonă turistică se transformă într-o aventură neașteptată.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon1/episod8.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s1-e8.jpg" alt="Episodul 8">
-            <div class="episode-info">
-                <span>SEZONUL 1 · EPISODUL 8</span>
-                <h3>Alianța</h3>
-                <p>Mai mulți vânători de recompense pornesc în urmărirea Omnitrixului, iar Ben trebuie să se apere.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon1/episod7.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s1-e7.jpg" alt="Episodul 7">
+<div class="episode-info">
+<span>SEZONUL 1 · EPISODUL 7</span>
+<h3>Kevin 11</h3>
+<p>Ben îl întâlnește pe Kevin, un băiat care poate absorbi energie și puteri.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon1/episod9.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s1-e9.jpg" alt="Episodul 9">
-            <div class="episode-info">
-                <span>SEZONUL 1 · EPISODUL 9</span>
-                <h3>Cine râde la urmă</h3>
-                <p>La un parc de distracții, Ben, Gwen și Max îl întâlnesc pe Zombozo, un clovn misterios care fură energia oamenilor.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon1/episod8.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s1-e8.jpg" alt="Episodul 8">
+<div class="episode-info">
+<span>SEZONUL 1 · EPISODUL 8</span>
+<h3>Alianța</h3>
+<p>Mai mulți vânători de recompense pornesc în urmărirea Omnitrixului.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon1/episod10.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s1-e10.jpg" alt="Episodul 10">
-            <div class="episode-info">
-                <span>SEZONUL 1 · EPISODUL 10</span>
-                <h3>Norocoasa</h3>
-                <p>Gwen găsește o carte de magie și începe să învețe vrăji, în timp ce Ben trebuie să-l oprească pe magicianul Hex.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon1/episod9.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s1-e9.jpg" alt="Episodul 9">
+<div class="episode-info">
+<span>SEZONUL 1 · EPISODUL 9</span>
+<h3>Cine râde la urmă</h3>
+<p>Ben, Gwen și Max îl întâlnesc pe Zombozo, un clovn misterios.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon1/episod11.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s1-e11.jpg" alt="Episodul 11">
-            <div class="episode-info">
-                <span>SEZONUL 1 · EPISODUL 11</span>
-                <h3>O problemă minoră</h3>
-                <p>Omnitrixul se defectează și Ben rămâne blocat în forma lui Grey Matter, ajungând în mâinile unor oameni periculoși.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon1/episod10.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s1-e10.jpg" alt="Episodul 10">
+<div class="episode-info">
+<span>SEZONUL 1 · EPISODUL 10</span>
+<h3>Norocoasa</h3>
+<p>Gwen găsește o carte de magie și începe să învețe vrăji.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon1/episod12.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s1-e12.jpg" alt="Episodul 12">
-            <div class="episode-info">
-                <span>SEZONUL 1 · EPISODUL 12</span>
-                <h3>Efecte secundare</h3>
-                <p>O răceală îi afectează transformările lui Ben, tocmai când trebuie să oprească un răufăcător care controlează insectele.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon1/episod11.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s1-e11.jpg" alt="Episodul 11">
+<div class="episode-info">
+<span>SEZONUL 1 · EPISODUL 11</span>
+<h3>O problemă minoră</h3>
+<p>Omnitrixul se defectează și Ben rămâne blocat în forma lui Grey Matter.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon1/episod13.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s1-e13.jpg" alt="Episodul 13">
-            <div class="episode-info">
-                <span>SEZONUL 1 · EPISODUL 13 · FINAL DE SEZON</span>
-                <h3>Secrete</h3>
-                <p>Vilgax ajunge pe Pământ și îl capturează pe Ben pentru a recupera Omnitrixul. Gwen și Max încearcă să-l salveze.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon1/episod12.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s1-e12.jpg" alt="Episodul 12">
+<div class="episode-info">
+<span>SEZONUL 1 · EPISODUL 12</span>
+<h3>Efecte secundare</h3>
+<p>O răceală îi afectează transformările lui Ben.</p>
+</div><div class="episode-play">▶</div></a>
 
-    </div>
+<a href="sezon1/episod13.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s1-e13.jpg" alt="Episodul 13">
+<div class="episode-info">
+<span>SEZONUL 1 · EPISODUL 13 · FINAL DE SEZON</span>
+<h3>Secrete</h3>
+<p>Vilgax ajunge pe Pământ și îl capturează pe Ben pentru a recupera Omnitrixul.</p>
+</div><div class="episode-play">▶</div></a>
 
-    <!-- SEZONUL 2 -->
-    <div class="episode-list season-list" id="sezon2">
+</div>
 
-        <a href="sezon2/episod1.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s2-e1.jpg" alt="Episodul 1">
-            <div class="episode-info">
-                <span>SEZONUL 2 · EPISODUL 1</span>
-                <h3>Adevărul</h3>
-                <p>Ben, Gwen și Max îl întâlnesc pe Phil, un fost partener al bunicului Max, care folosește un dispozitiv periculos pentru a captura extratereștri.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<!-- SEZONUL 2 -->
+<div class="episode-list season-list" id="sezon2">
 
-        <a href="sezon2/episod2.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s2-e2.jpg" alt="Episodul 2">
-            <div class="episode-info">
-                <span>SEZONUL 2 · EPISODUL 2</span>
-                <h3>Cel Măreț</h3>
-                <p>În Yellowstone, Ben descoperă o nouă transformare a Omnitrixului și trebuie să înfrunte o creatură uriașă care amenință zona.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon2/episod1.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s2-e1.jpg" alt="Episodul 1">
+<div class="episode-info">
+<span>SEZONUL 2 · EPISODUL 1</span>
+<h3>Adevărul</h3>
+<p>Ben, Gwen și Max îl întâlnesc pe Phil, un fost partener al bunicului Max.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon2/episod3.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s2-e3.jpg" alt="Episodul 3">
-            <div class="episode-info">
-                <span>SEZONUL 2 · EPISODUL 3</span>
-                <h3>Înscenarea</h3>
-                <p>Kevin își folosește puterile pentru a-l implica pe Ben într-o serie de probleme, făcându-l să pară vinovat.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon2/episod2.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s2-e2.jpg" alt="Episodul 2">
+<div class="episode-info">
+<span>SEZONUL 2 · EPISODUL 2</span>
+<h3>Cel Măreț</h3>
+<p>Ben descoperă o nouă transformare și întâlnește o creatură uriașă.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon2/episod4.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s2-e4.jpg" alt="Episodul 4">
-            <div class="episode-info">
-                <span>SEZONUL 2 · EPISODUL 4</span>
-                <h3>Gwen 10</h3>
-                <p>Într-o realitate alternativă, Gwen găsește Omnitrixul în locul lui Ben și trebuie să învețe să-i folosească puterile.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon2/episod3.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s2-e3.jpg" alt="Episodul 3">
+<div class="episode-info">
+<span>SEZONUL 2 · EPISODUL 3</span>
+<h3>Înscenarea</h3>
+<p>Kevin încearcă să-l facă pe Ben să pară vinovat pentru problemele provocate.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon2/episod5.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s2-e5.jpg" alt="Episodul 5">
-            <div class="episode-info">
-                <span>SEZONUL 2 · EPISODUL 5</span>
-                <h3>Combatanți Intergalactici</h3>
-                <p>Ben și Kevin ajung pe o navă spațială unde sunt obligați să participe la lupte între adversari din diferite lumi.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon2/episod4.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s2-e4.jpg" alt="Episodul 4">
+<div class="episode-info">
+<span>SEZONUL 2 · EPISODUL 4</span>
+<h3>Gwen 10</h3>
+<p>Într-o realitate alternativă, Gwen găsește Omnitrixul în locul lui Ben.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon2/episod6.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s2-e6.jpg" alt="Episodul 6">
-            <div class="episode-info">
-                <span>SEZONUL 2 · EPISODUL 6</span>
-                <h3>Echipa Forțelor Intergalactice</h3>
-                <p>Ben întâlnește o echipă de supereroi extratereștri și ajunge să colaboreze cu ei împotriva unor adversari periculoși.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon2/episod5.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s2-e5.jpg" alt="Episodul 5">
+<div class="episode-info">
+<span>SEZONUL 2 · EPISODUL 5</span>
+<h3>Combatanți Intergalactici</h3>
+<p>Ben și Kevin ajung pe o navă spațială unde sunt obligați să participe la lupte.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon2/episod7.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s2-e7.jpg" alt="Episodul 7">
-            <div class="episode-info">
-                <span>SEZONUL 2 · EPISODUL 7</span>
-                <h3>Tabăra Groazei</h3>
-                <p>Într-o tabără de vară apar ciuperci extraterestre misterioase, iar Ben descoperă o nouă transformare a Omnitrixului.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon2/episod6.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s2-e6.jpg" alt="Episodul 6">
+<div class="episode-info">
+<span>SEZONUL 2 · EPISODUL 6</span>
+<h3>Echipa Forțelor Intergalactice</h3>
+<p>Ben întâlnește o echipă de supereroi extratereștri.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon2/episod8.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s2-e8.jpg" alt="Episodul 8">
-            <div class="episode-info">
-                <span>SEZONUL 2 · EPISODUL 8</span>
-                <h3>Arma Supremă</h3>
-                <p>Ben, Gwen și Max pornesc în căutarea unei arme legendare, dar Cavalerii Eterni au propriile planuri.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon2/episod7.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s2-e7.jpg" alt="Episodul 7">
+<div class="episode-info">
+<span>SEZONUL 2 · EPISODUL 7</span>
+<h3>Tabăra Groazei</h3>
+<p>Într-o tabără de vară apar ciuperci extraterestre misterioase.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon2/episod9.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s2-e9.jpg" alt="Episodul 9">
-            <div class="episode-info">
-                <span>SEZONUL 2 · EPISODUL 9</span>
-                <h3>Ghinion</h3>
-                <p>Gwen găsește un talisman magic care îi oferă noroc și puteri speciale, însă Hex și Charmcaster vor să-l obțină.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon2/episod8.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s2-e8.jpg" alt="Episodul 8">
+<div class="episode-info">
+<span>SEZONUL 2 · EPISODUL 8</span>
+<h3>Arma Supremă</h3>
+<p>Ben, Gwen și Max pornesc în căutarea unei arme legendare.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon2/episod10.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s2-e10.jpg" alt="Episodul 10">
-            <div class="episode-info">
-                <span>SEZONUL 2 · EPISODUL 10</span>
-                <h3>Secretul din adâncuri</h3>
-                <p>Într-un complex subacvatic, Ben descoperă că o sursă de energie extraterestră a fost furată și folosită în scopuri periculoase.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon2/episod9.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s2-e9.jpg" alt="Episodul 9">
+<div class="episode-info">
+<span>SEZONUL 2 · EPISODUL 9</span>
+<h3>Ghinion</h3>
+<p>Gwen găsește un talisman magic care îi oferă noroc și puteri speciale.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon2/episod11.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s2-e11.jpg" alt="Episodul 11">
-            <div class="episode-info">
-                <span>SEZONUL 2 · EPISODUL 11</span>
-                <h3>Speriat de stafie</h3>
-                <p>Ghostfreak reușește să scape din Omnitrix, iar Ben trebuie să găsească o cale de a-l opri.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon2/episod10.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s2-e10.jpg" alt="Episodul 10">
+<div class="episode-info">
+<span>SEZONUL 2 · EPISODUL 10</span>
+<h3>Secretul din adâncuri</h3>
+<p>Ben descoperă o sursă de energie extraterestră folosită în scopuri periculoase.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon2/episod12.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s2-e12.jpg" alt="Episodul 12">
-            <div class="episode-info">
-                <span>SEZONUL 2 · EPISODUL 12</span>
-                <h3>Dr. Animo și raza mutantă</h3>
-                <p>Omnitrixul începe să funcționeze defectuos, iar Dr. Animo revine cu un nou plan care provoacă probleme.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon2/episod11.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s2-e11.jpg" alt="Episodul 11">
+<div class="episode-info">
+<span>SEZONUL 2 · EPISODUL 11</span>
+<h3>Speriat de stafie</h3>
+<p>Ghostfreak reușește să scape din Omnitrix, iar Ben trebuie să-l oprească.</p>
+</div><div class="episode-play">▶</div></a>
 
-        <a href="sezon2/episod13.html" class="episode-row">
-            <img src="../../postere/episoade/ben10-s2-e13.jpg" alt="Episodul 13">
-            <div class="episode-info">
-                <span>SEZONUL 2 · EPISODUL 13 · FINAL DE SEZON</span>
-                <h3>Răzbunarea</h3>
-                <p>Ben și familia sa se confruntă cu o nouă amenințare, iar aventura îi pune din nou la încercare.</p>
-            </div>
-            <div class="episode-play">▶</div>
-        </a>
+<a href="sezon2/episod12.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s2-e12.jpg" alt="Episodul 12">
+<div class="episode-info">
+<span>SEZONUL 2 · EPISODUL 12</span>
+<h3>Dr. Animo și raza mutantă</h3>
+<p>Dr. Animo revine cu un nou plan care provoacă probleme.</p>
+</div><div class="episode-play">▶</div></a>
 
-    </div>
+<a href="sezon2/episod13.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s2-e13.jpg" alt="Episodul 13">
+<div class="episode-info">
+<span>SEZONUL 2 · EPISODUL 13 · FINAL DE SEZON</span>
+<h3>Răzbunarea</h3>
+<p>Ben și familia sa se confruntă cu o nouă amenințare.</p>
+</div><div class="episode-play">▶</div></a>
+
+</div>
+
+<!-- SEZONUL 3 -->
+<div class="episode-list season-list" id="sezon3">
+
+<a href="sezon3/episod1.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s3-e1.jpg" alt="Ben 10.000">
+<div class="episode-info">
+<span>SEZONUL 3 · EPISODUL 1</span>
+<h3>Ben 10.000</h3>
+<p>Ben și Gwen ajung în viitor și îl întâlnesc pe Ben adult, care are nevoie de ajutorul lor.</p>
+</div><div class="episode-play">▶</div></a>
+
+<a href="sezon3/episod2.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s3-e2.jpg" alt="Agitație la miezul nopții">
+<div class="episode-info">
+<span>SEZONUL 3 · EPISODUL 2</span>
+<h3>Agitație la miezul nopții</h3>
+<p>Ben este hipnotizat de Sublimino și începe să fure obiecte în timpul nopții.</p>
+</div><div class="episode-play">▶</div></a>
+
+<a href="sezon3/episod3.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s3-e3.jpg" alt="Schimbarea la față">
+<div class="episode-info">
+<span>SEZONUL 3 · EPISODUL 3</span>
+<h3>Schimbarea la față</h3>
+<p>Charmcaster folosește o vrajă pentru a face schimb de corpuri cu Gwen.</p>
+</div><div class="episode-play">▶</div></a>
+
+<a href="sezon3/episod4.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s3-e4.jpg" alt="Crăciun fericit">
+<div class="episode-info">
+<span>SEZONUL 3 · EPISODUL 4</span>
+<h3>Crăciun fericit</h3>
+<p>Ben și Gwen ajung într-un parc de Crăciun misterios, unde bunicul Max dispare.</p>
+</div><div class="episode-play">▶</div></a>
+
+<a href="sezon3/episod5.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s3-e5.jpg" alt="Ben Vârcolac">
+<div class="episode-info">
+<span>SEZONUL 3 · EPISODUL 5</span>
+<h3>Ben Vârcolac</h3>
+<p>O creatură misterioasă îl atacă pe Ben, iar Omnitrixul îl transformă într-un extraterestru nou.</p>
+</div><div class="episode-play">▶</div></a>
+
+<a href="sezon3/episod6.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s3-e6.jpg" alt="Joc terminat">
+<div class="episode-info">
+<span>SEZONUL 3 · EPISODUL 6</span>
+<h3>Joc terminat</h3>
+<p>Ben și Gwen sunt atrași în jocul video Sumo Slammers și trebuie să treacă de niveluri.</p>
+</div><div class="episode-play">▶</div></a>
+
+<a href="sezon3/episod7.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s3-e7.jpg" alt="Aventurile super prietenilor extratereștri">
+<div class="episode-info">
+<span>SEZONUL 3 · EPISODUL 7</span>
+<h3>Aventurile super prietenilor extratereștri</h3>
+<p>Ben descoperă că formele sale extraterestre au devenit personaje într-un desen animat.</p>
+</div><div class="episode-play">▶</div></a>
+
+<a href="sezon3/episod8.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s3-e8.jpg" alt="Sub acoperire">
+<div class="episode-info">
+<span>SEZONUL 3 · EPISODUL 8</span>
+<h3>Sub acoperire</h3>
+<p>La o fermă, Ben descoperă o mumie extraterestră care caută un cristal periculos.</p>
+</div><div class="episode-play">▶</div></a>
+
+<a href="sezon3/episod9.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s3-e9.jpg" alt="Ciudații">
+<div class="episode-info">
+<span>SEZONUL 3 · EPISODUL 9</span>
+<h3>Ciudații</h3>
+<p>Ben descoperă că o echipă de copii sportivi este formată, de fapt, din roboți.</p>
+</div><div class="episode-play">▶</div></a>
+
+<a href="sezon3/episod10.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s3-e10.jpg" alt="Vreme monstruoasă">
+<div class="episode-info">
+<span>SEZONUL 3 · EPISODUL 10</span>
+<h3>Vreme monstruoasă</h3>
+<p>Un prezentator meteo folosește o mașinărie care controlează vremea, dar lucrurile scapă de sub control.</p>
+</div><div class="episode-play">▶</div></a>
+
+<a href="sezon3/episod11.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s3-e11.jpg" alt="Întoarcerea">
+<div class="episode-info">
+<span>SEZONUL 3 · EPISODUL 11</span>
+<h3>Întoarcerea</h3>
+<p>Ben descoperă că mumia și vârcolacul s-au întors și îl ajută pe Dr. Viktor să-l readucă pe Ghostfreak.</p>
+</div><div class="episode-play">▶</div></a>
+
+<a href="sezon3/episod12.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s3-e12.jpg" alt="Teamă de întuneric">
+<div class="episode-info">
+<span>SEZONUL 3 · EPISODUL 12</span>
+<h3>Teamă de întuneric</h3>
+<p>Ben, Gwen și Max încearcă să oprească planul lui Ghostfreak de a acoperi Pământul în întuneric.</p>
+</div><div class="episode-play">▶</div></a>
+
+<a href="sezon3/episod13.html" class="episode-row">
+<img src="../../postere/episoade/ben10-s3-e13.jpg" alt="Vizitatorul">
+<div class="episode-info">
+<span>SEZONUL 3 · EPISODUL 13 · FINAL DE SEZON</span>
+<h3>Vizitatorul</h3>
+<p>Xylene apare în viața familiei Tennyson și dezvăluie legătura ei cu Omnitrixul.</p>
+</div><div class="episode-play">▶</div></a>
+
+</div>
 
 </section>
 
@@ -785,30 +589,11 @@ footer {
     </p>
 
     <div class="character-grid">
-        <div class="character">
-            <span>PERSONAJ</span>
-            <h3>Ben Tennyson</h3>
-        </div>
-
-        <div class="character">
-            <span>PERSONAJ</span>
-            <h3>Gwen Tennyson</h3>
-        </div>
-
-        <div class="character">
-            <span>PERSONAJ</span>
-            <h3>Bunicul Max</h3>
-        </div>
-
-        <div class="character">
-            <span>PERSONAJ</span>
-            <h3>Vilgax</h3>
-        </div>
-
-        <div class="character">
-            <span>PERSONAJ</span>
-            <h3>Kevin 11</h3>
-        </div>
+        <div class="character"><span>PERSONAJ</span><h3>Ben Tennyson</h3></div>
+        <div class="character"><span>PERSONAJ</span><h3>Gwen Tennyson</h3></div>
+        <div class="character"><span>PERSONAJ</span><h3>Bunicul Max</h3></div>
+        <div class="character"><span>PERSONAJ</span><h3>Vilgax</h3></div>
+        <div class="character"><span>PERSONAJ</span><h3>Kevin 11</h3></div>
     </div>
 </section>
 
