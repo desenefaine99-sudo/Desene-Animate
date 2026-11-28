@@ -3,38 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101010">
+
 <title>Rămânem dezbinați – Ben 10 Classic | DeseneAnimate+</title>
 
 <style>
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
+    margin: 0;
     background: #101010;
-    color: #fff;
+    color: white;
     font-family: Arial, sans-serif;
 }
 
 header {
-    padding: 20px 6%;
+    padding: 22px 5%;
     background: #080808;
     border-bottom: 1px solid #222;
 }
 
 header a {
     color: #e50914;
+    font-size: 27px;
+    font-weight: 900;
     text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
 }
 
 .container {
-    max-width: 1000px;
-    margin: 35px auto;
-    padding: 0 20px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 35px 5%;
 }
 
 .back {
@@ -45,69 +46,69 @@ header a {
 }
 
 .back:hover {
-    color: #fff;
+    color: white;
 }
 
 .label {
     color: #e50914;
     font-size: 13px;
     font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
+    letter-spacing: 3px;
 }
 
 h1 {
-    font-size: 36px;
-    margin-bottom: 12px;
+    font-size: clamp(32px, 6vw, 48px);
+    margin: 12px 0;
 }
 
-.meta {
+.metadata {
     color: #aaa;
-    font-size: 14px;
     margin-bottom: 25px;
 }
 
-.video-container {
+.player {
     width: 100%;
+    aspect-ratio: 16 / 9;
     background: #000;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 10px 35px #0008;
 }
 
-video {
+.player video {
     width: 100%;
+    height: 100%;
     display: block;
+    object-fit: contain;
 }
 
-.about {
-    margin-top: 30px;
-    line-height: 1.7;
+h2 {
+    margin-top: 40px;
+    font-size: 25px;
 }
 
-.about h2 {
-    font-size: 22px;
-    margin-bottom: 12px;
-}
-
-.about p {
-    color: #ccc;
+.description {
+    color: #bbb;
+    line-height: 1.8;
     font-size: 15px;
+    max-width: 950px;
 }
 
 .navigation {
     display: flex;
+    justify-content: space-between;
     gap: 15px;
-    margin-top: 30px;
+    margin-top: 40px;
     flex-wrap: wrap;
 }
 
 .navigation a {
     background: #222;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 5px;
+    color: white;
     text-decoration: none;
-    font-size: 14px;
+    padding: 14px 20px;
+    border-radius: 6px;
+    transition: .3s;
 }
 
 .navigation a:hover {
@@ -116,16 +117,20 @@ video {
 
 footer {
     text-align: center;
-    padding: 25px;
+    padding: 30px;
     color: #777;
-    font-size: 13px;
-    margin-top: 40px;
-    border-top: 1px solid #222;
+    border-top: 1px solid #292929;
+    margin-top: 60px;
 }
 
-@media (max-width: 600px) {
-    h1 {
-        font-size: 28px;
+@media(max-width:600px) {
+    .container {
+        padding: 25px 16px;
+    }
+
+    .navigation a {
+        width: 100%;
+        text-align: center;
     }
 }
 </style>
@@ -137,42 +142,73 @@ footer {
     <a href="../../../index.html">DeseneAnimate+</a>
 </header>
 
-<div class="container">
+<main class="container">
 
-    <a class="back" href="../index.html">← Înapoi la episoade</a>
+    <a href="../index.html" class="back">
+        ← Înapoi la Ben 10 Classic
+    </a>
 
     <div class="label">BEN 10 CLASSIC · SEZONUL 4</div>
 
     <h1>Rămânem dezbinați</h1>
 
-    <div class="meta">
+    <div class="metadata">
         Sezonul 4 · Episodul 2 · Episodul 41 în total · 2007
     </div>
 
-    <div class="video-container">
+    <div class="player">
         <video controls playsinline preload="metadata"
             poster="../../../postere/episoade/ben10-s4-e2.jpg">
-            <source src="https://cartoonix.ro/api/media/videos/Ben10/Episodul%2041%20-%20Ramanem%20dezbinati.mp4" type="video/mp4">
-            Browserul tău nu suportă redarea videoclipurilor.
+
+            <source
+                src="https://cartoonix.ro/api/media/videos/Ben10/Episodul%2041%20-%20Ramanem%20dezbinati.mp4"
+                type="video/mp4">
+
+            Browserul tău nu poate reda acest videoclip.
         </video>
     </div>
 
-    <div class="about">
-        <h2>Despre episod</h2>
-        <p>
-            În timp ce se află la plajă, Ben descoperă o nouă transformare a Omnitrixului: Ditto, un extraterestru care se poate multiplica. Copiile lui Ben ajung să se certe și creează haos, dar lucrurile devin serioase când Dr. Animo revine și capturează unul dintre Dittos pentru a-i folosi ADN-ul. Ben, Gwen și Max trebuie să găsească o cale să-l salveze și să oprească armata de creaturi create de Animo.
-        </p>
-    </div>
+    <h2>Despre episod</h2>
+
+    <p class="description">
+        Ben descoperă o nouă transformare a Omnitrixului:
+        Ditto, un extraterestru care îi permite să creeze
+        mai multe copii ale sale. La început, puterea pare
+        foarte distractivă, însă copiile încep să se certe
+        și situația scapă de sub control.
+
+        <br><br>
+
+        Problemele se înrăutățesc atunci când Dr. Animo
+        revine cu un nou plan. Ben, Gwen și bunicul Max
+        trebuie să găsească o cale de a opri planul
+        răufăcătorului.
+    </p>
 
     <div class="navigation">
-        <a href="episod1.html">← Episodul anterior</a>
-        <a href="../index.html">Lista episoadelor</a>
+
+        <a href="episod1.html">
+            ← Episodul precedent
+        </a>
+
+        <a href="../index.html">
+            Lista episoadelor
+        </a>
+
+        <a href="episod3.html">
+            Episodul următor →
+        </a>
+
     </div>
 
-</div>
+</main>
 
 <footer>
-    DeseneAnimate+ © 2026 · Ben 10 Classic – Rămânem dezbinați
+    DeseneAnimate+ © 2026
+    <br>
+    <span style="font-size:12px;">
+        Ben 10 Classic – Rămânem dezbinați
+    </span>
 </footer>
 
 </body>
